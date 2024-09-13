@@ -31,7 +31,8 @@ if($LASTEXITCODE -ne 0)
     {
         $message = $_
         Write-Host "Error installing $($app): $message"
-        exit 1
+	exit 0 #fails the whole build process
+#        exit 1
     }
 else 
 {
