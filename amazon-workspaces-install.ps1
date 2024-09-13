@@ -61,7 +61,7 @@ else
 #set arguments string
 $arguments = "--ignore-checksum "
 if($version -ne "latest") {
-    $arguments += " --version=$version"
+    $arguments += " --version $version"
     }
 if($installArgumentsstring -ne "INSTALLSTRING") {
     $arguments += " --install-arguments=""$installArgumentsstring"""
