@@ -93,7 +93,8 @@ if($installed -eq $null)
     else
     {
         Write-Host "$($app) not detected; installing with Arguments $($arguments) now..."
-        Start-Process -Wait -FilePath "$($choco)\choco.exe" -ArgumentList "install $($app) $arguments) -y"
+        #Start-Process -Wait -FilePath "$($choco)\choco.exe" -ArgumentList "install $($app) $arguments) -y"
+        & $choco\choco.exe install $app $arguments -y
         if($LASTEXITCODE -ne 0)
         {
             $message = $_
