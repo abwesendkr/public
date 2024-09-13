@@ -22,7 +22,7 @@ $app = "googlechrome" #enter package name from https://community.chocolatey.org/
 $version = "129.0.6668.42" #version
 $installArgumentsstring = "INSTALLSTRING" #set $null if not in use
 $logPath = "C:\ProgramData\Kapsch\ImageBuilding\$($app)"
-$keepchoco = $False
+$keepchoco = $True
 $installFlag = "$($logPath)\$($app)_installed.txt"
 
 ########
