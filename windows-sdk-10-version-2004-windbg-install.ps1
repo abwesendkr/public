@@ -22,7 +22,7 @@ $app = "windows-sdk-10-version-2004-windbg" #enter package name from https://com
 $version = "10.0.19041.685" #version
 $installArgumentsstring = "INSTALLSTRING" #set $null if not in use
 $logPath = "C:\ProgramData\Kapsch\ImageBuilding\$($app)"
-$keepchoco = $False
+$keepchoco = $True
 $installFlag = "$($logPath)\$($app)_installed.txt"
 
 ########
