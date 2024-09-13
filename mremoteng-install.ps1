@@ -22,7 +22,7 @@ $app = "mremoteng" #enter package name from https://community.chocolatey.org/pac
 $version = "1.76.20.24615" #version
 $installArgumentsstring = "INSTALLSTRING" #set $null if not in use
 $logPath = "C:\ProgramData\Kapsch\ImageBuilding\$($app)"
-$keepchoco = $False
+$keepchoco = $True
 $installFlag = "$($logPath)\$($app)_installed.txt"
 
 ########
