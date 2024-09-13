@@ -18,7 +18,7 @@
 # Input #
 #########
 
-$app = "notepadplusplus#enter package name from https://community.chocolatey.org/packages
+$app = "notepadplusplus" #enter package name from https://community.chocolatey.org/packages
 $version = "8.6.9" #version
 $installArgumentsstring = "INSTALLSTRING" #set $null if not in use
 $logPath = "C:\ProgramData\Kapsch\ImageBuilding\$($app)"
