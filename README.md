@@ -1,2 +1,5 @@
 # public
-some random public stuff
+build Azure Virtual Desktop Custom Image Builder
+# learnings:
+* NEVER touch the files in the storage account *DURING* the build process. this will fail the build processes, even when read only
+
