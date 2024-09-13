@@ -22,7 +22,7 @@ $app = "notepadplusplus" #enter package name from https://community.chocolatey.o
 $version = "8.6.9" #version
 $installArgumentsstring = "INSTALLSTRING" #set $null if not in use
 $logPath = "C:\ProgramData\Kapsch\ImageBuilding\$($app)"
-$keepchoco = $False
+$keepchoco = $True
 $installFlag = "$($logPath)\$($app)_installed.txt"
 
 ########
