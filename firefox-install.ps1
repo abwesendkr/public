@@ -22,7 +22,7 @@ $app = "firefox" #enter package name from https://community.chocolatey.org/packa
 $version = "129.0.2" #version
 $installArgumentsstring = "INSTALLSTRING" #set $null if not in use
 $logPath = "C:\ProgramData\Kapsch\ImageBuilding\$($app)"
-$keepchoco = $False
+$keepchoco = $True
 $installFlag = "$($logPath)\$($app)_installed.txt"
 
 ########
