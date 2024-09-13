@@ -22,7 +22,7 @@ $app = "amazon-workspaces" #enter package name from https://community.chocolatey
 $version = "5.22.1.4847" #version
 $installArgumentsstring = "INSTALLSTRING" #set $null if not in use
 $logPath = "C:\ProgramData\Kapsch\ImageBuilding\$($app)"
-$keepchoco = $False
+$keepchoco = $True
 $installFlag = "$($logPath)\$($app)_installed.txt"
 
 ########
