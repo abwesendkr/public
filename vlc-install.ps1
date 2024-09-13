@@ -22,7 +22,7 @@ $app = "vlc" #enter package name from https://community.chocolatey.org/packages
 $version = "3.0.21" #version
 $installArgumentsstring = "INSTALLSTRING" #set $null if not in use
 $logPath = "C:\ProgramData\Kapsch\ImageBuilding\$($app)"
-$keepchoco = $False
+$keepchoco = $True
 $installFlag = "$($logPath)\$($app)_installed.txt"
 
 ########
