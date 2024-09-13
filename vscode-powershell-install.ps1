@@ -110,7 +110,8 @@ if($installed -eq $null)
 else
 {
     Write-Host "$($app) already installed.  Updating to latest version..."
-    Start-Process -Wait -FilePath "$($choco)\choco.exe" -ArgumentList "upgrade $($app) -y"
+    #Start-Process -Wait -FilePath "$($choco)\choco.exe" -ArgumentList "upgrade $($app) -y"
+    & $choco\choco.exe install $app $arguments -y
     if($LASTEXITCODE -ne 0)
     {
         $message = $_
