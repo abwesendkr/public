@@ -11,3 +11,11 @@ build Azure Virtual Desktop Custom Image Builder
 * install languages is take up 3>hours
 * install python is excluded
 * may language set up is causing abort error
+
+# Software via Intune:
+* adobereader
+
+# Software missing:
+* Video tool
+* SDK
+* CMTrace

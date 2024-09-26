@@ -1,6 +1,6 @@
 # CONSTANTS
-$REPO_NAME = "Choco-avd"
-$GITHUB_REPO = "https://github.com/Henchway/Choco-avd.git"
+$REPO_NAME = "public"
+$GITHUB_REPO = "https://github.com/abwesendkr/public.git"
 
 # Check if running as Administrator
 if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
