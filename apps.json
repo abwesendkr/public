@@ -93,7 +93,7 @@
   {
       "name": "ultravnc",
       "chocoVersion": "",
-      "chocoArgumentString": "/loadinf=c:\\Windows\\system32\\public\\config\\uvnc\\uvnc.inf",
+      "chocoArgumentString": "/loadinf=c:\\config\\uvnc\\uvnc.inf",
       "installType": "choco",
       "customInstallScript": ""
   },
