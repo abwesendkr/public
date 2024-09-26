@@ -12,7 +12,12 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 if (-not(Test-Path ".\$REPO_NAME")) {
     git clone $GITHUB_REPO
 }
+
+#Set work location
 Set-Location $REPO_NAME
+
+#Copy Config files
+Copy-Item .\public\config C:\ -Recurse -Force
 
 # Import functions module
 Import-Module "./functions.psm1"
