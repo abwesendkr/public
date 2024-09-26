@@ -74,8 +74,8 @@ Uninstall-Chocolatey
 #check if winget is installed:
 $winget_exe = Resolve-Path "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_*_x64__8wekyb3d8bbwe\winget.exe"
 Write-Host "Winget Path found: $($winget_exe)"
-$winget-command = Get-Command winget
-write-host "winget-command: $($winget-command)"
+$wingetcommand = Get-Command winget
+write-host "winget-command: $($wingetcommand)"
 
 if ($SuccessfulAppCount -lt $TotalAppCount) {
     Write-Host "[FATAL] Not all apps were installed successfully, failing script."  -ForegroundColor Red
