@@ -71,9 +71,9 @@ if($installArgumentsstring -ne "INSTALLSTRING") {
 Write-Host "Running choco-upgrade"
 Write-Host "Checking if $($app) is installed on $($env:COMPUTERNAME)..."
 $installed = Start-Process -Wait -FilePath "$($choco)\choco.exe" -ArgumentList "list" | Select-String $app
-if($installed -eq $null)
+if($null -eq $installed)
 {
-    if($arguments -eq $null)
+    if($null -eq $arguments)
     {
         Write-Host "$($app) not detected; installing now..."
 #        Start-Process -Wait -FilePath "$($choco)\choco.exe" -ArgumentList "install $($app) -y"
