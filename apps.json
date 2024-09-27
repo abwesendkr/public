@@ -96,7 +96,13 @@
       "chocoArgumentString": "",
       "installType": "winget",
       "customInstallScript": ""
-
+  },
+  {
+      "name": "Microsoft.WinDbg",
+      "chocoVersion": "",
+      "chocoArgumentString": "",
+      "installType": "winget",
+      "customInstallScript": ""
   },
   {
       "name": "ultravnc",

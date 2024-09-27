@@ -36,7 +36,7 @@ function Install-WithWinget {
     #check if winget is installed:
     $winget_exe = Resolve-Path "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_*_x64__8wekyb3d8bbwe\winget.exe"
     Write-Host "Winget Path found: $($winget_exe)"
-    $InstallCommand = "install --exact --id $($App.name) --silent --accept-package-agreements --accept-source-agreements --scope=machine"
+    $InstallCommand = "install --exact --id $($App.name) --silent --accept-package-agreements --accept-source-agreements"
 
     # Ensures to not install any applications when running in vscode
     if ($env:TERM_PROGRAM -eq "vscode") {
@@ -52,8 +52,9 @@ function Install-WithWinget {
     Write-Host "Executing command: $winget_exe $InstallCommand"
     try {
         # Execute the command
-        & $winget_exe $InstallCommand
-    
+        $env:WINGET_DOWNLOAD_PROGRESS = $false
+        Invoke-Expression "& `"$winget_exe`" $InstallCommand"
+        
         # Check the exit code or validate the installation
         if ($LASTEXITCODE -eq 1) {
             throw "[ERROR] Error encountered: $_"
