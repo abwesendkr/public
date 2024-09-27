@@ -49,10 +49,10 @@ function Install-WithWinget {
         $InstallCommand += " --install-arguments='$($App.chocoArgumentString)'"
     }
 
-    Write-Host "Executing command: $winget $InstallCommand"
+    Write-Host "Executing command: $winget_exe $InstallCommand"
     try {
         # Execute the command
-        & $winget $InstallCommand
+        & $winget_exe $InstallCommand
     
         # Check the exit code or validate the installation
         if ($LASTEXITCODE -eq 1) {

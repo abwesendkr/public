@@ -64,9 +64,6 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
                 $SuccessfulAppCount -= 1
             }
         }
-    {
-        <# Action when this condition is true #>
-    }
     else {
         try {
             powershell.exe -File $App.customInstallScript
