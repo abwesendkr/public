@@ -36,6 +36,7 @@ function Install-WithWinget {
     #check if winget is installed:
     $winget_exe = Resolve-Path "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_*_x64__8wekyb3d8bbwe\winget.exe"
     Write-Host "Winget Path found: $($winget_exe)"
+    #scope needs to be set to machine --scope machine
     $InstallCommand = "install --exact --id $($App.name) --silent --accept-package-agreements --accept-source-agreements"
 
     # Ensures to not install any applications when running in vscode
