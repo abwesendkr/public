@@ -52,6 +52,20 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
             $InstallStatusTable += Create-LogElement -App $App -Success $false  
             $SuccessfulAppCount -= 1
         }
+    }elseif ($App.installType -eq 'winget') {
+            try {
+                Install-WithWinget($App)
+                $InstallStatus = Create-LogElement -App $App -Success $true  
+                $InstallStatusTable += $InstallStatus
+            }
+            catch {
+                Write-Host "Encountered error: $_"
+                $InstallStatusTable += Create-LogElement -App $App -Success $false  
+                $SuccessfulAppCount -= 1
+            }
+        }
+    {
+        <# Action when this condition is true #>
     }
     else {
         try {
@@ -75,11 +89,6 @@ $InstallStatusTable | Format-Table -AutoSize
 
 # Uninstall Chocolatey
 Uninstall-Chocolatey
-
-#check if winget is installed:
-$winget_exe = Resolve-Path "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_*_x64__8wekyb3d8bbwe\winget.exe"
-Write-Host "Winget Path found: $($winget_exe)"
-& $winget_exe --version
 
 if ($SuccessfulAppCount -lt $TotalAppCount) {
     Write-Host "[FATAL] Not all apps were installed successfully, failing script."  -ForegroundColor Red

@@ -29,6 +29,43 @@ function Uninstall-Chocolatey {
     }
 }
 
+function Install-WithWinget {
+    param (
+        [object]$App
+    )
+    #check if winget is installed:
+    $winget_exe = Resolve-Path "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_*_x64__8wekyb3d8bbwe\winget.exe"
+    Write-Host "Winget Path found: $($winget_exe)"
+    $InstallCommand = "install --exact --id $($App.name) --silent --accept-package-agreements --accept-source-agreements --scope=machine"
+
+    # Ensures to not install any applications when running in vscode
+    if ($env:TERM_PROGRAM -eq "vscode") {
+        $InstallCommand += " --noop"
+    }
+    if ($App.chocoVersion) {
+        $InstallCommand += " --version $($App.chocoVersion)"
+    }
+    if ($App.chocoArgumentString) {
+        $InstallCommand += " --install-arguments='$($App.chocoArgumentString)'"
+    }
+
+    Write-Host "Executing command: $winget $InstallCommand"
+    try {
+        # Execute the command
+        & $winget $InstallCommand
+    
+        # Check the exit code or validate the installation
+        if ($LASTEXITCODE -eq 1) {
+            throw "[ERROR] Error encountered: $_"
+        }
+        Write-Host "[INFO] Successfully installed $($App.name)"  -ForegroundColor Green
+    }
+    catch {
+        Write-Host "[ERROR] Failed to install $($App.name)."  -ForegroundColor Red
+        throw "[ERROR] Error encountered: $_"
+    }
+}
+
 function Install-WithChoco {
     param (
         [object]$App

@@ -91,6 +91,14 @@
       "customInstallScript": ""
   },
   {
+      "name": "Microsoft.SQLServerManagementStudio",
+      "chocoVersion": "19.0.2",
+      "chocoArgumentString": "",
+      "installType": "winget",
+      "customInstallScript": ""
+
+  },
+  {
       "name": "ultravnc",
       "chocoVersion": "",
       "chocoArgumentString": "/loadinf=c:\\config\\uvnc\\uvnc.inf",
