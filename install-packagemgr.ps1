@@ -50,7 +50,7 @@ function Install-Wingetpowershell {
             Write-Host "Set-ExecutionPolicy..."
             
             # Setzen der Execution Policy auf RemoteSigned
-            Set-ExecutionPolicy -ExecutionPolicy "RemoteSigned" -Force
+            Set-ExecutionPolicy -ExecutionPolicy "RemoteSigned" -Force -ErrorAction Ignore
             Write-Host "Install-Module..."
             
             # Installieren des Moduls PowerShellGet
