@@ -90,7 +90,7 @@ function Install-WithWingetpowershell {
             # Installation mit spezifischer Version
             Install-WingetPackage -Id $App.name -Version $App.chocoVersion -Mode Silent -Scope System -Force  
         } else {
-            Write-Host "Starting installation of $($App.name)..."
+            Write-Host "Starting installation of $($App.name) with winget..."
             # Installation ohne spezifischer Version
             Install-WingetPackage -Id $App.name -Mode Silent -Scope System -Force 
         }
@@ -100,6 +100,7 @@ function Install-WithWingetpowershell {
     }
     catch {
         Write-Error "Installation failed: $_"
+        Get-Module
 #        exit 1  # Fehler
     }
 }

@@ -55,6 +55,7 @@ function Install-Wingetpowershell {
             
             # Installieren des Moduls PowerShellGet
             Install-Module -Name Microsoft.WinGet.Client -Force -Scope AllUsers -Verbose
+            Get-Module
         } else {
             Write-Host "Microsoft.WinGet.Client is already installed."
         }
