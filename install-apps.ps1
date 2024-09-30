@@ -15,6 +15,8 @@ if (-not(Test-Path ".\$REPO_NAME")) {
 
 #Set work location
 Set-Location $REPO_NAME
+Write-Host "Cloned this:"
+tree /f
 
 #Copy Config files
 Copy-Item .\public\config C:\ -Recurse -Force
