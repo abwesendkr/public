@@ -1,3 +1,26 @@
+function Install-Chocolatey {
+
+    if (Test-Path "C:\ProgramData\chocolatey") {
+        Remove-Item -Path "C:\ProgramData\chocolatey" -Recurse -Force
+    }
+
+    if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
+        Write-Host "Installing Chocolatey..." -ForegroundColor Green
+        Set-ExecutionPolicy Bypass -Scope Process -Force
+        [System.Net.WebRequest]::DefaultWebProxy.Credentials = [System.Net.CredentialCache]::DefaultCredentials
+        try {
+            Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+            Write-Host "Chocolatey installation completed." -ForegroundColor Green
+        }
+        catch {
+            Write-Host "[FATAL] Failed to install Chocolatey. Exiting script." -ForegroundColor Red
+            exit 1
+        }
+    }
+    else {
+        Write-Host "Chocolatey is already installed." -ForegroundColor Yellow
+    }
+}
 function Uninstall-Chocolatey {
 
     if ($env:TERM_PROGRAM -eq "vscode") {
@@ -26,6 +49,40 @@ function Uninstall-Chocolatey {
         else {
             Write-Host "Chocolatey is not installed." -ForegroundColor Yellow
         }
+    }
+}
+
+function Install-Wingetpowershell {
+    Write-Host "Attempting to install winget Powershellmodules Microsoft.WinGet.Client..."
+
+    try {
+        # Überprüfen, ob das Modul Microsoft.Winget.Client installiert ist
+        if (-not (Get-Module -Name Microsoft.Winget.Client)) {
+            Write-Host "Microsoft.WinGet.Client is not installed. Register..."
+
+            # Registrieren des Standard-PSRepositories
+    #        Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Confirm:$false -Scope AllUsers
+            Register-PSRepository -Default -Verbose -ErrorAction SilentlyContinue
+            Write-Host "Set-PSRepository..."
+            
+            # Setzen des InstallationPolicy auf Trusted
+            Set-PSRepository -Name "PSGallery" -InstallationPolicy "Trusted"
+            Write-Host "Set-ExecutionPolicy..."
+            
+            # Setzen der Execution Policy auf RemoteSigned
+            Set-ExecutionPolicy -ExecutionPolicy "RemoteSigned" -Force
+            Write-Host "Install-Module..."
+            
+            # Installieren des Moduls PowerShellGet
+            Install-Module -Name Microsoft.WinGet.Client -Force -Scope AllUsers
+        } else {
+            Write-Host "Microsoft.WinGet.Client is already installed."
+        }
+    } catch {
+        # Fehlerbehandlung
+        Write-Host "An error occurred: $_"
+        Stop-Transcript
+        exit 1
     }
 }
 
@@ -81,7 +138,29 @@ function Install-WithWinget {
         throw "[ERROR] Error encountered: $_"
     }
 }
-
+function Install-WithWingetpowershell {
+    param (
+        [object]$App
+    )
+    try {
+        if ($App.chocoVersion) {
+            Write-Host "Starting installation of $($App.name) with Version $($App.chocoVersion)..."
+            # Installation mit spezifischer Version
+            Install-WingetPackage -Id $App.name -Version $App.chocoVersion -Mode Silent -Scope System -Force  
+        } else {
+            Write-Host "Starting installation of $($App.name)..."
+            # Installation ohne spezifischer Version
+            Install-WingetPackage -Id $App.name -Mode Silent -Scope System -Force 
+        }
+        
+        Write-Host "Installation completed."
+#        exit 0  # Erfolgreiche Beendigung
+    }
+    catch {
+        Write-Error "Installation failed: $_"
+#        exit 1  # Fehler
+    }
+}
 function Install-WithChoco {
     param (
         [object]$App

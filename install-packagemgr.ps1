@@ -6,29 +6,7 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     Write-Host "[FATAL] You need to run this script as Administrator! Exiting script." -ForegroundColor Red
     exit 1
 }
-function Install-Chocolatey {
-
-    if (Test-Path "C:\ProgramData\chocolatey") {
-        Remove-Item -Path "C:\ProgramData\chocolatey" -Recurse -Force
-    }
-
-    if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
-        Write-Host "Installing Chocolatey..." -ForegroundColor Green
-        Set-ExecutionPolicy Bypass -Scope Process -Force
-        [System.Net.WebRequest]::DefaultWebProxy.Credentials = [System.Net.CredentialCache]::DefaultCredentials
-        try {
-            Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-            Write-Host "Chocolatey installation completed." -ForegroundColor Green
-        }
-        catch {
-            Write-Host "[FATAL] Failed to install Chocolatey. Exiting script." -ForegroundColor Red
-            exit 1
-        }
-    }
-    else {
-        Write-Host "Chocolatey is already installed." -ForegroundColor Yellow
-    }
-}
+Import-Module "./functions.psm1"
 
 # Install Chocolatey if not already installed
 Install-Chocolatey
@@ -45,4 +23,6 @@ if ($env:TERM_PROGRAM -eq "vscode") {
 Write-Host "Executing '$($GitInstallCommand)'"
 powershell.exe -Command $GitInstallCommand
 
+# Install Powershellmodule Winget
+Install-Wingetpowershell
 

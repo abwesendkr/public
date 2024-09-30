@@ -19,7 +19,7 @@ Write-Host "Cloned this:"
 tree /f
 
 #Copy Config files
-Copy-Item .\public\config C:\ -Recurse -Force
+Copy-Item .\config C:\ -Recurse -Force
 
 # Import functions module
 Import-Module "./functions.psm1"
@@ -56,7 +56,7 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
         }
     }elseif ($App.installType -eq 'winget') {
             try {
-                Install-WithWinget($App)
+                Install-WithWingetpowershell($App)
                 $InstallStatus = Create-LogElement -App $App -Success $true  
                 $InstallStatusTable += $InstallStatus
             }
