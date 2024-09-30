@@ -46,15 +46,15 @@ function Install-Wingetpowershell {
             Write-Host "Set-PSRepository..."
             
             # Setzen des InstallationPolicy auf Trusted
-            Set-PSRepository -Name "PSGallery" -InstallationPolicy "Trusted"
+            Set-PSRepository -Name "PSGallery" -InstallationPolicy "Trusted" -Verbose
             Write-Host "Set-ExecutionPolicy..."
             
             # Setzen der Execution Policy auf RemoteSigned
-            Set-ExecutionPolicy -ExecutionPolicy "RemoteSigned" -Force -ErrorAction Ignore
+            Set-ExecutionPolicy -ExecutionPolicy "RemoteSigned" -Force -Verbose -ErrorAction Ignore
             Write-Host "Install-Module..."
             
             # Installieren des Moduls PowerShellGet
-            Install-Module -Name Microsoft.WinGet.Client -Force -Scope AllUsers
+            Install-Module -Name Microsoft.WinGet.Client -Force -Scope AllUsers -Verbose
         } else {
             Write-Host "Microsoft.WinGet.Client is already installed."
         }
