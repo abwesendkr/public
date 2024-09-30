@@ -38,7 +38,10 @@ function Install-WithWinget {
     Write-Host "Winget Path found: $($winget_exe)"
     #scope needs to be set to machine --scope machine
     $InstallCommand = "install --exact --id $($App.name) --silent --accept-package-agreements --accept-source-agreements"
+    
     #set sources and environment:
+    Write-Host "DEBUG: Try to run programm: $winget_exe list --accept-source-agreements:"
+    & $winget_exe list --accept-source-agreements
     Write-Host "DEBUG: Try to run programm: $winget_exe settings --set region=US:"
     & $winget_exe settings --set region=US
     Write-Host "DEBUG: Try to run programm: $winget_exe source list:"
@@ -47,8 +50,9 @@ function Install-WithWinget {
     & $winget_exe source update
     Write-Host "DEBUG: Try to run programm: $winget_exe source export:"
     & $winget_exe source export
-    Write-Host "DEBUG: Try to run programm: $winget_exe list --accept-source-agreements:"
-    & $winget_exe list --accept-source-agreements
+    Write-Host "DEBUG: Try to run programm: get-winsystemlocale:"
+    get-winsystemlocale
+
    # Ensures to not install any applications when running in vscode
     if ($env:TERM_PROGRAM -eq "vscode") {
         $InstallCommand += " --noop"
