@@ -86,7 +86,7 @@ function Install-WithWingetpowershell {
     )
     try {
         if ($App.chocoVersion) {
-            Write-Host "Starting installation of $($App.name) with Version $($App.chocoVersion)..."
+            Write-Host "Starting installation of $($App.name) with winget and Version $($App.chocoVersion)..."
             # Installation mit spezifischer Version
             Install-WingetPackage -Id $App.name -Version $App.chocoVersion -Mode Silent -Scope System -Force  
         } else {
