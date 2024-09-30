@@ -87,13 +87,13 @@ function Install-WithWingetpowershell {
     try {
         if ($App.chocoVersion) {
             Write-Host "[DEBUG] Import Module Winget:"
-            Import-Module Microsoft.WinGet.Client -ErrorAction SilentlyContinue
+            Import-Module Microsoft.WinGet.Client -ErrorAction Continue
             Write-Host "Starting installation of $($App.name) with winget and Version $($App.chocoVersion)..."
             # Installation mit spezifischer Version
             Install-WingetPackage -Id $App.name -Version $App.chocoVersion -Mode Silent -Scope System -Force  
         } else {
             Write-Host "[DEBUG] Import Module Winget:"
-            Import-Module Microsoft.WinGet.Client -ErrorAction SilentlyContinue
+            Import-Module Microsoft.WinGet.Client -ErrorAction Continue
             Write-Host "Starting installation of $($App.name) with winget..."
             # Installation ohne spezifischer Version
             Install-WingetPackage -Id $App.name -Mode Silent -Scope System -Force 
@@ -107,6 +107,37 @@ function Install-WithWingetpowershell {
         Get-Module
 #        exit 1  # Fehler
     }
+}
+function Install-WithWingetpowershell7 {
+    param (
+        [object]$App
+    )
+    & 'C:\Program Files\PowerShell\7\pwsh.exe' -Command {
+        param ($App)
+        try {
+            if ($App.chocoVersion) {
+                Write-Host "[DEBUG] Import Module Winget:"
+                Import-Module Microsoft.WinGet.Client -ErrorAction Continue
+                Write-Host "Starting installation of $($App.name) with winget and Version $($App.chocoVersion)..."
+                # Installation mit spezifischer Version
+                Install-WingetPackage -Id $App.name -Version $App.chocoVersion -Mode Silent -Scope System -Force  
+            } else {
+                Write-Host "[DEBUG] Import Module Winget:"
+                Import-Module Microsoft.WinGet.Client -ErrorAction Continue
+                Write-Host "Starting installation of $($App.name) with winget..."
+                # Installation ohne spezifischer Version
+                Install-WingetPackage -Id $App.name -Mode Silent -Scope System -Force 
+            }
+            
+            Write-Host "Installation completed."
+    #        exit 0  # Erfolgreiche Beendigung
+        }
+        catch {
+            Write-Error "Installation failed: $_"
+            Get-Module
+    #        exit 1  # Fehler
+        }
+    } -args $App
 }
 function Install-WithChoco {
     param (

@@ -83,3 +83,5 @@ powershell.exe -Command $GitInstallCommand
 
 # Install Powershellmodule Winget
 Install-Wingetpowershell
+Write-Host "[DEBUG] CMDLets which could be used:"
+(Get-Module Microsoft.WinGet.Client).ExportedCommands

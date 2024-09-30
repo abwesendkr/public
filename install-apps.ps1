@@ -56,7 +56,8 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
         }
     }elseif ($App.installType -eq 'winget') {
             try {
-                Install-WithWingetpowershell($App)
+#                Install-WithWingetpowershell($App)
+                Install-WithWingetpowershell7($App)
                 $InstallStatus = Create-LogElement -App $App -Success $true  
                 $InstallStatusTable += $InstallStatus
             }
