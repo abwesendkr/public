@@ -41,7 +41,7 @@ function Install-Wingetpowershell {
             Write-Host "Microsoft.WinGet.Client is not installed. Register..."
 
             # Registrieren des Standard-PSRepositories
-    #        Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Confirm:$false -Scope AllUsers
+            Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Confirm:$False -Scope AllUsers
             Register-PSRepository -Default -Verbose -ErrorAction SilentlyContinue
             Write-Host "Set-PSRepository..."
             
