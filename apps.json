@@ -5,6 +5,11 @@
       "customInstallScript": ".\\custom\\powershell7\\powershell7.ps1"
   },
   {
+    "name": "Fortigate",
+    "installType": "custom",
+    "customInstallScript": ".\\custom\\fortigate\\fortigate.ps1"
+},
+  {
       "name": "Microsoft.WinDbg",
       "chocoVersion": "",
       "chocoArgumentString": "",
