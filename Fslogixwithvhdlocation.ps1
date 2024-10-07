@@ -18,7 +18,7 @@ Param (
         [string]$VHDSize
 )
 
-$ProfilePath = "\\crmecupaes01fxst001.privatelink.file.core.windows.net\crmecupaes01fxst001-share01"
+$ProfilePath = "\\wrongurl.privatelink.file.core.windows.net\wrongurl-share01"
 $FSLogixInstaller = "https://aka.ms/fslogix_download"
 $VHDSize = "30000"
 ######################
@@ -26,7 +26,7 @@ $VHDSize = "30000"
 ######################
 $LocalWVDpath            = "c:\temp\wvd\"
 $FSInstaller             = 'FSLogixAppsSetup.zip'
-$templateFilePathFolder = "C:\AVDImage"
+$templateFilePathFolder  = "C:\AVDImage"
 
 ####################################
 #    Test/Create Temp Directory    #
