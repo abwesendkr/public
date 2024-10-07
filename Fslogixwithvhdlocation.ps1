@@ -105,8 +105,7 @@ if(($PSBoundParameters.ContainsKey('ProfilePath'))) {
     New-ItemProperty `
     -Path HKLM:\Software\FSLogix\Profiles `
     -Name "VHDLocations" `
-#    -Value "type=smb,connectionString=$ProfilePath" `
-    -Value "$ProfilePath" `
+    -Value "$($ProfilePath)" `
     -PropertyType MultiString `
     -Force
 }
