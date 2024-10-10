@@ -13,7 +13,7 @@
       "chocoArgumentString": "--ignore-checksums",
       "installType": "choco",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": ""
+      "chocoIgnoreChecksum": "yes"
   },
   {
       "name": "filezilla",
@@ -37,7 +37,7 @@
       "chocoArgumentString": "--ignore-checksums",
       "installType": "choco",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": ""
+      "chocoIgnoreChecksum": "yes"
   },
   {
       "name": "mremoteng",
