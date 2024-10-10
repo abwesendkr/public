@@ -102,11 +102,11 @@ Set-ItemProperty `
     -Value "1"
 
 if(($PSBoundParameters.ContainsKey('ProfilePath'))) {
-    New-ItemProperty `
+    Set-ItemProperty `
     -Path HKLM:\Software\FSLogix\Profiles `
     -Name "VHDLocations" `
-    -Value "$($ProfilePath)" `
-    -PropertyType MultiString `
+    -Value "$ProfilePath" `
+    -Type "REG_SZ" `
     -Force
 }
 

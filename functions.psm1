@@ -155,6 +155,9 @@ function Install-WithChoco {
     if ($App.chocoArgumentString) {
         $InstallCommand += " --install-arguments='$($App.chocoArgumentString)'"
     }
+    if ($App.chocoIgnoreChecksum -eq "yes") {
+        $InstallCommand += " --ignore-checksum"
+    }
 
     Write-Host "Executing command: $InstallCommand"
     try {
@@ -172,7 +175,6 @@ function Install-WithChoco {
         throw "[ERROR] Error encountered: $_"
     }
 }
-
 function Load-WebFile {
     param (
         [string]$Url,

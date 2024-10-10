@@ -4,115 +4,132 @@
       "chocoVersion": "",
       "chocoArgumentString": "",
       "installType": "choco",
-      "customInstallScript": ""
+      "customInstallScript": "",
+      "chocoIgnoreChecksum": ""
   },
   {
       "name": "amazon-workspaces",
       "chocoVersion": "5.22.1.4847",
-      "chocoArgumentString": "",
+      "chocoArgumentString": "--ignore-checksums",
       "installType": "choco",
-      "customInstallScript": ""
+      "customInstallScript": "",
+      "chocoIgnoreChecksum": ""
   },
   {
       "name": "filezilla",
       "chocoVersion": "3.67.1",
       "chocoArgumentString": "",
       "installType": "choco",
-      "customInstallScript": ""
+      "customInstallScript": "",
+      "chocoIgnoreChecksum": ""
   },
   {
       "name": "firefox",
       "chocoVersion": "129.0.2",
       "chocoArgumentString": "",
       "installType": "choco",
-      "customInstallScript": ""
+      "customInstallScript": "",
+      "chocoIgnoreChecksum": ""
   },
   {
       "name": "googlechrome",
       "chocoVersion": "",
-      "chocoArgumentString": "",
+      "chocoArgumentString": "--ignore-checksums",
       "installType": "choco",
-      "customInstallScript": ""
+      "customInstallScript": "",
+      "chocoIgnoreChecksum": ""
   },
   {
       "name": "mremoteng",
       "chocoVersion": "1.76.20.24615",
       "chocoArgumentString": "",
       "installType": "choco",
-      "customInstallScript": ""
+      "customInstallScript": "",
+      "chocoIgnoreChecksum": ""
   },
   {
       "name": "notepadplusplus",
       "chocoVersion": "8.6.9",
       "chocoArgumentString": "",
       "installType": "choco",
-      "customInstallScript": ""
+      "customInstallScript": "",
+      "chocoIgnoreChecksum": ""
   },
   {
       "name": "putty.install",
       "chocoVersion": "0.81.0",
       "chocoArgumentString": "",
       "installType": "choco",
-      "customInstallScript": ""
+      "customInstallScript": "",
+      "chocoIgnoreChecksum": ""
   },
   {
       "name": "python311",
       "chocoVersion": "3.11.9",
       "chocoArgumentString": "",
       "installType": "choco",
-      "customInstallScript": ""
+      "customInstallScript": "",
+      "chocoIgnoreChecksum": ""
   },
   {
       "name": "vlc",
       "chocoVersion": "3.0.21",
       "chocoArgumentString": "",
       "installType": "choco",
-      "customInstallScript": ""
+      "customInstallScript": "",
+      "chocoIgnoreChecksum": ""
   },
   {
       "name": "vscode",
       "chocoVersion": "1.93.1",
       "chocoArgumentString": "",
       "installType": "choco",
-      "customInstallScript": ""
+      "customInstallScript": "",
+      "chocoIgnoreChecksum": ""
   },
   {
       "name": "vscode-powershell",
       "chocoVersion": "2024.2.2",
       "chocoArgumentString": "",
       "installType": "choco",
-      "customInstallScript": ""
+      "customInstallScript": "",
+      "chocoIgnoreChecksum": ""
   },
   {
       "name": "winscp",
       "chocoVersion": "6.3.5",
       "chocoArgumentString": "",
       "installType": "choco",
-      "customInstallScript": ""
+      "customInstallScript": "",
+      "chocoIgnoreChecksum": ""
   },
   {
       "name": "powershell7",
       "installType": "custom",
-      "customInstallScript": ".\\custom\\powershell7\\powershell7.ps1"
+      "customInstallScript": ".\\custom\\powershell7\\powershell7.ps1",
+      "chocoIgnoreChecksum": ""
   },
   {
     "name": "Fortigate",
     "installType": "custom",
-    "customInstallScript": ".\\custom\\fortigate\\fortigate.ps1"
+    "customInstallScript": ".\\custom\\fortigate\\fortigate.ps1",
+      "chocoIgnoreChecksum": ""
   },
   {
       "name": "Microsoft.WinDbg",
       "chocoVersion": "",
       "chocoArgumentString": "",
       "installType": "winget",
-      "customInstallScript": ""
+      "customInstallScript": "",
+      "chocoIgnoreChecksum": ""
   },
   {
       "name": "ultravnc",
       "chocoVersion": "",
       "chocoArgumentString": "/loadinf=c:\\config\\uvnc\\uvnc.inf",
       "installType": "choco",
-      "customInstallScript": ""
+      "customInstallScript": "",
+      "chocoIgnoreChecksum": ""
   },
   {
       "name": "Microsoft.SQLServerManagementStudio",
