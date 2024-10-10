@@ -10,7 +10,7 @@
   {
       "name": "amazon-workspaces",
       "chocoVersion": "5.22.1.4847",
-      "chocoArgumentString": "--ignore-checksums",
+      "chocoArgumentString": "",
       "installType": "choco",
       "customInstallScript": "",
       "chocoIgnoreChecksum": "yes"
@@ -34,7 +34,7 @@
   {
       "name": "googlechrome",
       "chocoVersion": "",
-      "chocoArgumentString": "s",
+      "chocoArgumentString": "",
       "installType": "choco",
       "customInstallScript": "",
       "chocoIgnoreChecksum": "yes"
