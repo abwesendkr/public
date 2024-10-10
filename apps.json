@@ -34,7 +34,7 @@
   {
       "name": "googlechrome",
       "chocoVersion": "",
-      "chocoArgumentString": "--ignore-checksums",
+      "chocoArgumentString": "s",
       "installType": "choco",
       "customInstallScript": "",
       "chocoIgnoreChecksum": "yes"
