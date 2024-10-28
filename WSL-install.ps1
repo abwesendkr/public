@@ -81,8 +81,7 @@ function Get-RunningAsAdministrator {
     [CmdletBinding()]
     param()
     
-    $isAdministrator = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.
-Principal.WindowsBuiltInRole] "Administrator")
+    $isAdministrator = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")
     Write-Verbose "Running with Administrator privileges (t/f): $isAdministrator"
     return $isAdministrator
 }
@@ -204,8 +203,7 @@ function Install-DhcpScope {
     $dhcpScope = Select-ResourceByProperty `
         -PropertyName 'Name' -ExpectedPropertyValue $scopeName `
         -List @(Get-DhcpServerV4Scope) `
-        -NewObjectScriptBlock { Add-DhcpServerv4Scope -name $scopeName -StartRange $StartRangeForClientIps -EndRange $EndRangeForClie
-ntIps -SubnetMask $SubnetMaskForClientIps -State Active
+        -NewObjectScriptBlock { Add-DhcpServerv4Scope -name $scopeName -StartRange $StartRangeForClientIps -EndRange $EndRangeForClientIps -SubnetMask $SubnetMaskForClientIps -State Active
                                 Set-DhcpServerV4OptionValue -DnsServer $dnsServerIp -Router $RouterIpAddress
                             }
     Write-Host "Using $dhcpScope"
@@ -239,8 +237,7 @@ function Select-ResourceByProperty {
     
     if ($items.Count -eq 0) {
         Write-Verbose "Creating new item with $PropertyName =  $ExpectedPropertyValue."
-        if (-not [String]::IsNullOrEmpty($ShouldContinuePrompt) -and  $PSCmdlet.ShouldContinue($ShouldContinuePrompt, $env:COMPUTERNA
-ME, [ref] $YesToAll, [ref] $NoToAll)){
+        if (-not [String]::IsNullOrEmpty($ShouldContinuePrompt) -and  $PSCmdlet.ShouldContinue($ShouldContinuePrompt, $env:COMPUTERNAME, [ref] $YesToAll, [ref] $NoToAll)){
             $returnValue = & $NewObjectScriptBlock
         }else{
             return $null
@@ -259,8 +256,7 @@ ME, [ref] $YesToAll, [ref] $NoToAll)){
         $choiceTable.Columns.Add($(New-Object System.Data.DataColumn("Details")))
            
         $choiceTable.Rows.Add($null, "\< Exit \>", "Choose this option to exit the script.") | Out-Null
-        $items | ForEach-Object { $choiceTable.Rows.Add($null, $($_ | Select-Object -ExpandProperty $PropertyName), $_.ToString()) } 
-| Out-Null
+        $items | ForEach-Object { $choiceTable.Rows.Add($null, $($_ | Select-Object -ExpandProperty $PropertyName), $_.ToString()) } | Out-Null
 
         Write-Host "Found multiple items with $PropertyName = $ExpectedPropertyValue.  Please choose on of the following options."
         $choiceTable | ForEach-Object { Write-Host "$($_[0]): $($_[1]) ($($_[2]))" }
@@ -304,8 +300,7 @@ try {
     # Pin Hyper-V to the user's desktop.
     if ($PSCmdlet.ShouldContinue("Install Hyper-V feature and tools.", $env:COMPUTERNAME, [ref] $YesToAll, [ref] $NoToAll)){
         Write-Host "Creating shortcut to Hyper-V Manager on desktop."
-        $Shortcut = (New-Object -ComObject WScript.Shell).CreateShortcut($(Join-Path "$env:UserProfile\Desktop" "Hyper-V Manager.lnk"
-))
+        $Shortcut = (New-Object -ComObject WScript.Shell).CreateShortcut($(Join-Path "$env:UserProfile\Desktop" "Hyper-V Manager.lnk"))
         $Shortcut.TargetPath = "$env:SystemRoot\System32\virtmgmt.msc"
         $Shortcut.Save()
     }
@@ -323,14 +318,11 @@ try {
 
         if ($InstallDhcp){
             # Install DHCP so client vms will automatically get an IP address.
-            Write-Warning "Installing DHCP role on an Azure VM is not a supported scenario.  It is recommended to manually set the ip
- address for Hyper-V VMs.  See https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq#can-i-deploy-a-dhcp-serve
-r-in-a-vnet"
+            Write-Warning "Installing DHCP role on an Azure VM is not a supported scenario.  It is recommended to manually set the ip address for Hyper-V VMs.  See https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq#can-i-deploy-a-dhcp-server-in-a-vnet"
             if ($PSCmdlet.ShouldContinue("Install DHCP role and scope.", $env:COMPUTERNAME, [ref] $YesToAll, [ref] $NoToAll)) {
                 Write-Host "Installing DHCP, if needed."
                 Install-DHCP 
-                Install-DhcpScope -RouterIpAddress $ipAddress -StartRangeForClientIps $startRangeForClientIps -EndRangeForClientIps $
-endRangeForClientIps -SubnetMaskForClientIps $subnetMaskForClientIps
+                Install-DhcpScope -RouterIpAddress $ipAddress -StartRangeForClientIps $startRangeForClientIps -EndRangeForClientIps $endRangeForClientIps -SubnetMaskForClientIps $subnetMaskForClientIps
             }
         }
 
@@ -357,8 +349,7 @@ endRangeForClientIps -SubnetMaskForClientIps $subnetMaskForClientIps
         $netIpAddr = Select-ResourceByProperty  `
             -PropertyName 'IPAddress' -ExpectedPropertyValue $ipAddress `
             -List @(Get-NetIPAddress) `
-            -NewObjectScriptBlock { New-NetIPAddress -IPAddress $ipAddress -PrefixLength $ipAddressPrefixRange -InterfaceIndex $netAd
-apter.ifIndex } `
+            -NewObjectScriptBlock { New-NetIPAddress -IPAddress $ipAddress -PrefixLength $ipAddressPrefixRange -InterfaceIndex $netAdapter.ifIndex } `
             -ShouldContinuePrompt "Create IP address $ipAddress"
         if ($null -eq $netIpAddr) {
             Write-Error "Couldn't create or find IP address $ipAddress."
@@ -385,8 +376,7 @@ apter.ifIndex } `
         }
 
         #Make sure WinNat will start automatically so Hyper-V VMs will have internet connectivity.
-        if (((Get-Service -Name WinNat | Select-Object -ExpandProperty StartType) -ne 'Automatic') -and $PSCmdlet.ShouldContinue($env
-:COMPUTERNAME, "Automatically start WinNat service.", [ref] $YesToAll, [ref] $NoToAll)) {
+        if (((Get-Service -Name WinNat | Select-Object -ExpandProperty StartType) -ne 'Automatic') -and $PSCmdlet.ShouldContinue($env:COMPUTERNAME, "Automatically start WinNat service.", [ref] $YesToAll, [ref] $NoToAll)) {
             Set-Service -Name WinNat -StartupType Automatic
         }
         if ($(Get-Service -Name WinNat | Select-Object -ExpandProperty StartType) -ne 'Automatic')
@@ -396,8 +386,7 @@ hen service is not running."
         }              
     }
     else {
-        Write-Host -Object "On Windows 10 and later, use 'Default Switch' when configuring network connection for Hyper-V VMs." -Fore
-groundColor Yellow
+        Write-Host -Object "On Windows 10 and later, use 'Default Switch' when configuring network connection for Hyper-V VMs." -ForegroundColor Yellow
     }
     # Tell the user script is done.    
     Write-Host "Script completed." -ForegroundColor Green
