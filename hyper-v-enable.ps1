@@ -154,7 +154,7 @@ function Install-HypervAndToolsClient {
     else {
         $roleInstallStatus = Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName 'Microsoft-Hyper-V-All'
         if ($roleInstallStatus.RestartNeeded) {
-            Write-Error "Restart required to finish installing the Hyper-V role.  Please restart and re-run this script."
+            Write-Host "Restart required to finish installing the Hyper-V role.  Please restart and re-run this script."
         }
 
         $featureEnableStatus = Get-WmiObject -Class Win32_OptionalFeature -Filter "name='Microsoft-Hyper-V-Hypervisor'"

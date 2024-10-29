@@ -2,6 +2,7 @@
 # Install WSL #
 ###############
 # Installiere WSL2 und eine Distribution
+Write-Host "Installing WSL, using `"wsl --install -d Ubuntu-24.04`" "
 wsl --install -d Ubuntu-24.04
 
 # Warte, bis die Installation abgeschlossen ist
