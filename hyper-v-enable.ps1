@@ -135,18 +135,17 @@ function Install-HypervAndToolsServer {
     # Install PowerShell cmdlets
     $featureStatus = Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Management-PowerShell
     if ($featureStatus.RestartNeeded -eq $true) {
-        Write-Error "Restart required to finish installing the Hyper-V PowerShell Module.  Please restart and re-run this script."
+        Write-Host "Restart required to finish installing the Hyper-V PowerShell Module.  Please restart and re-run this script."
     }
 }
 
 <#
 .SYNOPSIS
-Enables Hyper-V role for client (Win10), including PowerShell cmdlets for Hyper-V and management tools.
+Enables Hyper-V role and Windows for client (Win10), including PowerShell cmdlets for Hyper-V and management tools.
 #>
 function Install-HypervAndToolsClient {
     [CmdletBinding()]
     param()
-
     
     if ($null -eq $(Get-WindowsOptionalFeature -Online -FeatureName 'Microsoft-Hyper-V-All')) {
         Write-Error "This script only applies to machines that can run Hyper-V."
@@ -157,13 +156,45 @@ function Install-HypervAndToolsClient {
             Write-Host "Restart required to finish installing the Hyper-V role.  Please restart and re-run this script."
         }
 
-        $featureEnableStatus = Get-WmiObject -Class Win32_OptionalFeature -Filter "name='Microsoft-Hyper-V-Hypervisor'"
+        $featureEnableStatus = Get-WmiObject -Class Win32_OptionalFeature -Filter "name='Microsoft-Hyper-V-All'"
         if ($featureEnableStatus.InstallState -ne 1) {
-            Write-Error "This script only applies to machines that can run Hyper-V."
+            Write-Host "This script only applies to machines that can run Microsoft-Hyper-V-All."
             goto(finally)
         }
+    
+    if ($null -eq $(Get-WindowsOptionalFeature -Online -FeatureName 'Microsoft-Windows-Subsystem-Linux')) {
+        Write-Error "This script only applies to machines that can run Microsoft-Windows-Subsystem-Linux."
+    }
+    else {
+        Write-Host "Install Feature Microsoft-Windows-Subsystem-Linux   "
+        $roleInstallStatus = Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName 'Microsoft-Windows-Subsystem-Linux'
+        if ($roleInstallStatus.RestartNeeded) {
+            Write-Host "Restart required to finish installing the Microsoft-Windows-Subsystem-Linux role.  Please restart and re-run this script."
+        }
 
-    } 
+        $featureEnableStatus = Get-WmiObject -Class Win32_OptionalFeature -Filter "name='Microsoft-Windows-Subsystem-Linux'"
+        if ($featureEnableStatus.InstallState -ne 1) {
+            Write-Host "This script only applies to machines that can run Microsoft-Windows-Subsystem-Linux."
+            goto(finally)
+        }
+    }
+
+    if ($null -eq $(Get-WindowsOptionalFeature -Online -FeatureName 'VirtualMachinePlatform')) {
+        Write-Error "This script only applies to machines that can run Hyper-V."
+    }
+    else {
+        $roleInstallStatus = Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName 'VirtualMachinePlatform'
+        if ($roleInstallStatus.RestartNeeded) {
+            Write-Host "Restart required to finish installing the Hyper-V role.  Please restart and re-run this script."
+        }
+
+        $featureEnableStatus = Get-WmiObject -Class Win32_OptionalFeature -Filter "name='VirtualMachinePlatform'"
+        if ($featureEnableStatus.InstallState -ne 1) {
+            Write-Host "This script only applies to machines that can run VirtualMachinePlatform."
+            goto(finally)
+        }
+    
+ 
 }
 
 <#
@@ -292,6 +323,8 @@ try {
     if ($PSCmdlet.ShouldContinue("Install Hyper-V feature and tools.", $env:COMPUTERNAME, [ref] $YesToAll, [ref] $NoToAll )){
         Write-Host "Installing Hyper-V, if needed."
         Install-HypervAndTools
+        Write-Host "Installing Hyper-V, if needed."
+        Install-AndTools
     }else{
         Write-Error "Hyper-V feature and tools not installed."
         exit;
