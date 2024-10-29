@@ -299,10 +299,10 @@ try {
 
     # Pin Hyper-V to the user's desktop.
     if ($PSCmdlet.ShouldContinue("Install Hyper-V feature and tools.", $env:COMPUTERNAME, [ref] $YesToAll, [ref] $NoToAll)){
-        Write-Host "Creating shortcut to Hyper-V Manager on desktop."
-        $Shortcut = (New-Object -ComObject WScript.Shell).CreateShortcut($(Join-Path "$env:UserProfile\Desktop" "Hyper-V Manager.lnk"))
-        $Shortcut.TargetPath = "$env:SystemRoot\System32\virtmgmt.msc"
-        $Shortcut.Save()
+        #Write-Host "Creating shortcut to Hyper-V Manager on desktop."
+        #$Shortcut = (New-Object -ComObject WScript.Shell).CreateShortcut($(Join-Path "$env:UserProfile\Desktop" "Hyper-V Manager.lnk"))
+        #$Shortcut.TargetPath = "$env:SystemRoot\System32\virtmgmt.msc"
+        #$Shortcut.Save()
     }
 
     if (Get-RunningServerOperatingSystem) {
