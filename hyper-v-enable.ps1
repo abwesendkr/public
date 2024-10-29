@@ -161,7 +161,7 @@ function Install-HypervAndToolsClient {
             Write-Host "This script only applies to machines that can run Microsoft-Hyper-V-All."
             goto(finally)
         }
-    
+    }
     if ($null -eq $(Get-WindowsOptionalFeature -Online -FeatureName 'Microsoft-Windows-Subsystem-Linux')) {
         Write-Error "This script only applies to machines that can run Microsoft-Windows-Subsystem-Linux."
     }
@@ -193,8 +193,7 @@ function Install-HypervAndToolsClient {
             Write-Host "This script only applies to machines that can run VirtualMachinePlatform."
             goto(finally)
         }
-    
- 
+    }
 }
 
 <#
