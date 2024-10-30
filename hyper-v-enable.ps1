@@ -1,4 +1,7 @@
 <#
+
+# Azure VMs which are nested possbile can be found here: https://learn.microsoft.com/en-us/azure/virtual-machines/acu
+
 The MIT License (MIT)
 Copyright (c) Microsoft Corporation  
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the
