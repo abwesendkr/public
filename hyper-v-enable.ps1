@@ -427,6 +427,7 @@ hen service is not running."
     }
     # Tell the user script is done.    
     Write-Host "Script completed." -ForegroundColor Green
+    exit 0
 }
 finally {
     # Restore system to state prior to execution of this script.
