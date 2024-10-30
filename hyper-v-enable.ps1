@@ -329,8 +329,6 @@ try {
     if ($PSCmdlet.ShouldContinue("Install Hyper-V feature and tools.", $env:COMPUTERNAME, [ref] $YesToAll, [ref] $NoToAll )){
         Write-Host "Installing Hyper-V, if needed."
         Install-HypervAndTools
-        Write-Host "Installing Hyper-V, if needed."
-        Install-AndTools
     }else{
         Write-Error "Hyper-V feature and tools not installed."
         exit;
