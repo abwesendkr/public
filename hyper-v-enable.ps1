@@ -162,10 +162,17 @@ function Install-HypervAndToolsClient {
             goto(finally)
         }
     }
-    if ($null -eq $(Get-WindowsOptionalFeature -Online -FeatureName 'Microsoft-Windows-Subsystem-Linux')) {
-        Write-Error "This script only applies to machines that can run Microsoft-Windows-Subsystem-Linux."
-    }
-    else {
+    Write-Host "Installing VirtualMachinePlatform:"
+    $roleInstallStatus = Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName 'VirtualMachinePlatform'
+    Write-Host "thats the status of virtualmachineplatform: $roleInstallStatus"
+
+    Write-Host "Installing Microsoft-Windows-Subsystem-Linux"
+    $roleInstallStatus = Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName 'Microsoft-Windows-Subsystem-Linux'
+    Write-Host "thats the status of Microsoft-Windows-Subsystem-Linux: $roleInstallStatus"
+#    if ($null -eq $(Get-WindowsOptionalFeature -Online -FeatureName 'Microsoft-Windows-Subsystem-Linux')) {
+#        Write-Error "This script only applies to machines that can run Microsoft-Windows-Subsystem-Linux."
+#    }
+#    else {
         Write-Host "Install Feature Microsoft-Windows-Subsystem-Linux   "
         $roleInstallStatus = Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName 'Microsoft-Windows-Subsystem-Linux'
         if ($roleInstallStatus.RestartNeeded) {
@@ -177,23 +184,23 @@ function Install-HypervAndToolsClient {
             Write-Host "This script only applies to machines that can run Microsoft-Windows-Subsystem-Linux."
             goto(finally)
         }
-    }
+#    }
 
-    if ($null -eq $(Get-WindowsOptionalFeature -Online -FeatureName 'VirtualMachinePlatform')) {
-        Write-Error "This script only applies to machines that can run Hyper-V."
-    }
-    else {
-        $roleInstallStatus = Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName 'VirtualMachinePlatform'
-        if ($roleInstallStatus.RestartNeeded) {
-            Write-Host "Restart required to finish installing the Hyper-V role.  Please restart and re-run this script."
-        }
-
-        $featureEnableStatus = Get-WmiObject -Class Win32_OptionalFeature -Filter "name='VirtualMachinePlatform'"
-        if ($featureEnableStatus.InstallState -ne 1) {
-            Write-Host "This script only applies to machines that can run VirtualMachinePlatform."
-            goto(finally)
-        }
-    }
+#    if ($null -eq $(Get-WindowsOptionalFeature -Online -FeatureName 'VirtualMachinePlatform')) {
+#        Write-Error "This script only applies to machines that can run Hyper-V."
+#    }
+#    else {
+#        $roleInstallStatus = Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName 'VirtualMachinePlatform'
+#        if ($roleInstallStatus.RestartNeeded) {
+#            Write-Host "Restart required to finish installing the Hyper-V role.  Please restart and re-run this script."
+#        }
+#
+#        $featureEnableStatus = Get-WmiObject -Class Win32_OptionalFeature -Filter "name='VirtualMachinePlatform'"
+#        if ($featureEnableStatus.InstallState -ne 1) {
+#            Write-Host "This script only applies to machines that can run VirtualMachinePlatform."
+#            goto(finally)
+#        }
+#    }
 }
 
 <#
