@@ -12,7 +12,7 @@ try {
 
     # Installiere WSL2 und eine Distribution
     Write-Host "start download WSL-appx"
-    Invoke-WebRequest -Uri "https://aka.ms/wslubuntu2204" -OutFile "ubuntu-22.04.appx"
+    Invoke-WebRequest -Uri "https://aka.ms/wslubuntu2204" -OutFile "c:\temp\ubuntu-22.04.appx"
     Write-Host "Finished download WSL-appx"
 
     Write-Host "Installing WSL, using `"msiexec.exe /i wsl_update_x64.msi /quiet`" "
@@ -26,8 +26,8 @@ try {
     Start-Sleep -Seconds 10
 
     # Starte die WSL-Distribution
-    Write-Host "Installing WSL, using `"wsl --install -d Ubuntu-24.04`" "
-    wsl --user root -- bash -c "echo 'rootktc:Hilfe123456#' | chpasswd"
+#    Write-Host "Installing WSL, using `"wsl --install -d Ubuntu-24.04`" "
+#    wsl --user root -- bash -c "echo 'rootktc:Hilfe123456#' | chpasswd"
 #    wsl -d Ubuntu-24.04 --user root -- bash -c "echo 'rootktc:Hilfe123456#' | chpasswd"
 }
 catch {
