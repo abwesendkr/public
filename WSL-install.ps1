@@ -12,9 +12,12 @@ try {
 
     # Installiere WSL2 und eine Distribution
     Write-Host "start download WSL-appx"
-    Invoke-WebRequest -Uri "https://aka.ms/wslubuntu2204" -OutFile "c:\temp\ubuntu-22.04.appx"
-    Write-Host "Finished download WSL-appx"
-
+    Invoke-WebRequest -Uri "https://aka.ms/wslubuntu2204" -OutFile "ubuntu-22.04.appx"
+    Write-Host "Finished download WSL-appx, create c:\temp"
+    New-Item -ItemType Directory -Path "C:\temp" -Force
+    Write-Host "copy ubuntu-22.04.appx to c:\temp"
+    Copy-Item -Path ".\ubuntu-22.04.appx" -Destination "C:\temp\ubuntu-22.04.appx"
+    
     Write-Host "Installing WSL, using `"msiexec.exe /i wsl_update_x64.msi /quiet`" "
     Start-Process -FilePath "msiexec.exe" -ArgumentList "/i wsl_update_x64.msi /quiet" -Wait
     Write-Host "Installing WSL, using `"Add-AppxPackage -Path .\ubuntu-22.04.appx`" "
