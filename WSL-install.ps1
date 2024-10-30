@@ -17,8 +17,8 @@ try {
     Invoke-WebRequest -Uri "https://aka.ms/wslubuntu2204" -OutFile "ubuntu-22.04.appx"
     Write-Host "Finished download WSL-appx, create c:\temp"
     New-Item -ItemType Directory -Path "C:\temp" -Force
-    Write-Host "copy ubuntu-22.04.appx to c:\temp"
-    Copy-Item -Path ".\ubuntu-22.04.appx" -Destination "C:\temp\ubuntu-22.04.appx"
+    Write-Host "copy ubuntu-22.04.appx to C:\Users\Public\Desktop"
+    Copy-Item -Path ".\ubuntu-22.04.appx" -Destination "C:\Users\Public\Desktop\ubuntu-22.04.appx"
     
     Write-Host "Installing WSL, using `"msiexec.exe /i wsl_update_x64.msi /quiet`" "
     Start-Process -FilePath "msiexec.exe" -ArgumentList "/i wsl_update_x64.msi /quiet" -Wait
