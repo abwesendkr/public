@@ -4,7 +4,24 @@
 
 function CreateUbuntuShortcut {
     param ()
-    Invoke-WebRequest -Uri c:\users\public\ubuntu-22.04.png
+    
+    # Define the paths
+    $appxPath = "C:\Users\public\ubuntu-22.04.appx"
+    $shortcutPath = "C:\Users\public\desktop\Ubuntu-Shortcut.lnk"
+    $iconPath = "C:\Users\Public\ubuntu-22.04.ico" # Path to your converted icon file
+ 
+    Write-Host "start download Ubuntu Icon"
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/abwesendkr/public/refs/heads/main/ubuntu-22.04.ico" -OutFile $iconPath
+
+    # Create a WScript Shell COM object
+    $WshShell = New-Object -ComObject WScript.Shell
+
+    # Create the shortcut
+    $shortcut = $WshShell.CreateShortcut($shortcutPath)
+    $shortcut.TargetPath = $appxPath
+    $shortcut.IconLocation = $iconPath # Set the icon location
+    $shortcut.Save()
+    Write-Host "shortcut created"
 }
 
 Write-Host "start script install WSL"
@@ -35,7 +52,10 @@ try {
 
     # Warte, bis die Installation abgeschlossen ist
     Start-Sleep -Seconds 10
-
+    
+    # Create a ubuntu shortcut
+    $statusinstall = CreateUbuntuShortcut
+    
     # Starte die WSL-Distribution
 #    Write-Host "Installing WSL, using `"wsl --install -d Ubuntu-24.04`" "
 #    wsl --user root -- bash -c "echo 'rootktc:Hilfe123456#' | chpasswd"
