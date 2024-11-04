@@ -11,7 +11,7 @@ Param (
     [Parameter(Mandatory=$false)]
         [string]$ProfilePath,
 
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory=$false)]
         [string]$FSLogixInstaller,
 
     [Parameter(Mandatory=$false)]
