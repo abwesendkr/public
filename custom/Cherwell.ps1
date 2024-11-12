@@ -64,5 +64,5 @@ catch {
     throw $_
 }
 Write-Host "[INFO] Move $ConfigPath to $env:ProgramData\Trebuchet"
-Copy-File -Path "$ConfigPath" -Destination "$env:ProgramData\Trebuchet"
+Copy-Item -Path "$ConfigPath" -Destination "$env:ProgramData\Trebuchet"
 Write-Host "[INFO] $($App) installed successfully"
