@@ -5,7 +5,8 @@
       "chocoArgumentString": "",
       "installType": "choco",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": ""
+      "chocoIgnoreChecksum": "",
+      "mandatory": "no"
   },
   {
       "name": "amazon-workspaces",
@@ -13,7 +14,8 @@
       "chocoArgumentString": "",
       "installType": "choco",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": "yes"
+      "chocoIgnoreChecksum": "yes",
+      "mandatory": "no"
   },
   {
       "name": "filezilla",
@@ -21,7 +23,8 @@
       "chocoArgumentString": "",
       "installType": "choco",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": ""
+      "chocoIgnoreChecksum": "",
+      "mandatory": "no"
   },
   {
       "name": "firefox",
@@ -29,7 +32,8 @@
       "chocoArgumentString": "",
       "installType": "choco",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": ""
+      "chocoIgnoreChecksum": "",
+      "mandatory": "no"
   },
   {
       "name": "googlechrome",
@@ -37,7 +41,8 @@
       "chocoArgumentString": "",
       "installType": "choco",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": "yes"
+      "chocoIgnoreChecksum": "yes",
+      "mandatory": "no"
   },
   {
       "name": "mremoteng",
@@ -45,7 +50,8 @@
       "chocoArgumentString": "",
       "installType": "choco",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": ""
+      "chocoIgnoreChecksum": "",
+      "mandatory": "no"
   },
   {
       "name": "notepadplusplus",
@@ -53,7 +59,8 @@
       "chocoArgumentString": "",
       "installType": "choco",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": ""
+      "chocoIgnoreChecksum": "",
+      "mandatory": "no"
   },
   {
       "name": "putty.install",
@@ -61,7 +68,8 @@
       "chocoArgumentString": "",
       "installType": "choco",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": ""
+      "chocoIgnoreChecksum": "",
+      "mandatory": "no"
   },
   {
       "name": "python311",
@@ -69,7 +77,8 @@
       "chocoArgumentString": "",
       "installType": "choco",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": ""
+      "chocoIgnoreChecksum": "",
+      "mandatory": "no"
   },
   {
       "name": "vlc",
@@ -77,7 +86,8 @@
       "chocoArgumentString": "",
       "installType": "choco",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": ""
+      "chocoIgnoreChecksum": "",
+      "mandatory": "no"
   },
   {
       "name": "vscode",
@@ -85,7 +95,8 @@
       "chocoArgumentString": "",
       "installType": "choco",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": ""
+      "chocoIgnoreChecksum": "",
+      "mandatory": "no"
   },
   {
       "name": "vscode-powershell",
@@ -93,7 +104,8 @@
       "chocoArgumentString": "",
       "installType": "choco",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": ""
+      "chocoIgnoreChecksum": "",
+      "mandatory": "no"
   },
   {
       "name": "winscp",
@@ -101,19 +113,29 @@
       "chocoArgumentString": "",
       "installType": "choco",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": ""
+      "chocoIgnoreChecksum": "",
+      "mandatory": "no"
   },
   {
       "name": "powershell7",
       "installType": "custom",
       "customInstallScript": ".\\custom\\powershell7\\powershell7.ps1",
-      "chocoIgnoreChecksum": ""
+      "chocoIgnoreChecksum": "",
+      "mandatory": "yes"
   },
   {
     "name": "Fortigate",
     "installType": "custom",
     "customInstallScript": ".\\custom\\fortigate\\fortigate.ps1",
-      "chocoIgnoreChecksum": ""
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+  },  
+  {
+    "name": "Cherwell",
+    "installType": "custom",
+    "customInstallScript": ".\\custom\\Cherwell.ps1",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
   },
   {
       "name": "Microsoft.WinDbg",
@@ -121,7 +143,8 @@
       "chocoArgumentString": "",
       "installType": "winget",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": ""
+      "chocoIgnoreChecksum": "",
+      "mandatory": "no"
   },
   {
       "name": "ultravnc",
@@ -129,7 +152,8 @@
       "chocoArgumentString": "/loadinf=c:\\config\\uvnc\\uvnc.inf",
       "installType": "choco",
       "customInstallScript": "",
-      "chocoIgnoreChecksum": ""
+      "chocoIgnoreChecksum": "",
+      "mandatory": "no"
   },
   {
       "name": "Microsoft.SQLServerManagementStudio",

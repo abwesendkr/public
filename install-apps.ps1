@@ -36,12 +36,16 @@ catch {
 # Set counters for successful installation
 $TotalAppCount = $Apps | Measure-Object | Select-Object -ExpandProperty Count
 $SuccessfulAppCount = $TotalAppCount
+$SuccessfulMandatoryAppCount = 0
 $InstallStatusTable = @()
 
 
 # Loop through each app and install it
 for ($i = 0; $i -lt $Apps.Count; $i++) {
     $App = $Apps[$i]
+    if ($App.mandatory -eq "yes") {
+        $SuccessfulMandatoryAppCount += 1
+    }
     Write-Host "Installing $($App.name)..." -ForegroundColor Green
     if ($App.installType -eq 'choco') {
         try {
@@ -53,6 +57,9 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
             Write-Host "Encountered error: $_"
             $InstallStatusTable += Create-LogElement -App $App -Success $false  
             $SuccessfulAppCount -= 1
+            if ($App.mandatory -eq "yes") {
+                $SuccessfulMandatoryAppCount -= 1
+            }        
         }
     }elseif ($App.installType -eq 'winget') {
             try {
@@ -65,7 +72,10 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
                 Write-Host "Encountered error: $_"
                 $InstallStatusTable += Create-LogElement -App $App -Success $false  
                 $SuccessfulAppCount -= 1
-            }
+                if ($App.mandatory -eq "yes") {
+                    $SuccessfulMandatoryAppCount -= 1
+                }        
+                }
         }
     else {
         try {
@@ -76,6 +86,9 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
             Write-Host "Encountered error: $_"
             $InstallStatusTable += Create-LogElement -App $App -Success $false  
             $SuccessfulAppCount -= 1
+            if ($App.mandatory -eq "yes") {
+                $SuccessfulMandatoryAppCount -= 1
+            }        
         }
     }
 }
