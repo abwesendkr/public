@@ -1,5 +1,5 @@
 $App = "FortigateVPN"
-$MsiUrl = "https://ibktangaalt.ydns.eu/nextcloud/s/NjKjkANQcF6A3AL/download/FortiClient.msi"
+$MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/FortiClient.msi"
 $TempFolderPath = "C:\Temp"
 $MsiPath = "$TempFolderPath\Fortinet-7.4.0.1658.msi"
 

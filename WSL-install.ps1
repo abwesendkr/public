@@ -7,7 +7,7 @@ function CreateUbuntuShortcut {
     
     # Define the paths
     $appxPath = "C:\Users\public\ubuntu-22.04.appx"
-    $shortcutPath = "C:\Users\public\desktop\Ubuntu-Shortcut.lnk"
+    $shortcutPath = "C:\Users\public\desktop\Ubuntu-22.04.lnk"
     $iconPath = "C:\Users\Public\ubuntu-22.04.ico" # Path to your converted icon file
  
     Write-Host "start download Ubuntu Icon"
@@ -45,21 +45,10 @@ try {
     
     Write-Host "Installing WSL, using `"msiexec.exe /i wsl_update_x64.msi /quiet`" "
     Start-Process -FilePath "msiexec.exe" -ArgumentList "/i wsl_update_x64.msi /quiet" -Wait
-    Write-Host "Successfull, installing WSL only for each user, not in system-context"
-    #Add-AppxPackage -Path ".\ubuntu-22.04.appx"
-    
-    #wsl --install -d Ubuntu-24.04
-
     # Warte, bis die Installation abgeschlossen ist
     Start-Sleep -Seconds 10
-    
-    # Create a ubuntu shortcut
-    $statusinstall = CreateUbuntuShortcut
-    
-    # Starte die WSL-Distribution
-#    Write-Host "Installing WSL, using `"wsl --install -d Ubuntu-24.04`" "
-#    wsl --user root -- bash -c "echo 'rootktc:Hilfe123456#' | chpasswd"
-#    wsl -d Ubuntu-24.04 --user root -- bash -c "echo 'rootktc:Hilfe123456#' | chpasswd"
+
+    Write-Host "Successfull, installing WSL only for each user, not in system-context" 
     exit 0
 }
 catch {
