@@ -2,6 +2,7 @@ $App = "Cherwell 10.1.4"
 $MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/Cherwell%20Client_10.1.4.msi"
 $ConfigUrl = "https://ibktangaalt.ydns.eu/upload/data/Connections.xml"
 $TempFolderPath = "C:\Temp"
+$ConfigFolder = "$env:ProgramData\Trebuchet"
 $MsiPath = "$TempFolderPath\Cherwell_Client_10.1.4.msi"
 $ConfigPath = "$TempFolderPath\Connections.xml"
 
@@ -64,5 +65,8 @@ catch {
     throw $_
 }
 Write-Host "[INFO] Move $ConfigPath to $env:ProgramData\Trebuchet"
-Copy-Item -Path "$ConfigPath" -Destination "$env:ProgramData\Trebuchet"
+if (!(Test-Path $ConfigFolder)) {
+    mkdir $ConfigFolder
+}
+Copy-Item -Path "$ConfigPath" -Destination "$ConfigFolder\Connections.xml"
 Write-Host "[INFO] $($App) installed successfully"
