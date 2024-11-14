@@ -48,6 +48,7 @@ try {
     # Warte, bis die Installation abgeschlossen ist
     Start-Sleep -Seconds 10
 
+    CreateUbuntuShortcut
     Write-Host "Successfull, installing WSL only for each user, not in system-context" 
     exit 0
 }
