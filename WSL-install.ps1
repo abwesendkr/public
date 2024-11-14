@@ -31,7 +31,7 @@ try {
     # Download WSL update 
     # this guide https://learn.microsoft.com/de-de/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
     Invoke-WebRequest -Uri "https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi" -OutFile "c:\temp\wsl_update_x64.msi"
-    Write-Host "Finished download WSL-kernel-update"
+    Write-Host "Finished download WSL-kernel-update to c:\temp"
 
     # Installiere WSL2 und eine Distribution
     # Possible WSL images: https://learn.microsoft.com/de-de/windows/wsl/install-manual#downloading-distributions
