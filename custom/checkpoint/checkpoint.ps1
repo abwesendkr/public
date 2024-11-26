@@ -28,7 +28,7 @@ catch {
     throw $_
 }
 ##extradownloads:
-$MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/extender.cab"
+$MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/SNXComponentsShell.msi"
 $TempFolderPath = "C:\Temp"
 $MsiPath = "$TempFolderPath\extender.cab"
 # Load Powershell
@@ -38,17 +38,17 @@ if (-not(Test-Path $MsiPath)) {
 }
 
 # Install Powershell
-$Switches = "-norestart"
-Write-Host "Installing $MsiPath"
+$Switches = "/quiet /norestart"
+Write-Host "Installing $App"
 
 try {
-    Add-WindowsPackage -Online -PackagePath "$MsiPath" -NoRestart
+    Start-Process -Wait -FilePath "C:\Windows\System32\msiexec.exe" -ArgumentList "/i", "$MsiPath", "$Switches"
 }
 catch {
-    Write-Host "[ERROR] Error installing $($MsiPath): $_"
+    Write-Host "[ERROR] Error installing $($App): $_"
     throw $_
 }
-$MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/SNX.cab"
+$MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/cpextender.msi"
 $TempFolderPath = "C:\Temp"
 $MsiPath = "$TempFolderPath\SNX.cab"
 # Load Powershell
@@ -59,13 +59,13 @@ if (-not(Test-Path $MsiPath)) {
 
 # Install Powershell
 $Switches = "/quiet /norestart"
-Write-Host "Installing $MsiPath"
+Write-Host "Installing $App"
 
 try {
-    Add-WindowsPackage -Online -PackagePath "$MsiPath" -NoRestart
+    Start-Process -Wait -FilePath "C:\Windows\System32\msiexec.exe" -ArgumentList "/i", "$MsiPath", "$Switches"
 }
 catch {
-    Write-Host "[ERROR] Error installing $($MsiPath): $_"
+    Write-Host "[ERROR] Error installing $($App): $_"
     throw $_
 }
 $MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/jdk-17_windows-x64_bin.msi"
