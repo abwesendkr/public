@@ -18,13 +18,13 @@ if (-not(Test-Path $MsiPath)) {
 
 # Install Powershell
 $Switches = "/quiet /norestart"
-Write-Host "Installing $App"
+Write-Host "Installing $MsiPath"
 
 try {
     Start-Process -Wait -FilePath "C:\Windows\System32\msiexec.exe" -ArgumentList "/i", "$MsiPath", "$Switches"
 }
 catch {
-    Write-Host "[ERROR] Error installing $($App): $_"
+    Write-Host "[ERROR] Error installing $($MsiPath): $_"
     throw $_
 }
 ##extradownloads:
@@ -39,13 +39,13 @@ if (-not(Test-Path $MsiPath)) {
 
 # Install Powershell
 $Switches = "/quiet /norestart"
-Write-Host "Installing $App"
+Write-Host "Installing $MsiPath"
 
 try {
     Start-Process -Wait -FilePath "C:\Windows\System32\msiexec.exe" -ArgumentList "/i", "$MsiPath", "$Switches"
 }
 catch {
-    Write-Host "[ERROR] Error installing $($App): $_"
+    Write-Host "[ERROR] Error installing $($MsiPath): $_"
     throw $_
 }
 $MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/cpextender.msi"
@@ -59,13 +59,13 @@ if (-not(Test-Path $MsiPath)) {
 
 # Install Powershell
 $Switches = "/quiet /norestart"
-Write-Host "Installing $App"
+Write-Host "Installing $MsiPath"
 
 try {
     Start-Process -Wait -FilePath "C:\Windows\System32\msiexec.exe" -ArgumentList "/i", "$MsiPath", "$Switches"
 }
 catch {
-    Write-Host "[ERROR] Error installing $($App): $_"
+    Write-Host "[ERROR] Error installing $($MsiPath): $_"
     throw $_
 }
 $MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/jdk-17_windows-x64_bin.msi"
