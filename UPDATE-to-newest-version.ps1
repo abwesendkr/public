@@ -47,3 +47,5 @@ if ($SuccessfulAppCount -lt $TotalAppCount) {
     Write-Host "[FATAL] Not all apps were installed successfully, failing script."  -ForegroundColor Red
     exit 1
 }
+
+ConvertTo-Json -InputObject $Apps | Out-File '.\apps-new.json'
