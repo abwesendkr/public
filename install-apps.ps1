@@ -28,7 +28,7 @@ Import-Module "./functions.psm1"
 try {
     $readValue = [System.Environment]::GetEnvironmentVariable("region", [System.EnvironmentVariableTarget]::Machine)
     Write-Host "Try to read set 'region': $($readValue)"
-    if ([string]::IsNullOrWhiteSpace($readValue)) {
+    if (-not [string]::IsNullOrWhiteSpace($readValue)) {
         $Apps = Get-Content -Path "./apps-$($readValue).json" -Raw | ConvertFrom-Json
         Write-Host "App.json 'region' read successfull"
     }
