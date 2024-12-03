@@ -173,5 +173,10 @@
       "chocoArgumentString": "",
       "installType": "winget",
       "customInstallScript": ""
+  },
+  {
+    "name": "disable-msstore",
+    "installType": "custom",
+    "customInstallScript": ".\\custom\\disable-ms-store.ps1"
   }
 ]

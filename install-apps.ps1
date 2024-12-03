@@ -26,10 +26,15 @@ Import-Module "./functions.psm1"
 
 # Parse JSON file
 try {
-    $Apps = Get-Content -Path "./apps.json" -Raw | ConvertFrom-Json
+    $readValue = [System.Environment]::GetEnvironmentVariable("region", [System.EnvironmentVariableTarget]::Machine)
+    Write-Host "Try to read set 'region': $($readValue)"
+    if ([string]::IsNullOrWhiteSpace($readValue)) {
+        $Apps = Get-Content -Path "./apps-$($readValue).json" -Raw | ConvertFrom-Json
+        Write-Host "App.json 'region' read successfull"
+    }
 }
 catch {
-    Write-Host "[FATAL] Failed to load apps.json, error message: $($_.Exception.Message)" -ForegroundColor Red
+    Write-Error "[FATAL] Failed to load apps.json, error message: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
 }
 

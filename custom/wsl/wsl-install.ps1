@@ -13,7 +13,7 @@ function CreateUbuntuShortcut {
     $iconPath = "C:\Users\Public\ubuntu-22.04.ico" # Path to your converted icon file
  
     Write-Host "start download Ubuntu Icon"
-    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/abwesendkr/public/refs/heads/main/ubuntu-22.04.ico" -OutFile $iconPath
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/abwesendkr/public/refs/heads/main/wsl/ubuntu-22.04.ico" -OutFile $iconPath
 
     # Create a WScript Shell COM object
     $WshShell = New-Object -ComObject WScript.Shell
@@ -49,7 +49,7 @@ try {
     Write-Host "start download ubuntu-check.ps1"
     # Download WSL update 
     # this guide https://learn.microsoft.com/de-de/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
-    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/abwesendkr/public/refs/heads/main/ubuntu-check.ps1" -OutFile "c:\users\public\ubuntu-check.ps1"
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/abwesendkr/public/refs/heads/main/wsl/ubuntu-check.ps1" -OutFile "c:\users\public\ubuntu-check.ps1"
     Write-Host "Finished download ubuntu-check.ps1 to c:\user\public\"
     # Warte, bis die Installation abgeschlossen ist
     Start-Sleep -Seconds 10
