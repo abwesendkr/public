@@ -108,13 +108,15 @@
       "customInstallScript": ".\\custom\\fortigate\\fortigate.ps1",
       "chocoIgnoreChecksum": "",
       "mandatory": "no"
-    },  {
+    },  
+    {
       "name": "Checkpoint",
       "installType": "custom",
       "customInstallScript": ".\\custom\\checkpoint\\checkpoint.ps1",
       "chocoIgnoreChecksum": "",
       "mandatory": "no"
-    },  {
+    },  
+    {
       "name": "globalprotect",
       "installType": "custom",
       "customInstallScript": ".\\custom\\globalprotect\\globalprotect.ps1",

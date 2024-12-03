@@ -15,7 +15,7 @@ if (!(Test-Path $TempFolderPath)) {
 Import-Module -name ".\functions.psm1"
 
 # Load Powershell
-Write-Host "Attempting to load file from $MsiUrl to $MsiPath"
+Write-Host "[INFO] Attempting to load file from $MsiUrl to $MsiPath"
 if (-not(Test-Path $MsiPath)) {
     Load-WebFile $MsiUrl $MsiPath
 }
@@ -28,7 +28,7 @@ $desktopShortcut = "C:\Users\Public\Desktop\sqldeveloper.lnk"
 
 # Überprüfen, ob das ZIP-File existiert
 if (-Not (Test-Path -Path $zipFile)) {
-    write-Error "[ERROR] Das ZIP-File '$zipFile' wurde nicht gefunden."
+    write-host "[ERROR] Das ZIP-File '$zipFile' wurde nicht gefunden."
 }
 
 # Versionsnummer auslesen
@@ -37,7 +37,7 @@ if ($versionMatch.Success) {
     $version = $versionMatch.Value
     Write-Host "[INFO] Extracted version: $($version)"
 } else {
-    write-Error "[ERROR] Konnte die Versionsnummer nicht aus dem Dateinamen extrahieren."
+    write-host "[ERROR] Konnte die Versionsnummer nicht aus dem Dateinamen extrahieren."
 }
 
 # Zielverzeichnis mit Versionsnummer erstellen
@@ -53,13 +53,13 @@ try {
     [System.IO.Compression.ZipFile]::ExtractToDirectory($zipFile, $destination)
     Write-Host "[INFO] Zip-File extracted"
 } catch {
-    write-Error "[ERROR] Fehler beim Entpacken der ZIP-Datei: $_"
+    write-host "[ERROR] Fehler beim Entpacken der ZIP-Datei: $_"
 }
 
 # Verknüpfung erstellen
 $exePath = Join-Path -Path $destination -ChildPath "sqldeveloper\sqldeveloper.exe"
 if (-Not (Test-Path -Path $exePath)) {
-    write-Error "[ERROR] Die Datei 'sqldeveloper.exe' wurde nicht im entpackten Verzeichnis gefunden."
+    write-host "[ERROR] Die Datei 'sqldeveloper.exe' wurde nicht im entpackten Verzeichnis gefunden."
 }
 
 $WScriptShell = New-Object -ComObject WScript.Shell

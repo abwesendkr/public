@@ -101,25 +101,6 @@
         "name": "powershell7",
         "installType": "custom",
         "customInstallScript": ".\\custom\\powershell7\\powershell7.ps1"
-    },
-    {
-      "name": "Fortigate",
-      "installType": "custom",
-      "customInstallScript": ".\\custom\\fortigate\\fortigate.ps1",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-    },  {
-      "name": "Checkpoint",
-      "installType": "custom",
-      "customInstallScript": ".\\custom\\checkpoint\\checkpoint.ps1",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-    },  {
-      "name": "globalprotect",
-      "installType": "custom",
-      "customInstallScript": ".\\custom\\globalprotect\\globalprotect.ps1",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
     },  
     {
       "name": "Cherwell",
@@ -127,7 +108,7 @@
       "customInstallScript": ".\\custom\\Cherwell.ps1",
       "chocoIgnoreChecksum": "",
       "mandatory": "no"
-    },
+    }, 
     {
       "name": "Hyper-V-enabled",
       "installType": "custom",
@@ -142,6 +123,20 @@
       "chocoIgnoreChecksum": "",
       "mandatory": "no"
     },
+    {
+      "name": "Orcale-SQL-Developer",
+      "installType": "custom",
+      "customInstallScript": ".\\custom\\sqldeveloper.ps1",
+      "chocoIgnoreChecksum": "",
+      "mandatory": "no"
+    },
+    {
+      "name": "Fortigate",
+      "installType": "custom",
+      "customInstallScript": ".\\custom\\fortigate\\fortigate.ps1",
+      "chocoIgnoreChecksum": "",
+      "mandatory": "no"
+    },  
     {
       "name": "disable-msstore",
       "installType": "custom",

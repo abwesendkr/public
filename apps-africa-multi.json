@@ -7,13 +7,6 @@
       "customInstallScript": ""
   },
   {
-      "name": "amazon-workspaces",
-      "chocoVersion": "5.24.1.5059",
-      "chocoArgumentString": "",
-      "installType": "choco",
-      "customInstallScript": ""
-  },
-  {
       "name": "filezilla",
       "chocoVersion": "3.68.1",
       "chocoArgumentString": "",
@@ -127,6 +120,13 @@
     "name": "wsl-install",
     "installType": "custom",
     "customInstallScript": ".\\custom\\wsl\\wsl-install.ps1",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+  },
+  {
+    "name": "Orcale-SQL-Developer",
+    "installType": "custom",
+    "customInstallScript": ".\\custom\\sqldeveloper.ps1",
     "chocoIgnoreChecksum": "",
     "mandatory": "no"
   },
