@@ -1,182 +1,218 @@
-[
-  {
-      "name": "7zip",
-      "chocoVersion": "",
-      "chocoArgumentString": "",
-      "installType": "choco",
-      "customInstallScript": "",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-  },
-  {
-      "name": "amazon-workspaces",
-      "chocoVersion": "5.22.1.4847",
-      "chocoArgumentString": "",
-      "installType": "choco",
-      "customInstallScript": "",
-      "chocoIgnoreChecksum": "yes",
-      "mandatory": "no"
-  },
-  {
-      "name": "filezilla",
-      "chocoVersion": "3.67.1",
-      "chocoArgumentString": "",
-      "installType": "choco",
-      "customInstallScript": "",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-  },
-  {
-      "name": "firefox",
-      "chocoVersion": "129.0.2",
-      "chocoArgumentString": "",
-      "installType": "choco",
-      "customInstallScript": "",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-  },
-  {
-      "name": "googlechrome",
-      "chocoVersion": "",
-      "chocoArgumentString": "",
-      "installType": "choco",
-      "customInstallScript": "",
-      "chocoIgnoreChecksum": "yes",
-      "mandatory": "no"
-  },
-  {
-      "name": "mremoteng",
-      "chocoVersion": "1.76.20.24615",
-      "chocoArgumentString": "",
-      "installType": "choco",
-      "customInstallScript": "",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-  },
-  {
-      "name": "notepadplusplus",
-      "chocoVersion": "8.6.9",
-      "chocoArgumentString": "",
-      "installType": "choco",
-      "customInstallScript": "",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-  },
-  {
-      "name": "putty.install",
-      "chocoVersion": "0.81.0",
-      "chocoArgumentString": "",
-      "installType": "choco",
-      "customInstallScript": "",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-  },
-  {
-      "name": "python311",
-      "chocoVersion": "3.11.9",
-      "chocoArgumentString": "",
-      "installType": "choco",
-      "customInstallScript": "",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-  },
-  {
-      "name": "vlc",
-      "chocoVersion": "3.0.21",
-      "chocoArgumentString": "",
-      "installType": "choco",
-      "customInstallScript": "",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-  },
-  {
-      "name": "vscode",
-      "chocoVersion": "1.93.1",
-      "chocoArgumentString": "",
-      "installType": "choco",
-      "customInstallScript": "",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-  },
-  {
-      "name": "vscode-powershell",
-      "chocoVersion": "2024.2.2",
-      "chocoArgumentString": "",
-      "installType": "choco",
-      "customInstallScript": "",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-  },
-  {
-      "name": "winscp",
-      "chocoVersion": "6.3.5",
-      "chocoArgumentString": "",
-      "installType": "choco",
-      "customInstallScript": "",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-  },
-  {
-      "name": "powershell7",
-      "installType": "custom",
-      "customInstallScript": ".\\custom\\powershell7\\powershell7.ps1",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "yes"
-  },
-  {
+[  
+{
+    "name": "powershell7",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
+    "installType": "custom",
+    "customInstallScript": ".\\custom\\powershell7\\powershell7.ps1",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "7zip",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "amazon-workspaces",
+    "chocoVersion": "5.22.1.4847",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "yes",
+    "mandatory": "no"
+},
+{
+    "name": "filezilla",
+    "chocoVersion": "3.68.1",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "firefox",
+    "chocoVersion": "133.0.0",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "googlechrome",
+    "chocoVersion": "131.0.6778.86",
+    "chocoIgnoreChecksum": "yes",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "mandatory": "no"
+},
+{
+    "name": "mremoteng",
+    "chocoVersion": "1.76.20.24615",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "notepadplusplus",
+    "chocoVersion": "8.7.3",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "putty.install",
+    "chocoVersion": "0.82.0",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "python311",
+    "chocoVersion": "3.11.9",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "vlc",
+    "chocoVersion": "3.0.21",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "vscode",
+    "chocoVersion": "1.95.3",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "vscode-powershell",
+    "chocoVersion": "2024.4.0",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "winscp",
+    "chocoVersion": "6.3.6",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "Microsoft.WinDbg",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
+    "installType": "winget",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "ultravnc",
+    "chocoVersion": "1.4350",
+    "chocoArgumentString": "/loadinf=c:\\config\\uvnc\\uvnc.inf",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no" 
+},
+{
     "name": "Fortigate",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
     "installType": "custom",
     "customInstallScript": ".\\custom\\fortigate\\fortigate.ps1",
     "chocoIgnoreChecksum": "",
     "mandatory": "no"
-  },  {
+},  
+{
     "name": "Checkpoint",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
     "installType": "custom",
     "customInstallScript": ".\\custom\\checkpoint\\checkpoint.ps1",
     "chocoIgnoreChecksum": "",
     "mandatory": "no"
-  },  {
+},  
+{
     "name": "globalprotect",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
     "installType": "custom",
     "customInstallScript": ".\\custom\\globalprotect\\globalprotect.ps1",
     "chocoIgnoreChecksum": "",
     "mandatory": "no"
-  },  
-  {
+},  
+{
     "name": "Cherwell",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
     "installType": "custom",
     "customInstallScript": ".\\custom\\Cherwell.ps1",
     "chocoIgnoreChecksum": "",
     "mandatory": "no"
-  },
-  {
-      "name": "Microsoft.WinDbg",
-      "chocoVersion": "",
-      "chocoArgumentString": "",
-      "installType": "winget",
-      "customInstallScript": "",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-  },
-  {
-      "name": "ultravnc",
-      "chocoVersion": "",
-      "chocoArgumentString": "/loadinf=c:\\config\\uvnc\\uvnc.inf",
-      "installType": "choco",
-      "customInstallScript": "",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-  },
-  {
-      "name": "Microsoft.SQLServerManagementStudio",
-      "chocoVersion": "19.0.2",
-      "chocoArgumentString": "",
-      "installType": "winget",
-      "customInstallScript": ""
-  },
-  {
-    "name": "disable-msstore",
+}, 
+{
+    "name": "Microsoft.SQLServerManagementStudio",
+    "chocoVersion": "19.0.2",
+    "chocoArgumentString": "",
+    "installType": "winget",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "Hyper-V-enabled",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
     "installType": "custom",
-    "customInstallScript": ".\\custom\\disable-ms-store.ps1"
-  }
+    "customInstallScript": ".\\custom\\wsl\\hyper-v-enable.ps1",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+ },
+{
+    "name": "wsl-install",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
+    "installType": "custom",
+    "customInstallScript": ".\\custom\\wsl\\wsl-install.ps1",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "disable-msstore",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
+    "installType": "custom",
+    "customInstallScript": ".\\custom\\disable-ms-store.ps1",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+}
 ]
