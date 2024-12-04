@@ -1,10 +1,22 @@
+$distro = "Ubuntu"
 $test = wsl -l 
-write-host $test
-if ($test -like "Ubuntu*"){ 
+#write-host $test
+$check = $false
+foreach ($item in $test) {
+    # Remove all spaces and other whitespace characters
+    $cleanedItem = -join ($item.ToCharArray() | Where-Object { $_ -ne ' ' -and $_ -ne [char]0 })
+#    Write-Host "item: $item"
+#    write-host "cleaneditem: $cleanedItem"
+    if ($cleanedItem -match "Ubuntu") {
+        Write-Output "Found Ubuntu"
+        $check =$true
+    }
+}
+if ($check){ 
     Write-host "Starting WSL"
-    wsl.exe
-    sleep 10
-} 
+    Invoke-Expression "wsl.exe"
+#    sleep 10
+}
 else{ 
     Write-Host "Installing AppxPackage Ubuntu-22.04.appx"
     try {

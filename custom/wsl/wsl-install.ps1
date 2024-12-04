@@ -8,7 +8,7 @@ function CreateUbuntuShortcut {
     
     # Define the paths
 #    $appxPath = "C:\Users\public\ubuntu-22.04.appx"
-    $appxPath = "C:\Users\public\ubuntu-check.ps1"
+    $appxPath = "C:\Users\public\ubuntu-check.exe"
     $shortcutPath = "C:\Users\public\desktop\Ubuntu-22.04.lnk"
     $iconPath = "C:\Users\Public\ubuntu-22.04.ico" # Path to your converted icon file
  
@@ -46,11 +46,11 @@ try {
 
     Write-Host "Installing WSL, using `"msiexec.exe /i wsl_update_x64.msi /quiet`" "
     Start-Process -FilePath "msiexec.exe" -ArgumentList "/i wsl_update_x64.msi /quiet" -Wait
-    Write-Host "start download ubuntu-check.ps1"
+    Write-Host "start download ubuntu-check.exe"
     # Download WSL update 
     # this guide https://learn.microsoft.com/de-de/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
-    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/abwesendkr/public/refs/heads/main/custom/wsl/ubuntu-check.ps1" -OutFile "c:\users\public\ubuntu-check.ps1"
-    Write-Host "Finished download ubuntu-check.ps1 to c:\user\public\"
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/abwesendkr/public/refs/heads/main/custom/wsl/ubuntu-check.exe" -OutFile "c:\users\public\ubuntu-check.exe"
+    Write-Host "Finished download ubuntu-check.exe to c:\user\public\"
     # Warte, bis die Installation abgeschlossen ist
     Start-Sleep -Seconds 10
 
