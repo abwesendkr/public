@@ -7,8 +7,8 @@ foreach ($item in $test) {
     $cleanedItem = -join ($item.ToCharArray() | Where-Object { $_ -ne ' ' -and $_ -ne [char]0 })
 #    Write-Host "item: $item"
 #    write-host "cleaneditem: $cleanedItem"
-    if ($cleanedItem -match "Ubuntu") {
-        Write-Output "Found Ubuntu"
+    if ($cleanedItem -match $distro) {
+        Write-Output "Found $distro"
         $check =$true
     }
 }
