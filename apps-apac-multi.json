@@ -1,5 +1,10 @@
 [
   {
+      "name": "powershell7",
+      "installType": "custom",
+      "customInstallScript": ".\\custom\\powershell7\\powershell7.ps1"
+  }, 
+  {
       "name": "7zip",
       "chocoVersion": "24.9.0",
       "chocoArgumentString": "",
@@ -103,12 +108,7 @@
       "chocoArgumentString": "/loadinf=c:\\config\\uvnc\\uvnc.inf",
       "installType": "choco",
       "customInstallScript": ""
-  },
-  {
-      "name": "powershell7",
-      "installType": "custom",
-      "customInstallScript": ".\\custom\\powershell7\\powershell7.ps1"
-  },  
+  }, 
   {
     "name": "Cherwell",
     "installType": "custom",
