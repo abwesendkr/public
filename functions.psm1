@@ -235,5 +235,4 @@ function Create-LogElement {
         Success = $Success
     }
     return $LogElement
-
 }
