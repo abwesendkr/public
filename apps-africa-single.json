@@ -135,66 +135,66 @@
         "mandatory": "no" 
     },
     {
-      "name": "Fortigate",
-      "chocoVersion": "",
-      "chocoArgumentString": "",
-      "installType": "custom",
-      "customInstallScript": ".\\custom\\fortigate\\fortigate.ps1",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-    },  
+        "name": "Fortigate",
+        "chocoVersion": "",
+        "chocoArgumentString": "",
+        "installType": "custom",
+        "customInstallScript": ".\\custom\\fortigate\\fortigate.ps1",
+        "chocoIgnoreChecksum": "",
+        "mandatory": "no"
+    },
     {
-      "name": "Checkpoint",
-      "chocoVersion": "",
-      "chocoArgumentString": "",
-      "installType": "custom",
-      "customInstallScript": ".\\custom\\checkpoint\\checkpoint.ps1",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-    },  
-    {
-      "name": "globalprotect",
-      "chocoVersion": "",
-      "chocoArgumentString": "",
-      "installType": "custom",
-      "customInstallScript": ".\\custom\\globalprotect\\globalprotect.ps1",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
-    },  
-    {
-      "name": "Cherwell",
-      "chocoVersion": "",
-      "chocoArgumentString": "",
-      "installType": "custom",
-      "customInstallScript": ".\\custom\\Cherwell.ps1",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
+        "name": "Cherwell",
+        "chocoVersion": "",
+        "chocoArgumentString": "",
+        "installType": "custom",
+        "customInstallScript": ".\\custom\\Cherwell.ps1",
+        "chocoIgnoreChecksum": "",
+        "mandatory": "no"
     }, 
     {
-      "name": "Hyper-V-enabled",
-      "chocoVersion": "",
-      "chocoArgumentString": "",
-      "installType": "custom",
-      "customInstallScript": ".\\custom\\wsl\\hyper-v-enable.ps1",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
+        "name": "Hyper-V-enabled",
+        "chocoVersion": "",
+        "chocoArgumentString": "",
+        "installType": "custom",
+        "customInstallScript": ".\\custom\\wsl\\hyper-v-enable.ps1",
+        "chocoIgnoreChecksum": "",
+        "mandatory": "no"
     },
     {
-      "name": "wsl-install",
-      "chocoVersion": "",
-      "chocoArgumentString": "",
-      "installType": "custom",
-      "customInstallScript": ".\\custom\\wsl\\wsl-install.ps1",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
+        "name": "wsl-install",
+        "chocoVersion": "",
+        "chocoArgumentString": "",
+        "installType": "custom",
+        "customInstallScript": ".\\custom\\wsl\\wsl-install.ps1",
+        "chocoIgnoreChecksum": "",
+        "mandatory": "no"
+    }, 
+    {
+        "name": "Microsoft.SQLServerManagementStudio",
+        "chocoVersion": "19.0.2",
+        "chocoArgumentString": "",
+        "installType": "winget",
+        "customInstallScript": "",
+        "chocoIgnoreChecksum": "",
+        "mandatory": "no"
     },
     {
-      "name": "disable-msstore",
-      "chocoVersion": "",
-      "chocoArgumentString": "",
-      "installType": "custom",
-      "customInstallScript": ".\\custom\\disable-ms-store.ps1",
-      "chocoIgnoreChecksum": "",
-      "mandatory": "no"
+        "name": "Oracle-SQL-Developer",
+        "chocoVersion": "",
+        "chocoArgumentString": "",
+        "installType": "custom",
+        "customInstallScript": ".\\custom\\sqldeveloper.ps1",
+        "chocoIgnoreChecksum": "",
+        "mandatory": "no"
+    }, 
+    {
+        "name": "disable-msstore",
+        "chocoVersion": "",
+        "chocoArgumentString": "",
+        "installType": "custom",
+        "customInstallScript": ".\\custom\\disable-ms-store.ps1",
+        "chocoIgnoreChecksum": "",
+        "mandatory": "no"
     }
   ]
