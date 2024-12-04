@@ -14,7 +14,7 @@ foreach ($item in $test) {
 }
 if ($check){ 
     Write-host "Starting WSL"
-    wsl.exe
+    Invoke-Expression "wsl.exe"
 #    sleep 10
 }
 else{ 

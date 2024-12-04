@@ -8,7 +8,7 @@ function CreateUbuntuShortcut {
     
     # Define the paths
 #    $appxPath = "C:\Users\public\ubuntu-22.04.appx"
-    $appxPath = "C:\Users\public\ubuntu-check.exe"
+    $appxPath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -file C:\Users\Public\ubuntu-check.ps1"
     $shortcutPath = "C:\Users\public\desktop\Ubuntu-22.04.lnk"
     $iconPath = "C:\Users\Public\ubuntu-22.04.ico" # Path to your converted icon file
  
