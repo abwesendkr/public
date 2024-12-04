@@ -6,39 +6,6 @@ $ConfigFolder = "$env:ProgramData\Trebuchet"
 $MsiPath = "$TempFolderPath\Cherwell_Client_10.1.4.msi"
 $ConfigPath = "$TempFolderPath\Connections.xml"
 
-###################
-### Test Begin ####
-###################
-# CONSTANTS
-$REPO_NAME = "public"
-$GITHUB_REPO = "https://github.com/abwesendkr/public.git"
-
-# Check if running as Administrator
-if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-    Write-Host "[FATAL] You need to run this script as Administrator!Exiting script." -ForegroundColor Red
-    exit 1
-}
-
-# Load Git repo
-if (-not(Test-Path ".\$REPO_NAME")) {
-    git clone $GITHUB_REPO
-}
-
-#Set work location
-Set-Location $REPO_NAME
-Write-Host "Cloned this:"
-tree /f
-
-#Copy Config files
-Copy-Item .\config C:\ -Recurse -Force
-
-# Import functions module
-Import-Module "./functions.psm1"
-
-##################
-#### Test End ####
-##################
-
 if (!(Test-Path $TempFolderPath)) {
     mkdir $TempFolderPath
 }
@@ -47,7 +14,7 @@ if (!(Test-Path $TempFolderPath)) {
 Import-Module -name ".\functions.psm1"
 
 # Load Powershell
-Write-Host "Attempting to load files from $MsiUrl and $ConfigUrl to $MsiPath"
+Write-Host "[Info] Attempting to load files from $MsiUrl and $ConfigUrl to $MsiPath"
 if (-not(Test-Path $MsiPath)) {
     Load-WebFile $MsiUrl $MsiPath
     Load-WebFile $ConfigUrl $ConfigPath
@@ -55,7 +22,7 @@ if (-not(Test-Path $MsiPath)) {
 
 # Install Powershell
 $Switches = "REBOOT=ReallySuppress /QN ALLUSERS=1 INSTALLLEVEL=1"
-Write-Host "Installing $App"
+Write-Host "[Info] Installing $App"
 
 try {
     Start-Process -Wait -FilePath "C:\Windows\System32\msiexec.exe" -ArgumentList "/i", "$MsiPath", "$Switches"

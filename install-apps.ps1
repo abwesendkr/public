@@ -51,7 +51,7 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
     if ($App.mandatory -eq "yes") {
         $SuccessfulMandatoryAppCount += 1
     }
-    Write-Host "Installing $($App.name)..." -ForegroundColor Green
+    Write-Host "[INSTALLING] $($App.name)..." -ForegroundColor Green
     if ($App.installType -eq 'choco') {
         try {
             Install-WithChoco($App)
