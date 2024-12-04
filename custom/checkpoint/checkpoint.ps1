@@ -44,7 +44,7 @@ if (-not(Test-Path $MsiPath)) {
 }
 
 # Install Powershell
-$Switches = "/quiet /norestart"
+$Switches = "/quiet /norestart ALLUSERS=1"
 Write-Host "Installing $MsiPath"
 try {
     Start-Process -Wait -FilePath "C:\Windows\System32\msiexec.exe" -ArgumentList "/i", "$MsiPath", "$Switches"
@@ -66,7 +66,7 @@ if (-not(Test-Path $MsiPath)) {
 }
 
 # Install Powershell
-$Switches = "/quiet /norestart"
+$Switches = "/quiet /norestart ALLUSERS=1"
 Write-Host "Installing $MsiPath"
 try {
     Start-Process -Wait -FilePath "C:\Windows\System32\msiexec.exe" -ArgumentList "/i", "$MsiPath", "$Switches"
