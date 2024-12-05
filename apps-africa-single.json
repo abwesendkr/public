@@ -151,25 +151,7 @@
         "customInstallScript": ".\\custom\\Cherwell.ps1",
         "chocoIgnoreChecksum": "",
         "mandatory": "no"
-    }, 
-    {
-        "name": "Hyper-V-enabled",
-        "chocoVersion": "",
-        "chocoArgumentString": "",
-        "installType": "custom",
-        "customInstallScript": ".\\custom\\wsl\\hyper-v-enable.ps1",
-        "chocoIgnoreChecksum": "",
-        "mandatory": "no"
     },
-    {
-        "name": "wsl-install",
-        "chocoVersion": "",
-        "chocoArgumentString": "",
-        "installType": "custom",
-        "customInstallScript": ".\\custom\\wsl\\wsl-install.ps1",
-        "chocoIgnoreChecksum": "",
-        "mandatory": "no"
-    }, 
     {
         "name": "Microsoft.SQLServerManagementStudio",
         "chocoVersion": "19.0.2",
