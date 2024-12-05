@@ -20,7 +20,8 @@ if ($check){
 else{ 
     Write-Host "Installing AppxPackage Ubuntu-22.04.appx"
     try {
-        Start-Process -Wait Add-AppxPackage -Path C:\Users\Public\ubuntu-22.04.appx
+#        Start-Process -Wait Add-AppxPackage -Path C:\Users\Public\ubuntu-22.04.appx
+        Start-Process -Wait -FilePath "powershell.exe" -ArgumentList "Add-AppxPackage -Path 'C:\Users\Public\ubuntu-22.04.appx'"
     }
     catch {
         Write-host "install closed with: $_"
@@ -28,3 +29,4 @@ else{
     Write-host "install successfull with: $_"
     wsl.exe
 }
+sleep 5
