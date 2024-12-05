@@ -8,7 +8,8 @@ function CreateUbuntuShortcut {
     
     # Define the paths
 #    $appxPath = "C:\Users\public\ubuntu-22.04.appx"
-    $appxPath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -file C:\Users\Public\ubuntu-check.ps1"
+    $appxPath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" 
+    $Arguments = "-ExecutionPolicy Bypass -file C:\Users\Public\ubuntu-check.ps1"
     $shortcutPath = "C:\Users\public\desktop\Ubuntu-22.04.lnk"
     $iconPath = "C:\Users\Public\ubuntu-22.04.ico" # Path to your converted icon file
  
@@ -20,6 +21,7 @@ function CreateUbuntuShortcut {
 
     # Create the shortcut
     $shortcut = $WshShell.CreateShortcut($shortcutPath)
+    $shortcut.Arguments = $Arguments
     $shortcut.TargetPath = $appxPath
     $shortcut.IconLocation = $iconPath # Set the icon location
     $shortcut.Save()
