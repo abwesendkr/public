@@ -1,17 +1,11 @@
 Set-Location $PSScriptRoot
-$Url = "https://raw.githubusercontent.com/abwesendkr/public/refs/heads/main/GPOs/Add-AdminsToFSLogixExcludeList.ps1"
-$scriptPath = Join-Path -path (get-location).Path -ChildPath "Add-AdminsToFSLogixExcludeList.ps1"  
-
-Write-Host "Installing Startupscript..." -ForegroundColor Green
-try {
-    Write-Host "Downloading from Url: $Url"
-    Invoke-WebRequest -Uri $Url -OutFile $scriptPath -ErrorAction Stop
-    Write-Host "Downloaded: $scriptPath"
+$orignalpath = Join-Path -path (get-location).Path -ChildPath "GPOs\Add-AdminsToFSLogixExcludeList.ps1"  
+$scriptPathroot = "C:\scripts"
+if (-not(Test-Path ".\$scriptPathroot")) {
+    echo "hilfe"
+    New-Item $scriptPathroot -ItemType Directory -Force
 }
-catch {
-    Write-Host "Error downloading $scriptPath from $Url" -ForegroundColor Red
-    throw "Error: $_"
-}
+$scriptPath = Copy-Item $orignalpath -Destination "c:\scripts\Add-AdminsToFSLogixExcludeList.ps1" -Force
 
 #Write-Host "Add $scriptPath to run each reboot"
 
