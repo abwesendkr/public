@@ -228,12 +228,12 @@ function Load-WebFile {
 function Create-LogElement {
     param(
         [object]$App,
-        [boolean]$Success
+        [string]$exitcode
     )
     $LogElement = [pscustomobject]@{
         Name    = $($App.name)
         Version = $($App.chocoVersion)
-        Success = $Success
+        Success = $exitcode
     }
     return $LogElement
 }

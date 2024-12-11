@@ -54,14 +54,14 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
     Write-Host "[INSTALLING] $($App.name)..." -ForegroundColor Green
     if ($App.installType -eq 'choco') {
         try {
-            $chocoexitcode = Install-WithChoco($App)
-            Write-Host "[INFO]Last Exitcode: $($chocoexitcode)"
-            $InstallStatus = Create-LogElement -App $App -Success $true  
+            $installoutput = Install-WithChoco($App)
+            $exitcode = ($installoutput)[-1]
+            $InstallStatus = Create-LogElement -App $App -exitcode $exitcode 
             $InstallStatusTable += $InstallStatus
         }
         catch {
             Write-Host "Encountered error: $_"
-            $InstallStatusTable += Create-LogElement -App $App -Success $false  
+            $InstallStatusTable += Create-LogElement -App $App -exitcode 1  
             $SuccessfulAppCount -= 1
             if ($App.mandatory -eq "yes") {
                 $SuccessfulMandatoryAppCount -= 1
@@ -71,12 +71,12 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
             try {
 #                Install-WithWingetpowershell($App)
                 Install-WithWingetpowershell7($App)
-                $InstallStatus = Create-LogElement -App $App -Success $true  
+                $InstallStatus = Create-LogElement -App $App -exitcode 0  
                 $InstallStatusTable += $InstallStatus
             }
             catch {
                 Write-Host "Encountered error: $_"
-                $InstallStatusTable += Create-LogElement -App $App -Success $false  
+                $InstallStatusTable += Create-LogElement -App $App -exitcode 1  
                 $SuccessfulAppCount -= 1
                 if ($App.mandatory -eq "yes") {
                     $SuccessfulMandatoryAppCount -= 1
@@ -86,11 +86,12 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
     else {
         try {
             powershell.exe -File $App.customInstallScript
-            $InstallStatusTable += Create-LogElement -App $App -Success $true  
+            $exitcode = $LASTEXITCODE
+            $InstallStatusTable += Create-LogElement -App $App -exitcode $exitcode  
         } 
         catch {
             Write-Host "Encountered error: $_"
-            $InstallStatusTable += Create-LogElement -App $App -Success $false  
+            $InstallStatusTable += Create-LogElement -App $App -exitcode $exitcode
             $SuccessfulAppCount -= 1
             if ($App.mandatory -eq "yes") {
                 $SuccessfulMandatoryAppCount -= 1
