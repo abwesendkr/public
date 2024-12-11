@@ -47,4 +47,4 @@ else{
     Write-host "install successfull with: $_"
     wsl.exe
 }
-sleep 5
+Start-Sleep 5
