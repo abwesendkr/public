@@ -214,5 +214,14 @@
     "customInstallScript": ".\\custom\\disable-ms-store.ps1",
     "chocoIgnoreChecksum": "",
     "mandatory": "no"
+},
+{
+    "name": "openlens",
+    "chocoVersion": "6.5.2.3660",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
 }
 ]
