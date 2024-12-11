@@ -223,5 +223,14 @@
     "customInstallScript": "",
     "chocoIgnoreChecksum": "",
     "mandatory": "no"
+},
+{
+    "name": "Boottasks",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
+    "installType": "custom",
+    "customInstallScript": ".\\custom\\GPOs\\Add-Startupscripts.ps1",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
 }
 ]
