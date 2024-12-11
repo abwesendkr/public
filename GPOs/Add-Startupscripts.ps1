@@ -1,5 +1,5 @@
 Set-Location $PSScriptRoot
-$orignalpath = Join-Path -path (get-location).Path -ChildPath "GPOs\Add-AdminsToFSLogixExcludeList.ps1"  
+$orignalpath = Join-Path -path (get-location).Path -ChildPath "Add-AdminsToFSLogixExcludeList.ps1"  
 $scriptPathroot = "C:\scripts"
 if (-not(Test-Path ".\$scriptPathroot")) {
     echo "hilfe"
