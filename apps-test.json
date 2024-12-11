@@ -22,7 +22,7 @@
     "chocoVersion": "",
     "chocoArgumentString": "",
     "installType": "custom",
-    "customInstallScript": ".\\custom\\GPOs\\Add-Startupscripts.ps1",
+    "customInstallScript": ".\\GPOs\\Add-Startupscripts.ps1",
     "chocoIgnoreChecksum": "",
     "mandatory": "no"
 }
