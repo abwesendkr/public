@@ -1,0 +1,20 @@
+[  
+{
+    "name": "powershell7",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
+    "installType": "custom",
+    "customInstallScript": ".\\custom\\powershell7\\powershell7.ps1",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "openlens",
+    "chocoVersion": "6.5.2.3660",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+}
+]
