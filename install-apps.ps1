@@ -54,7 +54,8 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
     Write-Host "[INSTALLING] $($App.name)..." -ForegroundColor Green
     if ($App.installType -eq 'choco') {
         try {
-            Install-WithChoco($App)
+            $chocoexitcode = Install-WithChoco($App)
+            Write-Host "[INFO]Last Exitcode: $($chocoexitcode)"
             $InstallStatus = Create-LogElement -App $App -Success $true  
             $InstallStatusTable += $InstallStatus
         }

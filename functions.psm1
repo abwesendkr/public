@@ -163,12 +163,13 @@ function Install-WithChoco {
     try {
         # Execute the command
         Invoke-Expression $InstallCommand
-    
+        $chocoexitcode = $LASTEXITCODE
         # Check the exit code or validate the installation
         if ($LASTEXITCODE -eq 1) {
             throw "[ERROR] Error encountered: $_"
         }
-        Write-Host "[INFO] Successfully installed $($App.name)"  -ForegroundColor Green
+        Write-Host "[INFO] Successfully installed $($App.name) with Exitcode $($LASTEXITCODE)"  -ForegroundColor Green
+        return $chocoexitcode
     }
     catch {
         Write-Host "[ERROR] Failed to install $($App.name)."  -ForegroundColor Red
