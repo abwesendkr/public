@@ -1,7 +1,16 @@
+#############################
+##### Config Fortigate ######
+#############################
+
 $App = "FortigateVPN"
 $MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/FortiClient.msi"
 $TempFolderPath = "C:\Temp"
 $MsiPath = "$TempFolderPath\Fortinet-7.4.0.1658.msi"
+$Switches = "/quiet /norestart"
+
+#############################
+#### Install Fortigate ######
+#############################
 
 if (!(Test-Path $TempFolderPath)) {
     mkdir $TempFolderPath
@@ -17,7 +26,6 @@ if (-not(Test-Path $MsiPath)) {
 }
 
 # Install Powershell
-$Switches = "/quiet /norestart"
 Write-Host "Installing $App"
 
 try {

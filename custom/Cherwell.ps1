@@ -1,3 +1,7 @@
+#############################
+##### Config Cherwell ######
+#############################
+
 $App = "Cherwell 10.1.4"
 $MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/Cherwell%20Client_10.1.4.msi"
 $ConfigUrl = "https://ibktangaalt.ydns.eu/upload/data/Connections.xml"
@@ -5,6 +9,11 @@ $TempFolderPath = "C:\Temp"
 $ConfigFolder = "$env:ProgramData\Trebuchet"
 $MsiPath = "$TempFolderPath\Cherwell_Client_10.1.4.msi"
 $ConfigPath = "$TempFolderPath\Connections.xml"
+$Switches = "REBOOT=ReallySuppress /QN ALLUSERS=1 INSTALLLEVEL=1"
+
+#############################
+#### Installing Cherwell ####
+#############################
 
 if (!(Test-Path $TempFolderPath)) {
     mkdir $TempFolderPath
@@ -21,7 +30,6 @@ if (-not(Test-Path $MsiPath)) {
 }
 
 # Install Powershell
-$Switches = "REBOOT=ReallySuppress /QN ALLUSERS=1 INSTALLLEVEL=1"
 Write-Host "[Info] Installing $App"
 
 try {

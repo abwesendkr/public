@@ -1,15 +1,16 @@
-##############################
-#### Config Globalprotect ####
-##############################
+#############################
+##### Config Teamviewer #####
+#############################
 
-$App = "GlobalProtect"
-$MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/GlobalProtect64.msi"
+$App = "Teamviewer"
+$MsiUrl = "space"
 $TempFolderPath = "C:\Temp"
-$MsiPath = "$TempFolderPath\GlobalProtect64.msi"
-$Switches = "/quiet /norestart"
+$MsiPath = "$TempFolderPath\Teamviewer.msi"
+$AssignmentID = "0001CoABChAuA1PAHNAR75DmQRs6vN3rEigIACAAAgAJALtw9S-phXRtsEWayIQsr9hqghaNnMXUKFbc6qeVXR0qGkCNSOddkNoXXCSBYSbdbwqZNykVn-qLicMC26NWB1uhgrT7dJSwQPhnCueq8vLIYg28aai9avB0PSMhL65vJ4PHIAEQlYWS9wo="
+$Switches = "/qn CUSTOMCONFIGID=$($AssignmentID) NORESTART=1 "
 
 #############################
-## Install Globalprotect ####
+### Installing Teamviewer ###
 #############################
 
 if (!(Test-Path $TempFolderPath)) {
