@@ -2,7 +2,6 @@ Set-Location $PSScriptRoot
 $orignalpath = Join-Path -path (get-location).Path -ChildPath "Add-AdminsToFSLogixExcludeList.ps1"  
 $scriptPathroot = "C:\scripts"
 if (-not(Test-Path ".\$scriptPathroot")) {
-    echo "hilfe"
     New-Item $scriptPathroot -ItemType Directory -Force
 }
 $scriptPath = Copy-Item $orignalpath -Destination "c:\scripts\Add-AdminsToFSLogixExcludeList.ps1" -Force
