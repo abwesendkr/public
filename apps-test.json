@@ -18,6 +18,15 @@
     "mandatory": "no"
 },
 {
+    "name": "Notepad++.Notepad++",
+    "chocoVersion": "8.7.4",
+    "chocoArgumentString": "",
+    "installType": "winget",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
     "name": "Boottasks",
     "chocoVersion": "",
     "chocoArgumentString": "",
