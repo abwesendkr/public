@@ -54,10 +54,10 @@
         "mandatory": "no"
     },
     {
-        "name": "notepadplusplus",
-        "chocoVersion": "8.7.3",
+        "name": "Notepad++.Notepad++",
+        "chocoVersion": "8.7.4",
         "chocoArgumentString": "",
-        "installType": "choco",
+        "installType": "winget",
         "customInstallScript": "",
         "chocoIgnoreChecksum": "",
         "mandatory": "no"
