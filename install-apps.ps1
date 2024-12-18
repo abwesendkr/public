@@ -10,7 +10,7 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 
 # Load Git repo
 if (-not(Test-Path ".\$REPO_NAME")) {
-    git clone $GITHUB_REPO
+    & git clone $GITHUB_REPO
 }
 
 #Set work location
