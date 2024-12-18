@@ -88,6 +88,8 @@ function Install-WithWingetpowershell {
         if ($App.chocoVersion) {
             Write-Host "[DEBUG] Import Module Winget:"
             Import-Module Microsoft.WinGet.Client -ErrorAction Continue
+            Write-Host "[DEBUG] refreshenv:"
+            refreshenv
             Write-Host "Starting installation of $($App.name) with winget and Version $($App.chocoVersion)..."
             # Installation mit spezifischer Version
             Install-WingetPackage -Id $App.name -Version $App.chocoVersion -Mode Silent -Scope System -Force  
@@ -105,7 +107,9 @@ function Install-WithWingetpowershell {
     catch {
         Write-Error "Installation failed: $_"
         Get-Module 
-        Get-Module | Select-Object -expandProperty ExportedCommands
+        Get-Module Microsoft.WinGet.Client | Select-Object -expandProperty ExportedCommands
+        Install-WingetPackage
+        Get-Help Install-WingetPackage -Full -Online
 #        exit 1  # Fehler
     }
 }
