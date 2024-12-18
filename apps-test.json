@@ -1,10 +1,10 @@
 [  
 {
     "comment": "this is used for powershell 7 and needs to be done in the very beginning",
-    "name": "Microsoft.PowerShell",
+    "name": "powershell-core",
     "chocoVersion": "",
     "chocoArgumentString": "",
-    "installType": "winget-5",
+    "installType": "choco",
     "customInstallScript": ".\\custom\\powershell7\\powershell7.ps1",
     "chocoIgnoreChecksum": "",
     "mandatory": "no"
