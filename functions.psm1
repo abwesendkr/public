@@ -104,7 +104,8 @@ function Install-WithWingetpowershell {
     }
     catch {
         Write-Error "Installation failed: $_"
-        Get-Module
+        Get-Module 
+        Get-Module | Select-Object -expandProperty ExportedCommands
 #        exit 1  # Fehler
     }
 }
