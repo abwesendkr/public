@@ -1,16 +1,17 @@
 [  
 {
-    "name": "powershell7",
+    "comment": "this is used for powershell 7 and needs to be done in the very beginning",
+    "name": "Microsoft.PowerShell",
     "chocoVersion": "",
     "chocoArgumentString": "",
-    "installType": "custom",
+    "installType": "winget",
     "customInstallScript": ".\\custom\\powershell7\\powershell7.ps1",
     "chocoIgnoreChecksum": "",
     "mandatory": "no"
 },
 {
     "name": "openlens",
-    "chocoVersion": "6.5.2.3660",
+    "chocoVersion": "",
     "chocoArgumentString": "",
     "installType": "choco",
     "customInstallScript": "",
@@ -19,7 +20,7 @@
 },
 {
     "name": "Notepad++.Notepad++",
-    "chocoVersion": "8.7.4",
+    "chocoVersion": "",
     "chocoArgumentString": "",
     "installType": "winget",
     "customInstallScript": "",
