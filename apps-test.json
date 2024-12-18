@@ -4,7 +4,7 @@
     "name": "Microsoft.PowerShell",
     "chocoVersion": "",
     "chocoArgumentString": "",
-    "installType": "winget",
+    "installType": "winget-5",
     "customInstallScript": ".\\custom\\powershell7\\powershell7.ps1",
     "chocoIgnoreChecksum": "",
     "mandatory": "no"

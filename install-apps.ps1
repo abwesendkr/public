@@ -82,7 +82,22 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
                     $SuccessfulMandatoryAppCount -= 1
                 }        
                 }
+    }elseif ($App.installType -eq 'winget-5') {
+        try {
+            Install-WithWingetpowershell($App)
+#            Install-WithWingetpowershell7($App)
+            $InstallStatus = Create-LogElement -App $App -exitcode 0  
+            $InstallStatusTable += $InstallStatus
         }
+        catch {
+            Write-Host "Encountered error: $_"
+            $InstallStatusTable += Create-LogElement -App $App -exitcode 1  
+            $SuccessfulAppCount -= 1
+            if ($App.mandatory -eq "yes") {
+                $SuccessfulMandatoryAppCount -= 1
+            }        
+            }
+    }
     else {
         try {
             powershell.exe -File $App.customInstallScript
