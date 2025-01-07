@@ -198,7 +198,7 @@ function Update-AppVersionToLatest {
             } elseif ($App.installType -eq "winget") {
                 # Execute for winget
                 Import-Module Microsoft.WinGet.Client -ErrorAction Continue
-                $App.chocoVersion = (Find-WinGetPackage $App.name).Version
+                $App.chocoVersion = (Find-WinGetPackage -matchoption Equals $App.name).Version
             }
         
             # Check the exit code or validate the installation
