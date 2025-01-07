@@ -192,8 +192,8 @@ function Update-AppVersionToLatest {
         try {
             if ($App.installType -eq "choco") {
                 # Execute for chocolately
-                $latestversiononline = "(choco search $App.name --exact)[1].Split("" "")[1]"
-                $App.chocoVersion = Invoke-Expression $latestversiononline
+                $latestversiononline = (choco search $App.name --exact)[1].Split(" ")[1]
+                $App.chocoVersion = $latestversiononline
             } elseif ($App.installType -eq "winget") {
                 # Execute for winget
                 Import-Module Microsoft.WinGet.Client -ErrorAction Continue
