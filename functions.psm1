@@ -192,7 +192,7 @@ function Update-AppVersionToLatest {
         try {
             if ($App.installType -eq "choco") {
                 # Execute for chocolately
-                $latestversiononline = '(choco search $App.name --exact)[1].Split(" ")[1]'
+                $latestversiononline = '(choco search $App.name --exact)[-2].Split(" ")[1]'
                 $oldversion = $app.chocoVersion
                 $App.chocoVersion = invoke-expression $latestversiononline
             } elseif ($App.installType -eq "winget") {
