@@ -192,8 +192,9 @@ function Update-AppVersionToLatest {
         try {
             if ($App.installType -eq "choco") {
                 # Execute for chocolately
-                $latestversiononline = (choco search $App.name --exact)[1].Split(" ")[1]
-                $App.chocoVersion = $latestversiononline
+                $latestversiononline = '(choco search $App.name --exact)[1].Split(" ")[1]'
+                $oldversion = $app.chocoVersion
+                $App.chocoVersion = invoke-expression $latestversiononline
             } elseif ($App.installType -eq "winget") {
                 # Execute for winget
                 Import-Module Microsoft.WinGet.Client -ErrorAction Continue
@@ -204,7 +205,7 @@ function Update-AppVersionToLatest {
             if ($LASTEXITCODE -eq 1) {
                 throw "[ERROR] Error encountered: $_"
             }
-            Write-Host "[INFO] Successfully updated $($App.name) version to $($App.chocoVersion)"  -ForegroundColor Green
+            Write-Host "[INFO] Successfully updated $($App.name) version from $($oldversion) to $($App.chocoVersion)"  -ForegroundColor Green
         }
         catch {
             Write-Host "[ERROR] Failed to updated $($App.name) version to $($App.chocoVersion)."  -ForegroundColor Red
@@ -212,6 +213,7 @@ function Update-AppVersionToLatest {
         }
     }
 }
+
 function Load-WebFile {
     param (
         [string]$Url,

@@ -1,12 +1,22 @@
+###############
+#### INPUT ####
+###############
+
+$Appjson = "apps-africa-single.json"
+
+###############
+#### CODE #####
+###############
+
 # Parse JSON file
 try {
-    $Apps = Get-Content -Path "./apps.json" -Raw | ConvertFrom-Json
+    $Apps = Get-Content -Path $Appjson -Raw | ConvertFrom-Json
 }
 catch {
     Write-Host "[FATAL] Failed to load apps.json, error message: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
 }
-
+Import-Module "./functions.psm1"
 
 # Set counters for successful installation
 $TotalAppCount = $Apps.Count
@@ -35,17 +45,5 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
         }        
     }
 }
-
-# Move back to root folder
-Set-Location ".."
-
-# Log the status table
-Write-Host "[INFO] Successfully updated versions $($SuccessfulAppCount)/$($TotalAppCount) applications."
-$InstallStatusTable | Format-Table -AutoSize
-
-if ($SuccessfulAppCount -lt $TotalAppCount) {
-    Write-Host "[FATAL] Not all apps were installed successfully, failing script."  -ForegroundColor Red
-    exit 1
-}
-
-ConvertTo-Json -InputObject $Apps | Out-File '.\apps-new.json'
+ 
+$Apps | ConvertTo-Json | Out-File -FilePath $Appjson
