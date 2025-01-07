@@ -56,42 +56,32 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
         try {
             $installoutput = Install-WithChoco($App)
             $exitcode = ($installoutput)[-1]
-            $InstallStatus = Create-LogElement -App $App -exitcode $exitcode 
-            $InstallStatusTable += $InstallStatus
         }
         catch {
             Write-Host "Encountered error: $_"
-            $InstallStatusTable += Create-LogElement -App $App -exitcode 1  
             $SuccessfulAppCount -= 1
             if ($App.mandatory -eq "yes") {
                 $SuccessfulMandatoryAppCount -= 1
             }        
         }
     }elseif ($App.installType -eq 'winget') {
-            try {
-#                Install-WithWingetpowershell($App)
-                Install-WithWingetpowershell7($App)
-                $InstallStatus = Create-LogElement -App $App -exitcode 0  
-                $InstallStatusTable += $InstallStatus
-            }
-            catch {
-                Write-Host "Encountered error: $_"
-                $InstallStatusTable += Create-LogElement -App $App -exitcode 1  
-                $SuccessfulAppCount -= 1
-                if ($App.mandatory -eq "yes") {
-                    $SuccessfulMandatoryAppCount -= 1
-                }        
-                }
-    }elseif ($App.installType -eq 'winget-5') {
         try {
-            Install-WithWingetpowershell($App)
-#            Install-WithWingetpowershell7($App)
-            $InstallStatus = Create-LogElement -App $App -exitcode 0  
-            $InstallStatusTable += $InstallStatus
+            $installoutput = Install-WithWingetpowershell7($App)
+            $exitcode = ($installoutput).InstallerErrorCode
         }
         catch {
             Write-Host "Encountered error: $_"
-            $InstallStatusTable += Create-LogElement -App $App -exitcode 1  
+            $SuccessfulAppCount -= 1
+            if ($App.mandatory -eq "yes") {
+                $SuccessfulMandatoryAppCount -= 1
+            }        
+        }
+    }elseif ($App.installType -eq 'winget-5') {
+        try {
+            Install-WithWingetpowershell($App)
+        }
+        catch {
+            Write-Host "Encountered error: $_"
             $SuccessfulAppCount -= 1
             if ($App.mandatory -eq "yes") {
                 $SuccessfulMandatoryAppCount -= 1
@@ -102,17 +92,16 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
         try {
             powershell.exe -File $App.customInstallScript
             $exitcode = $LASTEXITCODE
-            $InstallStatusTable += Create-LogElement -App $App -exitcode $exitcode  
         } 
         catch {
             Write-Host "Encountered error: $_"
-            $InstallStatusTable += Create-LogElement -App $App -exitcode $exitcode
             $SuccessfulAppCount -= 1
             if ($App.mandatory -eq "yes") {
                 $SuccessfulMandatoryAppCount -= 1
             }        
         }
     }
+    $InstallStatus += Create-LogElement -App $App -exitcode $exitcode
 }
 
 # Move back to root folder
