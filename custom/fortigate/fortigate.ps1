@@ -2,10 +2,18 @@
 ##### Config Fortigate ######
 #############################
 
+<#
+how to get to newest version:
+1. original download and start: https://links.fortinet.com/forticlient/win/vpnagent
+2. go to C:\ProgramData\Applications\Cache and search in subfolders for correct forticlientVPN.msi.
+3. upload it to MSI url below
+4. change MSI-Path
+#>
+
 $App = "FortigateVPN"
-$MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/FortiClient.msi"
+$MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/FortiClientVPN.msi"
 $TempFolderPath = "C:\Temp"
-$MsiPath = "$TempFolderPath\Fortinet-7.4.0.1658.msi"
+$MsiPath = "$TempFolderPath\Fortinet-7.4.2.1737.msi"
 $Switches = "/quiet /norestart"
 
 #############################

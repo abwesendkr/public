@@ -2,6 +2,14 @@
 #### Config Globalprotect ####
 ##############################
 
+<#
+how to get to newest version:
+1. ask a ops guy to download the newest version
+2. go to C:\ProgramData\Applications\Cache and search in subfolders for correct forticlientVPN.msi.
+3. upload it to MSI url below
+4. change MSI-Path
+#>
+
 $App = "GlobalProtect"
 $MsiUrl = "https://ibktangaalt.ydns.eu/upload/data/GlobalProtect64.msi"
 $TempFolderPath = "C:\Temp"

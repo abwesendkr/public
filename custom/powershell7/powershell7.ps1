@@ -3,7 +3,7 @@
 ##############################
 
 $App = "Powershell7"
-$MsiUrl = "https://github.com/PowerShell/PowerShell/releases/download/v7.4.5/PowerShell-7.4.5-win-x64.msi"
+$MsiUrl = "https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/PowerShell-7.4.6-win-x64.msi"
 $TempFolderPath = "C:\Temp"
 $MsiPath = "$TempFolderPath\PowerShell-7.4.5-win-x64.msi"
 $Switches = "/quiet /norestart"
