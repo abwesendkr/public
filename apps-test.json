@@ -10,8 +10,8 @@
     "mandatory": "no"
 },
 {
-    "name": "openlens",
-    "chocoVersion": "",
+    "name": "citrix-workspace",
+    "chocoVersion": "24.9.1.207",
     "chocoArgumentString": "",
     "installType": "choco",
     "customInstallScript": "",
@@ -19,7 +19,7 @@
     "mandatory": "no"
 },
 {
-    "name": "Notepad++.Notepad++",
+    "name": "Microsoft.AzureCLI",
     "chocoVersion": "",
     "chocoArgumentString": "",
     "installType": "winget",
