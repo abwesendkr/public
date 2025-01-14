@@ -10,8 +10,8 @@
     "mandatory": "no"
 },
 {
-    "name": "citrix-workspace",
-    "chocoVersion": "24.9.1.207",
+    "name": "wireshark",
+    "chocoVersion": "",
     "chocoArgumentString": "",
     "installType": "choco",
     "customInstallScript": "",
@@ -19,10 +19,28 @@
     "mandatory": "no"
 },
 {
-    "name": "Microsoft.AzureCLI",
+    "name": "knime.install",
     "chocoVersion": "",
     "chocoArgumentString": "",
-    "installType": "winget",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "mobaxterm",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no"
+},
+{
+    "name": "flyway.commandline",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
+    "installType": "choco",
     "customInstallScript": "",
     "chocoIgnoreChecksum": "",
     "mandatory": "no"
