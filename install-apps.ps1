@@ -101,7 +101,7 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
             }        
         }
     }
-    $InstallStatus += Create-LogElement -App $App -exitcode $exitcode
+    $InstallStatusTable += Create-LogElement -App $App -exitcode $exitcode
 }
 
 # Move back to root folder
