@@ -4,7 +4,8 @@ $scriptPathroot = "C:\scripts"
 if (-not(Test-Path ".\$scriptPathroot")) {
     New-Item $scriptPathroot -ItemType Directory -Force
 }
-$scriptPath = Copy-Item $orignalpath -Destination "c:\scripts\Add-AdminsToFSLogixExcludeList.ps1" -Force
+Copy-Item $orignalpath -Destination "c:\scripts\Add-AdminsToFSLogixExcludeList.ps1" -Force
+$scriptPath = "c:\scripts\Add-AdminsToFSLogixExcludeList.ps1"
 
 #Write-Host "Add $scriptPath to run each reboot"
 
