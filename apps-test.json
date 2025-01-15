@@ -20,12 +20,13 @@
 },
 {
     "name": "knime.install",
-    "chocoVersion": "",
+    "chocoVersion": "4.5.2",
     "chocoArgumentString": "",
     "installType": "choco",
     "customInstallScript": "",
     "chocoIgnoreChecksum": "",
-    "mandatory": "no"
+    "mandatory": "no",
+    "comment": "4.6.0 is broken in chocolately"
 },
 {
     "name": "mobaxterm",
