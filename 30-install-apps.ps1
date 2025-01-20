@@ -27,7 +27,7 @@ Import-Module "./functions.psm1"
 # Parse JSON file
 
 try {
-    Read-Region
+    $region = Read-Region
 <#    $region = [System.Environment]::GetEnvironmentVariable("region", [System.EnvironmentVariableTarget]::Machine)
     Write-Host "Try to read set 'region': $($region)"
 #>
