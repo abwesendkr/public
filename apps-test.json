@@ -14,8 +14,8 @@
     "chocoVersion": "",
     "chocoArgumentString": "",
     "installType": "custom",
-    "customInstallScript": "",
-    "chocoIgnoreChecksum": ".\\40-FSLogix-VHDLocations.ps1",
+    "customInstallScript": ".\\40-FSLogix-VHDLocations.ps1",
+    "chocoIgnoreChecksum": "",
     "mandatory": "no"
 },
 {
