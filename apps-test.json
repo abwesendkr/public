@@ -10,6 +10,15 @@
     "mandatory": "no"
 },
 {
+    "name": "fslogix",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
+    "installType": "custom",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": ".\\40-FSLogix-VHDLocations.ps1",
+    "mandatory": "no"
+},
+{
     "name": "wireshark",
     "chocoVersion": "",
     "chocoArgumentString": "",
