@@ -3,13 +3,16 @@
 #####################################
 
 # Import functions module
+Write-Host "[INFO] import powershell functions"
 Import-Module "./functions.psm1"
 
 # Read region from environment variable 
-Read-Region
+Write-Host "[INFO] read region variable"
+$region = Read-Region
 
 # Set test FSLogix 
 if($region = "test") {
+    Write-Host "[INFO] set fslogix variables"
     $fslogix_regex_storageaccount = "random-stg-account"
     $fslogix_regex_share = "random-share"
 }
