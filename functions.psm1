@@ -244,3 +244,14 @@ function Create-LogElement {
     }
     return $LogElement
 }
+function Read-Region {
+    try {
+        $region = [System.Environment]::GetEnvironmentVariable("region", [System.EnvironmentVariableTarget]::Machine)
+        Write-Host "Try to read set 'region': $($region)"
+        return $region
+    }
+    catch {
+        Write-Error "[FATAL] Failed to load apps.json, error message: $($_.Exception.Message)" -ForegroundColor Red
+        exit 1
+    }
+}

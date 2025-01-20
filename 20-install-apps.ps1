@@ -25,11 +25,14 @@ Copy-Item .\config C:\ -Recurse -Force
 Import-Module "./functions.psm1"
 
 # Parse JSON file
+
 try {
-    $readValue = [System.Environment]::GetEnvironmentVariable("region", [System.EnvironmentVariableTarget]::Machine)
-    Write-Host "Try to read set 'region': $($readValue)"
-    if (-not [string]::IsNullOrWhiteSpace($readValue)) {
-        $Apps = Get-Content -Path "./apps-$($readValue).json" -Raw | ConvertFrom-Json
+    Read-Region
+<#    $region = [System.Environment]::GetEnvironmentVariable("region", [System.EnvironmentVariableTarget]::Machine)
+    Write-Host "Try to read set 'region': $($region)"
+#>
+    if (-not [string]::IsNullOrWhiteSpace($region)) {
+        $Apps = Get-Content -Path "./apps-$($region).json" -Raw | ConvertFrom-Json
         Write-Host "App.json 'region' read successfull"
     }
 }
@@ -37,6 +40,7 @@ catch {
     Write-Error "[FATAL] Failed to load apps.json, error message: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
 }
+
 
 # Set counters for successful installation
 $TotalAppCount = $Apps | Measure-Object | Select-Object -ExpandProperty Count
