@@ -14,7 +14,7 @@ $region = Read-Region
 if($region = "test") {
     Write-Host "[INFO] set fslogix variables"
     $fslogix_regex_storageaccount = "crmecupaes01fxst001"
-    $fslogix_regex_share = "singlessession"
+    $fslogix_regex_share = "singlesession"
 }
 
 # Set FSLogix properties for vhdlocations
