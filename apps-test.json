@@ -7,27 +7,33 @@
     "installType": "choco",
     "customInstallScript": ".\\custom\\powershell7\\powershell7.ps1",
     "chocoIgnoreChecksum": "",
-    "mandatory": "no"
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
 },
 {
+    "comment": "",
     "name": "fslogix",
     "chocoVersion": "",
     "chocoArgumentString": "",
     "installType": "custom",
     "customInstallScript": ".\\40-FSLogix-VHDLocations.ps1",
     "chocoIgnoreChecksum": "",
-    "mandatory": "no"
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
 },
 {
+    "comment": "",
     "name": "wireshark",
     "chocoVersion": "",
     "chocoArgumentString": "",
     "installType": "choco",
     "customInstallScript": "",
     "chocoIgnoreChecksum": "",
-    "mandatory": "no"
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
 },
 {
+    "comment": "4.6.0 is broken in chocolately",
     "name": "knime.install",
     "chocoVersion": "4.5.2",
     "chocoArgumentString": "",
@@ -35,33 +41,39 @@
     "customInstallScript": "",
     "chocoIgnoreChecksum": "",
     "mandatory": "no",
-    "comment": "4.6.0 is broken in chocolately"
+    "firewallruleoutgoingpath": ""
 },
 {
+    "comment": "",
     "name": "mobaxterm",
     "chocoVersion": "",
     "chocoArgumentString": "",
     "installType": "choco",
     "customInstallScript": "",
     "chocoIgnoreChecksum": "",
-    "mandatory": "no"
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
 },
 {
+    "comment": "",
     "name": "flyway.commandline",
     "chocoVersion": "",
     "chocoArgumentString": "",
     "installType": "choco",
     "customInstallScript": "",
     "chocoIgnoreChecksum": "",
-    "mandatory": "no"
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
 },
 {
+    "comment": "",
     "name": "Boottasks",
     "chocoVersion": "",
     "chocoArgumentString": "",
     "installType": "custom",
     "customInstallScript": ".\\GPOs\\Add-Startupscripts.ps1",
     "chocoIgnoreChecksum": "",
-    "mandatory": "no"
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
 }
 ]

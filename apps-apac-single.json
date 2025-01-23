@@ -1,200 +1,244 @@
 [
     {
+        "comment": "",
         "name":  "powershell7",
         "chocoVersion":  "",
         "chocoArgumentString":  "",
         "installType":  "custom",
         "customInstallScript":  ".\\custom\\powershell7\\powershell7.ps1",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "7zip",
         "chocoVersion":  "24.9.0",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "filezilla",
         "chocoVersion":  "3.68.1",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "firefox",
         "chocoVersion":  "133.0.3",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "googlechrome",
         "chocoVersion":  "131.0.6778.205",
-        "chocoIgnoreChecksum":  "yes",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
-        "mandatory":  "no"
+        "chocoIgnoreChecksum":  "yes",
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "mremoteng",
         "chocoVersion":  "1.76.20.24615",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "notepadplusplus",
         "chocoVersion":  "8.7.5",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "putty.install",
         "chocoVersion":  "0.82.0",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "python311",
         "chocoVersion":  "3.11.9",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "vlc",
         "chocoVersion":  "3.0.21",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "vscode",
         "chocoVersion":  "1.96.2",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "vscode-powershell",
         "chocoVersion":  "2024.4.0",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "winscp",
         "chocoVersion":  "6.3.6",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "Microsoft.WinDbg",
         "chocoVersion":  "",
         "chocoArgumentString":  "",
         "installType":  "winget",
         "customInstallScript":  "",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "ultravnc",
         "chocoVersion":  "1.4350.0",
         "chocoArgumentString":  "/loadinf=c:\\config\\uvnc\\uvnc.inf",
         "installType":  "choco",
         "customInstallScript":  "",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "Fortigate",
         "chocoVersion":  "",
         "chocoArgumentString":  "",
         "installType":  "custom",
         "customInstallScript":  ".\\custom\\fortigate\\fortigate.ps1",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "Checkpoint",
         "chocoVersion":  "",
         "chocoArgumentString":  "",
         "installType":  "custom",
         "customInstallScript":  ".\\custom\\checkpoint\\checkpoint.ps1",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "globalprotect",
         "chocoVersion":  "",
         "chocoArgumentString":  "",
         "installType":  "custom",
         "customInstallScript":  ".\\custom\\globalprotect\\globalprotect.ps1",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "Cherwell",
         "chocoVersion":  "",
         "chocoArgumentString":  "",
         "installType":  "custom",
         "customInstallScript":  ".\\custom\\Cherwell.ps1",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "Hyper-V-enabled",
         "chocoVersion":  "",
         "chocoArgumentString":  "",
         "installType":  "custom",
         "customInstallScript":  ".\\custom\\wsl\\hyper-v-enable.ps1",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "wsl-install",
         "chocoVersion":  "",
         "chocoArgumentString":  "",
         "installType":  "custom",
         "customInstallScript":  ".\\custom\\wsl\\wsl-install.ps1",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     },
     {
+        "comment": "",
         "name":  "disable-msstore",
         "chocoVersion":  "",
         "chocoArgumentString":  "",
         "installType":  "custom",
         "customInstallScript":  ".\\custom\\disable-ms-store.ps1",
         "chocoIgnoreChecksum":  "",
-        "mandatory":  "no"
+        "mandatory":  "no",
+        "firewallruleoutgoingpath": ""
     }
 ]
