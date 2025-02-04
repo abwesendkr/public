@@ -3,9 +3,9 @@
 
 $App = "Oracle-SQLDeveloper"
 # newest version: https://www.oracle.com/database/sqldeveloper/technologies/download/
-$MsiUrl = "https://download.oracle.com/otn_software/java/sqldeveloper/sqldeveloper-24.3.0.284.2209-x64.zip"
+$MsiUrl = "https://download.oracle.com/otn_software/java/sqldeveloper/sqldeveloper-24.3.1.347.1826-x64.zip"
 $TempFolderPath = "C:\Temp"
-$MsiPath = "$TempFolderPath\sqldeveloper-24.3.0.284.2209-x64.zip"
+$MsiPath = "$TempFolderPath\sqldeveloper-24.3.1.347.1826-x64.zip"
 
 if (!(Test-Path $TempFolderPath)) {
     mkdir $TempFolderPath
