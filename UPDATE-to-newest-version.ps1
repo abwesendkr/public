@@ -10,14 +10,7 @@ $Appjson = "apps-africa-single.json"
 ###############
 
 
-# Parse JSON file
-try {
-    $Apps = Get-Content -Path $Appjson -Raw | ConvertFrom-Json
-}
-catch {
-    Write-Host "[FATAL] Failed to load apps.json, error message: $($_.Exception.Message)" -ForegroundColor Red
-    exit 1
-}
+
 # CONSTANTS
 $REPO_NAME = "public"
 $GITHUB_REPO = "https://github.com/abwesendkr/public.git"
@@ -39,7 +32,14 @@ Write-Host "Cloned this:"
 tree /f
 
 Import-Module "./functions.psm1"
-
+# Parse JSON file
+try {
+    $Apps = Get-Content -Path $Appjson -Raw | ConvertFrom-Json
+}
+catch {
+    Write-Host "[FATAL] Failed to load apps.json, error message: $($_.Exception.Message)" -ForegroundColor Red
+    exit 1
+}
 # Set counters for successful installation
 $TotalAppCount = $Apps.Count
 $SuccessfulAppCount = $TotalAppCount
