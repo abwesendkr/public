@@ -12,19 +12,19 @@ $region = Read-Region
 
 # Set test FSLogix 
 Write-Host "[INFO] set fslogix variables"
-if($region = "test") {
+if($region -eq "test") {
     $fslogix_regex_storageaccount = "crmecupsans01fxst001"
     $fslogix_regex_share = "crmecupsans01fxst001-share01"
-} elseif ($region = "apac-single") {
+} elseif ($region -eq "apac-single") {
     $fslogix_regex_storageaccount = "crmecupaes01fxst001"
     $fslogix_regex_share = "singlesession"
-} elseif ($region = "apac-multi") {
+} elseif ($region -eq "apac-multi") {
     $fslogix_regex_storageaccount = "crmecupaes01fxst001"
     $fslogix_regex_share = "multisession"
-} elseif ($region = "africa-single") {
+} elseif ($region -eq "africa-single") {
     $fslogix_regex_storageaccount = "crmecupsans01fxst001"
     $fslogix_regex_share = "singlesession"
-} elseif ($region = "africa-multi") {
+} elseif ($region -eq "africa-multi") {
     $fslogix_regex_storageaccount = "crmecupsans01fxst001"
     $fslogix_regex_share = "multisession"
 }
