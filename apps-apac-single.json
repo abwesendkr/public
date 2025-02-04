@@ -240,5 +240,16 @@
         "chocoIgnoreChecksum":  "",
         "mandatory":  "no",
         "firewallruleoutgoingpath":  ""
+    },
+    {
+        "comment": "",
+        "name": "Boottasks",
+        "chocoVersion": "",
+        "chocoArgumentString": "",
+        "installType": "custom",
+        "customInstallScript": ".\\GPOs\\Add-Startupscripts.ps1",
+        "chocoIgnoreChecksum": "",
+        "mandatory": "no",
+        "firewallruleoutgoingpath": ""
     }
 ]
