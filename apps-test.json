@@ -1,6 +1,6 @@
 [  
 {
-    "comment": "this is used for powershell 7 and needs to be done in the very beginning",
+    "comment": "!!!!!!!!!!!never touch this!!!!!!!!!!!!!!!!! this is used for powershell 7 and needs to be done in the very beginning",
     "name": "powershell-core",
     "chocoVersion": "",
     "chocoArgumentString": "",
