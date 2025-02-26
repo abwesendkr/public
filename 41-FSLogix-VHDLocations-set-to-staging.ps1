@@ -3,36 +3,39 @@
 #####################################
 
 # Import functions module
-Write-Host "[INFO] import powershell functions"
+Write-Host "[INFO] Import powershell functions"  -ForegroundColor Yellow
 Import-Module "./functions.psm1"
 
 # Read region from environment variable 
-Write-Host "[INFO] read region variable"
+Write-Host "[INFO] Read region and environment variable"  -ForegroundColor Yellow
 $region = Read-Region
+$environment = Read-Environment
 
-# Set test FSLogix 
-Write-Host "[INFO] set fslogix variables"
-if($region -eq "test") {
-    $fslogix_regex_storageaccount = "crmecupsan001fxst001"
-    $fslogix_regex_share = "image-test"
-} elseif ($region -eq "apac-single") {
-    $fslogix_regex_storageaccount = "crmecupae001fxst001"
-    $fslogix_regex_share = "singlesession"
-} elseif ($region -eq "apac-multi") {
-    $fslogix_regex_storageaccount = "crmecupae001fxst001"
-    $fslogix_regex_share = "multisession"
-} elseif ($region -eq "africa-single") {
-    $fslogix_regex_storageaccount = "crmecupsans01fxst001"
-    $fslogix_regex_share = "singlesession"
-} elseif ($region -eq "africa-multi") {
-    $fslogix_regex_storageaccount = "crmecupsans01fxst001"
-    $fslogix_regex_share = "multisession"
+# Set test FSLogix to staging for all
+if($environment -eq "staging") {
+    Write-Host "[INFO] Set Staging fslogix variables" -ForegroundColor Yellow
+    if($region -eq "test") {
+        $fslogix_regex_storageaccount = "crmecupsans01fxst001"
+        $fslogix_regex_share = "crmecupsans01fxst001-share01"
+    } elseif ($region -eq "apac-single") {
+        $fslogix_regex_storageaccount = "crmecupaes01fxst001"
+        $fslogix_regex_share = "singlesession"
+    } elseif ($region -eq "apac-multi") {
+        $fslogix_regex_storageaccount = "crmecupaes01fxst001"
+        $fslogix_regex_share = "multisession"
+    } elseif ($region -eq "africa-single") {
+        $fslogix_regex_storageaccount = "crmecupsans01fxst001"
+        $fslogix_regex_share = "singlesession"
+    } elseif ($region -eq "africa-multi") {
+        $fslogix_regex_storageaccount = "crmecupsans01fxst001"
+        $fslogix_regex_share = "multisession"
+    }
 }
-Write-Host "[INFO] Set share to: $($fslogix_regex_storageaccount) and $($fslogix_regex_share)" -ForegroundColor Black
+Write-Host "[INFO] Set share to: $($fslogix_regex_storageaccount) and $($fslogix_regex_share)" -ForegroundColor Yellow
 
 # Set FSLogix properties for vhdlocations
-Write-Host "[INFO] try set registry " -ForegroundColor Black
-if($region) {
+Write-Host "[INFO] try set registry " -ForegroundColor Yellow
+if($region -and $environment) {
     try {
         $regPath = "HKLM:\SOFTWARE\FSLogix\Profiles"
         New-ItemProperty -Path $regPath -Name Enabled -PropertyType DWORD -Value 1 -Force
@@ -47,11 +50,11 @@ if($region) {
         Write-Host "[INSTALLED] Registriy set" -ForegroundColor Green
     }
     catch {
-        Write-Host "[ERROR] Error installing $($App): $_"
+        Write-Host "[ERROR] Error installing $($App): $_"  -ForegroundColor Red
         throw $_
     }
 } else {
-    Write-Host "[ERROR] Region not set"
+    Write-Host "[ERROR] Region or Environment not set"  -ForegroundColor Red
 }
 
 

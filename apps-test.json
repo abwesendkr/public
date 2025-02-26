@@ -23,6 +23,17 @@
 },
 {
     "comment": "",
+    "name": "fslogix-paths",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
+    "installType": "custom",
+    "customInstallScript": ".\\41-FSLogix-VHDLocations-set-to-staging.ps1",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
+},
+{
+    "comment": "",
     "name": "putty.install",
     "chocoVersion": "0.82.0",
     "chocoArgumentString": "",
