@@ -23,8 +23,8 @@
 },
 {
     "comment": "",
-    "name": "wireshark",
-    "chocoVersion": "",
+    "name": "putty.install",
+    "chocoVersion": "0.82.0",
     "chocoArgumentString": "",
     "installType": "choco",
     "customInstallScript": "",
@@ -33,9 +33,31 @@
     "firewallruleoutgoingpath": ""
 },
 {
-    "comment": "4.6.0 is broken in chocolately",
-    "name": "knime.install",
-    "chocoVersion": "4.5.2",
+    "comment": "",
+    "name": "mremoteng",
+    "chocoVersion": "1.76.20.24615",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
+},
+{
+    "comment": "",
+    "name": "notepadplusplus",
+    "chocoVersion": "8.7.3",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
+},
+{
+    "comment": "",
+    "name": "winscp",
+    "chocoVersion": "6.3.6",
     "chocoArgumentString": "",
     "installType": "choco",
     "customInstallScript": "",
@@ -56,8 +78,8 @@
 },
 {
     "comment": "",
-    "name": "flyway.commandline",
-    "chocoVersion": "",
+    "name": "winscp",
+    "chocoVersion": "6.3.6",
     "chocoArgumentString": "",
     "installType": "choco",
     "customInstallScript": "",
