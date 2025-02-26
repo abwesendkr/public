@@ -4,7 +4,22 @@
 
 # Import functions module
 Write-Host "[INFO] Import powershell functions"  -ForegroundColor Yellow
-Import-Module "./functions.psm1"
+
+function Read-Environment {
+    # Hole den Hostnamen des Computers
+    $hostname = $env:COMPUTERNAME
+
+    # Überprüfe, ob der Hostname "vms" oder "vss" enthält
+    if ($hostname -match "vms" -or $hostname -match "vss") {
+        # Setze die Systemvariable "environment"
+        [System.Environment]::SetEnvironmentVariable("environment", "staging", [System.EnvironmentVariableTarget]::Machine)
+        Write-Output "Systemvariable 'environment' set to: $([System.Environment]::GetEnvironmentVariable("environment", [System.EnvironmentVariableTarget]::Machine))."
+    } else {
+        Write-Output "[INFO] No 'vms' or 'vss' found in hostname = no staging."
+        [System.Environment]::SetEnvironmentVariable("environment", "production", [System.EnvironmentVariableTarget]::Machine)
+    }
+    return [System.Environment]::GetEnvironmentVariable("environment", [System.EnvironmentVariableTarget]::Machine)
+}
 
 # Read region from environment variable 
 Write-Host "[INFO] Read region and environment variable"  -ForegroundColor Yellow

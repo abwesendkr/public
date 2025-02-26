@@ -12,17 +12,6 @@
 },
 {
     "comment": "",
-    "name": "fslogix",
-    "chocoVersion": "",
-    "chocoArgumentString": "",
-    "installType": "custom",
-    "customInstallScript": ".\\40-FSLogix-VHDLocations.ps1",
-    "chocoIgnoreChecksum": "",
-    "mandatory": "no",
-    "firewallruleoutgoingpath": ""
-},
-{
-    "comment": "",
     "name": "fslogix-paths",
     "chocoVersion": "",
     "chocoArgumentString": "",
