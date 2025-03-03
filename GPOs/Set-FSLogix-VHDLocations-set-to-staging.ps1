@@ -45,7 +45,20 @@ if($environment -eq "staging") {
         $fslogix_regex_storageaccount = "crmecupsans01fxst001"
         $fslogix_regex_share = "multisession"
     }
+} elseif ($environment -eq "production") {
+    Write-Host "[INFO] Set Production fslogix variables" -ForegroundColor Yellow
+    if($region -eq "test") {
+        $fslogix_regex_storageaccount = "crmecupae001fxst002"
+        $fslogix_regex_share = "test"
+    } elseif ($region -eq "apac-single") {
+        $fslogix_regex_storageaccount = "crmecupae001fxst002"
+        $fslogix_regex_share = "singlesession"
+    } elseif ($region -eq "apac-multi") {
+        $fslogix_regex_storageaccount = "crmecupae001fxst002"
+        $fslogix_regex_share = "multisession"
+    }
 }
+
 Write-Host "[INFO] Set share to: $($fslogix_regex_storageaccount) and $($fslogix_regex_share)" -ForegroundColor Yellow
 
 # Set FSLogix properties for vhdlocations
