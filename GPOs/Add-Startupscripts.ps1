@@ -6,7 +6,7 @@ if (-not(Test-Path ".\$scriptPathroot")) {
 
 ####################  temp ########################
 
-$url = https://raw.githubusercontent.com/abwesendkr/public/refs/heads/main/GPOs/Set-FSLogix-VHDLocations-set-to-staging.ps1
+$Url = "https://raw.githubusercontent.com/abwesendkr/public/refs/heads/main/GPOs/Set-FSLogix-VHDLocations-set-to-staging.ps1"
 $FilePath = "C:\scripts\Set-FSLogix-VHDLocations-set-to-staging.ps1"
 Write-Host "[INFO] Downloading from Url: $Url"
 Invoke-WebRequest -Uri $Url -OutFile $FilePath -ErrorAction Stop
