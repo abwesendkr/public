@@ -21,6 +21,9 @@ tree /f
 #Copy Config files
 Copy-Item .\config C:\ -Recurse -Force
 
+#Make Functions system wide accessible after reboot for all users
+Copy-Item .\functions.psm1 C:\windows\System32\WindowsPowerShell\v1.0\Modules\functions\functions.psm1 -Recurse -Force
+
 # Import functions module
 Import-Module "./functions.psm1"
 
