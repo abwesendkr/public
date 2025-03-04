@@ -16,7 +16,6 @@ $scriptPath = "c:\scripts\Add-AdminsToFSLogixExcludeList.ps1"
 $orignalpath2 = Join-Path -path (get-location).Path -ChildPath "Set-FSLogix-VHDLocations-set-to-staging.ps1"  
 Copy-Item $orignalpath2 -Destination "c:\scripts\Set-FSLogix-VHDLocations-set-to-staging.ps1" -Force
 $scriptPath2 = "c:\scripts\Set-FSLogix-VHDLocations-set-to-staging.ps1"
-$scriptPath2 = $FilePath
 
 #Write-Host "Add $scriptPath to run each reboot"
 
