@@ -5,6 +5,19 @@
 # Import functions module
 Write-Host "[INFO] Import powershell functions"  -ForegroundColor Yellow
 
+############ wird importiert in zukunft ################
+
+function Read-Region {
+    try {
+        $region = [System.Environment]::GetEnvironmentVariable("region", [System.EnvironmentVariableTarget]::Machine)
+        Write-Host "Try to read set 'region': $($region)"
+        return $region
+    }
+    catch {
+        Write-Error "[FATAL] Failed to load apps.json, error message: $($_.Exception.Message)" -ForegroundColor Red
+        exit 1
+    }
+}
 function Read-Environment {
     # Hole den Hostnamen des Computers
     $hostname = $env:COMPUTERNAME
@@ -20,6 +33,8 @@ function Read-Environment {
     }
     return [System.Environment]::GetEnvironmentVariable("environment", [System.EnvironmentVariableTarget]::Machine)
 }
+
+#################### ende import #################################
 
 # Read region from environment variable 
 Write-Host "[INFO] Read region and environment variable"  -ForegroundColor Yellow
