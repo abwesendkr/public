@@ -46,7 +46,7 @@
     {
         "comment":  "",
         "name":  "firefox",
-        "chocoVersion":  "134.0.2",
+        "chocoVersion":  "135.0.1",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
@@ -57,7 +57,7 @@
     {
         "comment":  "",
         "name":  "googlechrome",
-        "chocoVersion":  "133.0.6943.35",
+        "chocoVersion":  "134.0.6998.35",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
@@ -79,7 +79,7 @@
     {
         "comment":  "",
         "name":  "notepadplusplus",
-        "chocoVersion":  "8.7.6",
+        "chocoVersion":  "8.7.7",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
@@ -90,7 +90,7 @@
     {
         "comment":  "",
         "name":  "putty.install",
-        "chocoVersion":  "0.82.0",
+        "chocoVersion":  "0.83.0",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
@@ -123,7 +123,7 @@
     {
         "comment":  "",
         "name":  "vscode",
-        "chocoVersion":  "1.96.4",
+        "chocoVersion":  "1.97.2",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
@@ -145,7 +145,7 @@
     {
         "comment":  "",
         "name":  "winscp",
-        "chocoVersion":  "6.3.6",
+        "chocoVersion":  "6.3.7",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
@@ -171,17 +171,6 @@
         "chocoArgumentString":  "/loadinf=c:\\config\\uvnc\\uvnc.inf",
         "installType":  "choco",
         "customInstallScript":  "",
-        "chocoIgnoreChecksum":  "",
-        "mandatory":  "no",
-        "firewallruleoutgoingpath":  ""
-    },
-    {
-        "comment":  "",
-        "name":  "Cherwell",
-        "chocoVersion":  "",
-        "chocoArgumentString":  "",
-        "installType":  "custom",
-        "customInstallScript":  ".\\custom\\Cherwell.ps1",
         "chocoIgnoreChecksum":  "",
         "mandatory":  "no",
         "firewallruleoutgoingpath":  ""
@@ -231,14 +220,14 @@
         "firewallruleoutgoingpath":  ""
     },
     {
-        "comment": "",
-        "name": "Boottasks",
-        "chocoVersion": "",
-        "chocoArgumentString": "",
-        "installType": "custom",
-        "customInstallScript": ".\\GPOs\\Add-Startupscripts.ps1",
-        "chocoIgnoreChecksum": "",
-        "mandatory": "no",
-        "firewallruleoutgoingpath": ""
+        "comment":  "",
+        "name":  "Boottasks",
+        "chocoVersion":  "",
+        "chocoArgumentString":  "",
+        "installType":  "custom",
+        "customInstallScript":  ".\\GPOs\\Add-Startupscripts.ps1",
+        "chocoIgnoreChecksum":  "",
+        "mandatory":  "no",
+        "firewallruleoutgoingpath":  ""
     }
 ]
