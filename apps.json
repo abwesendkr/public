@@ -264,6 +264,17 @@
     "firewallruleoutgoingpath": ""
 },
 {
+    "comment":  "",
+    "name":  "Oracle-SQL-Developer",
+    "chocoVersion":  "",
+    "chocoArgumentString":  "",
+    "installType":  "custom",
+    "customInstallScript":  ".\\custom\\sqldeveloper.ps1",
+    "chocoIgnoreChecksum":  "",
+    "mandatory":  "no",
+    "firewallruleoutgoingpath":  ""
+},
+{
     "comment": "",
     "name": "openlens",
     "chocoVersion": "6.5.2.3660",
