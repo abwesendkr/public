@@ -248,27 +248,31 @@ function Set-Region {
     try {
         $region = [System.Environment]::GetEnvironmentVariable("region", [System.EnvironmentVariableTarget]::Machine)
         # try to find out which region like: crmep10${local.location_short}vms
-        $hostname = hostname
-        if ($region -match "global") {
-            if ($hostname -match "^[a-zA-Z]+\d{2}san[a-zA-Z]+\d+$") {
+        $hostname = hostname # read machine hostname 
+        if ($region -match "global") { # check what tag was set
+            # set each region
+            if ($hostname -match "san") {
                 Write-Output "Hostname $hostname shows 'san'"
                 $region1 = "san"
-            } elseif ($hostname -match "^[a-zA-Z]+\d{2}ae[a-zA-Z]+\d+") {
+            } elseif ($hostname -match "ae") {
                 Write-Output "Hostname $hostname shows 'apac'"
-                $region2 = "apac"
-            } elseif ($hostname -match "^[a-zA-Z]+\d{2}eus2[a-zA-Z]+\d+") {
+                $region1 = "apac"
+            } elseif ($hostname -match "eus2") {
                 Write-Output "Hostname $hostname shows 'eus2'"
-                $region2 = "nam"
-            } elseif ($hostname -match "^[a-zA-Z]+\d{2}we[a-zA-Z]+\d+") {
+                $region1 = "nam"
+            } elseif ($hostname -match "we") {
                 Write-Output "Hostname $hostname shows 'we'"
-                $region2 = "emena"
+                $region1 = "emena"
             }
+            # check session types
             if ($region -match "global-single") {
-                $region = $region +"-single" 
-            } elseif ($region -match "global-single") {
-                $region = $region +"-multi" 
+                $region2 = "-single" 
+            } elseif ($region -match "global-multi") {
+                $region2 = "-multi" 
             }
-        } 
+        }
+        # read environment for prodcution or staging
+        Read-Environment
         Write-Host "Try to read set 'region': $($region)"
         return $region
     }
