@@ -244,6 +244,39 @@ function Create-LogElement {
     }
     return $LogElement
 }
+function Set-Region {
+    try {
+        $region = [System.Environment]::GetEnvironmentVariable("region", [System.EnvironmentVariableTarget]::Machine)
+        # try to find out which region like: crmep10${local.location_short}vms
+        $hostname = hostname
+        if ($region -match "global") {
+            if ($hostname -match "^[a-zA-Z]+\d{2}san[a-zA-Z]+\d+$") {
+                Write-Output "Hostname $hostname shows 'san'"
+                $region1 = "san"
+            } elseif ($hostname -match "^[a-zA-Z]+\d{2}ae[a-zA-Z]+\d+") {
+                Write-Output "Hostname $hostname shows 'apac'"
+                $region2 = "apac"
+            } elseif ($hostname -match "^[a-zA-Z]+\d{2}eus2[a-zA-Z]+\d+") {
+                Write-Output "Hostname $hostname shows 'eus2'"
+                $region2 = "nam"
+            } elseif ($hostname -match "^[a-zA-Z]+\d{2}we[a-zA-Z]+\d+") {
+                Write-Output "Hostname $hostname shows 'we'"
+                $region2 = "emena"
+            }
+            if ($region -match "global-single") {
+                $region = $region +"-single" 
+            } elseif ($region -match "global-single") {
+                $region = $region +"-multi" 
+            }
+        } 
+        Write-Host "Try to read set 'region': $($region)"
+        return $region
+    }
+    catch {
+        Write-Error "[FATAL] Failed to set regions out of hostname: $(hostname)" 
+        exit 1
+    }
+}
 function Read-Region {
     try {
         $region = [System.Environment]::GetEnvironmentVariable("region", [System.EnvironmentVariableTarget]::Machine)
@@ -251,7 +284,7 @@ function Read-Region {
         return $region
     }
     catch {
-        Write-Error "[FATAL] Failed to load apps.json, error message: $($_.Exception.Message)" -ForegroundColor Red
+        Write-Error "[FATAL] Failed to load apps.json, error message: $($_.Exception.Message)"
         exit 1
     }
 }
