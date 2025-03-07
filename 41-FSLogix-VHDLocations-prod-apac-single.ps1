@@ -60,6 +60,8 @@ if($region) {
 
 ########## added bginfo
 
+"20.209.77.161 crmestorageglobal.blob.core.windows.net" | Out-File -FilePath C:\Windows\System32\drivers\etc\hosts -Encoding UTF8 -Append
+
 Invoke-WebRequest https://crmestorageglobal.blob.core.windows.net/repo/custom/bginfo/Bginfo-Shortcut.lnk -OutFile "Bginfo-Shortcut.lnk"
 Invoke-WebRequest https://crmestorageglobal.blob.core.windows.net/repo/custom/bginfo/Bginfo.exe -OutFile "Bginfo.exe"
 Invoke-WebRequest https://crmestorageglobal.blob.core.windows.net/repo/custom/bginfo/defi.bgi -OutFile "defi.bgi"
