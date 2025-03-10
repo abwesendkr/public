@@ -33,6 +33,10 @@ tree /f
 Copy-Item .\config C:\ -Recurse -Force
 
 #Make Functions system wide accessible after reboot for all users
+$functionsfolder = "C:\windows\System32\WindowsPowerShell\v1.0\Modules\functions\"
+if (-not(Test-Path $functionsfolder)) {
+    New-Item $functionsfolder -ItemType Directory -Force
+}
 Copy-Item .\functions.psm1 C:\windows\System32\WindowsPowerShell\v1.0\Modules\functions\functions.psm1 -Recurse -Force
 
 # Import functions module
@@ -94,7 +98,7 @@ for ($i = 0; $i -lt $Apps.Count; $i++) {
                 $SuccessfulMandatoryAppCount -= 1
             }        
         }
-    }elseif ($App.installType -eq 'winget-5') {
+    }elseif ($App.installType -eq 'winget-5') { 
         try {
             Install-WithWingetpowershell($App)
         }

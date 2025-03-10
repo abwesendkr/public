@@ -79,7 +79,7 @@
     {
         "comment":  "",
         "name":  "adobereader",
-        "chocoVersion":  "24.9.0",
+        "chocoVersion":  "2024.5.20414",
         "chocoArgumentString":  "/DesktopIcon",
         "installType":  "choco",
         "customInstallScript":  "",
