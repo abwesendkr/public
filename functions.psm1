@@ -240,7 +240,7 @@ function Create-LogElement {
     $LogElement = [pscustomobject]@{
         Name    = $($App.name)
         Version = $($App.chocoVersion)
-        Success = $exitcode
+        Exitcode = $exitcode
     }
     return $LogElement
 }
