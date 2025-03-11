@@ -1,5 +1,5 @@
 # CONSTANTS
-#$REPO_NAME = "public"
+$REPO_NAME = "public"
 $GITHUB_REPO = "https://crmestorageglobal.blob.core.windows.net/repo/repo.tar.gz"
 $scriptPathroot = "C:\scripts2"
 $repofile = Join-Path -path $scriptPathroot -ChildPath "repo.tar.gz"  
@@ -9,23 +9,23 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     Write-Host "[FATAL] You need to run this script as Administrator!Exiting script." -ForegroundColor Red
     exit 1
 }
-<#
+
 # Load Git repo
 if (-not(Test-Path ".\$REPO_NAME")) {
     & git clone $GITHUB_REPO
 }
-#>
+
 if (-not(Test-Path ".\$scriptPathroot")) {
     New-Item $scriptPathroot -ItemType Directory -Force
 }
 
-"20.209.77.161 crmestorageglobal.blob.core.windows.net" | Out-File -FilePath C:\Windows\System32\drivers\etc\hosts -Encoding UTF8 -Append
-Invoke-WebRequest $GITHUB_REPO -OutFile $repofile
+#"20.209.77.161 crmestorageglobal.blob.core.windows.net" | Out-File -FilePath C:\Windows\System32\drivers\etc\hosts -Encoding UTF8 -Append
+#Invoke-WebRequest $GITHUB_REPO -OutFile $repofile
 #Set work location
 Set-Location $scriptPathroot
 
 #expand archive:
-tar -xvzf $repofile
+#tar -xvzf $repofile
 Write-Host "Cloned this:"
 tree /f
 
