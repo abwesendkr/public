@@ -1,6 +1,7 @@
 # CONSTANTS
 $REPO_NAME = "public"
-$GITHUB_REPO = "https://crmestorageglobal.blob.core.windows.net/repo/repo.tar.gz"
+$GITHUB_REPO = "https://github.com/abwesendkr/public.git"
+#$GITHUB_REPO = "https://crmestorageglobal.blob.core.windows.net/repo/repo.tar.gz"
 $scriptPathroot = "C:\scripts2"
 $repofile = Join-Path -path $scriptPathroot -ChildPath "repo.tar.gz"  
 
