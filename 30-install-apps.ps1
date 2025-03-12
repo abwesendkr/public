@@ -3,6 +3,10 @@ $REPO_NAME = "public"
 $GITHUB_REPO = "https://github.com/abwesendkr/public.git"
 #$GITHUB_REPO = "https://crmestorageglobal.blob.core.windows.net/repo/repo.tar.gz"
 $scriptPathroot = "C:\scripts2"
+
+if (-not(Test-Path ".\$scriptPathroot")) {
+    New-Item $scriptPathroot -ItemType Directory -Force
+}
 $repofile = Join-Path -path $scriptPathroot -ChildPath "repo.tar.gz"  
 
 # Check if running as Administrator
@@ -17,9 +21,6 @@ if (-not(Test-Path ".\$REPO_NAME")) {
     & git clone $GITHUB_REPO
 }
 
-if (-not(Test-Path ".\$scriptPathroot")) {
-    New-Item $scriptPathroot -ItemType Directory -Force
-}
 
 #"20.209.77.161 crmestorageglobal.blob.core.windows.net" | Out-File -FilePath C:\Windows\System32\drivers\etc\hosts -Encoding UTF8 -Append
 #Invoke-WebRequest $GITHUB_REPO -OutFile $repofile
