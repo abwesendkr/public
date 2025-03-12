@@ -4,8 +4,9 @@ $GITHUB_REPO = "https://github.com/abwesendkr/public.git"
 #$GITHUB_REPO = "https://crmestorageglobal.blob.core.windows.net/repo/repo.tar.gz"
 $scriptPathroot = "C:\scripts2"
 
-if (-not(Test-Path ".\$scriptPathroot")) {
+if (-not(Test-Path $scriptPathroot)) {
     New-Item $scriptPathroot -ItemType Directory -Force
+    write-host "[INFO] created $($scriptPathroot)"
 }
 $repofile = Join-Path -path $scriptPathroot -ChildPath "repo.tar.gz"  
 
@@ -14,13 +15,15 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     Write-Host "[FATAL] You need to run this script as Administrator!Exiting script." -ForegroundColor Red
     exit 1
 }
+Write-Host "[INFO] change location $($scriptPathroot)"
 Set-Location $scriptPathroot
-
+write-host "$(pwd)"
 # Load Git repo
 if (-not(Test-Path ".\$REPO_NAME")) {
     & git clone $GITHUB_REPO
 }
-
+Set-Location $REPO_NAME
+write-host "$(pwd)"
 
 #"20.209.77.161 crmestorageglobal.blob.core.windows.net" | Out-File -FilePath C:\Windows\System32\drivers\etc\hosts -Encoding UTF8 -Append
 #Invoke-WebRequest $GITHUB_REPO -OutFile $repofile
@@ -29,7 +32,7 @@ if (-not(Test-Path ".\$REPO_NAME")) {
 #expand archive:
 #tar -xvzf $repofile
 Write-Host "Cloned this:"
-tree /f
+#tree /f
 
 #Copy Config files
 Copy-Item .\config C:\ -Recurse -Force
