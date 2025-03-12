@@ -33,8 +33,8 @@ function Set-Region {
             } elseif ($region -match "global-multi") {
                 $region2 = "-multi" 
             }
+        $region = $region1+$region2
         }
-		$region = $region1+$region2
         # read environment for prodcution or staging
         Read-Environment
         Write-Host "Try to read set 'region': $($region)"
