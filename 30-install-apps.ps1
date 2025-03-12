@@ -10,6 +10,7 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     Write-Host "[FATAL] You need to run this script as Administrator!Exiting script." -ForegroundColor Red
     exit 1
 }
+Set-Location $scriptPathroot
 
 # Load Git repo
 if (-not(Test-Path ".\$REPO_NAME")) {
@@ -23,7 +24,6 @@ if (-not(Test-Path ".\$scriptPathroot")) {
 #"20.209.77.161 crmestorageglobal.blob.core.windows.net" | Out-File -FilePath C:\Windows\System32\drivers\etc\hosts -Encoding UTF8 -Append
 #Invoke-WebRequest $GITHUB_REPO -OutFile $repofile
 #Set work location
-Set-Location $scriptPathroot
 
 #expand archive:
 #tar -xvzf $repofile
