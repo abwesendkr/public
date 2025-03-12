@@ -7,17 +7,45 @@ Write-Host "[INFO] Import powershell functions"  -ForegroundColor Yellow
 
 ############ wird importiert in zukunft ################
 
-function Read-Region {
+function Set-Region {
     try {
         $region = [System.Environment]::GetEnvironmentVariable("region", [System.EnvironmentVariableTarget]::Machine)
+        # try to find out which region like: crmep10${local.location_short}vms
+        $hostname = hostname # read machine hostname 
+        if ($region -match "global") { # check what tag was set
+            # set each region
+            if ($hostname -match "san") {
+                Write-Output "Hostname $hostname shows 'san'"
+                $region1 = "san"
+            } elseif ($hostname -match "ae") {
+                Write-Output "Hostname $hostname shows 'apac'"
+                $region1 = "apac"
+            } elseif ($hostname -match "eus2") {
+                Write-Output "Hostname $hostname shows 'eus2'"
+                $region1 = "nam"
+            } elseif ($hostname -match "we") {
+                Write-Output "Hostname $hostname shows 'we'"
+                $region1 = "emena"
+            }
+            # check session types
+            if ($region -match "global-single") {
+                $region2 = "-single" 
+            } elseif ($region -match "global-multi") {
+                $region2 = "-multi" 
+            }
+        }
+		$region = $region1+$region2
+        # read environment for prodcution or staging
+        Read-Environment
         Write-Host "Try to read set 'region': $($region)"
         return $region
     }
     catch {
-        Write-Error "[FATAL] Failed to load apps.json, error message: $($_.Exception.Message)" -ForegroundColor Red
+        Write-Error "[FATAL] Failed to set regions out of hostname: $(hostname)" 
         exit 1
     }
 }
+
 function Read-Environment {
     # Hole den Hostnamen des Computers
     $hostname = $env:COMPUTERNAME
@@ -38,7 +66,7 @@ function Read-Environment {
 
 # Read region from environment variable 
 Write-Host "[INFO] Read region and environment variable"  -ForegroundColor Yellow
-$region = Read-Region
+$region = Set-Region
 $environment = Read-Environment
 
 # Set test FSLogix to staging for all
@@ -59,6 +87,18 @@ if($environment -eq "staging") {
     } elseif ($region -eq "africa-multi") {
         $fslogix_regex_storageaccount = "crmecupsans01fxst001"
         $fslogix_regex_share = "multisession"
+    } elseif ($region -eq "emena-single") {
+        $fslogix_regex_storageaccount = "crmecupwe002fxst001"
+        $fslogix_regex_share = "singlesession"
+    } elseif ($region -eq "emena-multi") {
+        $fslogix_regex_storageaccount = "crmecupwe002fxst001"
+        $fslogix_regex_share = "multisession"
+    } elseif ($region -eq "nam-single") {
+        $fslogix_regex_storageaccount = "crmecupeus2002fxst001"
+        $fslogix_regex_share = "singlesession"
+    } elseif ($region -eq "nam-multi") {
+        $fslogix_regex_storageaccount = "crmecupeus2002fxst001"
+        $fslogix_regex_share = "multisession"
     }
 } elseif ($environment -eq "production") {
     Write-Host "[INFO] Set Production fslogix variables" -ForegroundColor Yellow
@@ -70,6 +110,18 @@ if($environment -eq "staging") {
         $fslogix_regex_share = "singlesession"
     } elseif ($region -eq "apac-multi") {
         $fslogix_regex_storageaccount = "crmecupae001fxst002"
+        $fslogix_regex_share = "multisession"
+    } elseif ($region -eq "emena-single") {
+        $fslogix_regex_storageaccount = "crmecupwe003fxst001"
+        $fslogix_regex_share = "singlesession"
+    } elseif ($region -eq "emena-multi") {
+        $fslogix_regex_storageaccount = "crmecupwe003fxst001"
+        $fslogix_regex_share = "multisession"
+    } elseif ($region -eq "nam-single") {
+        $fslogix_regex_storageaccount = "crmecupeus2001fxst001"
+        $fslogix_regex_share = "singlesession"
+    } elseif ($region -eq "nam-multi") {
+        $fslogix_regex_storageaccount = "crmecupeus2001fxst001"
         $fslogix_regex_share = "multisession"
     }
 }
