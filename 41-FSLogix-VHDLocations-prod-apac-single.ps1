@@ -2,9 +2,6 @@
 # Install FSLogix with VHDLocations #
 #####################################
 
-# Import functions module
-Write-Host "[INFO] import powershell functions"
-
 # Read region from environment variable 
 Write-Host "[INFO] read region variable"
 $region = "apac-single"
@@ -35,7 +32,7 @@ if($region) {
     try {
         $regPath = "HKLM:\SOFTWARE\FSLogix\Profiles"
         New-ItemProperty -Path $regPath -Name Enabled -PropertyType DWORD -Value 1 -Force
-        New-ItemProperty -Path $regPath -Name VHDLocations -PropertyType MultiString -Value "\\$fslogix_regex_storageaccount.privatelink.file.core.windows.net\$fslogix_regex_share" -Force
+        New-ItemProperty -Path $regPath -Name VHDLocations -PropertyType MultiString -Value "\\$fslogix_regex_storageaccount.file.core.windows.net\$fslogix_regex_share" -Force
         New-ItemProperty -Path $regPath -Name SizeInMBs -PropertyType DWORD -Value 30000 -Force
         New-ItemProperty -Path $regPath -Name IsDynamic -PropertyType DWORD -Value 1 -Force
         New-ItemProperty -Path $regPath -Name VolumeType -PropertyType String -Value "vhdx" -Force
