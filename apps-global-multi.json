@@ -23,17 +23,6 @@
     },
     {
         "comment":  "",
-        "name":  "wsl-install",
-        "chocoVersion":  "",
-        "chocoArgumentString":  "",
-        "installType":  "custom",
-        "customInstallScript":  ".\\custom\\wsl\\wsl-install.ps1",
-        "chocoIgnoreChecksum":  "",
-        "mandatory":  "no",
-        "firewallruleoutgoingpath":  ""
-    },
-    {
-        "comment":  "",
         "name":  "disable-msstore",
         "chocoVersion":  "",
         "chocoArgumentString":  "",
