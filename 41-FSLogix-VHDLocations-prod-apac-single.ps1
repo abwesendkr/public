@@ -60,15 +60,15 @@ Remove-Item -path "C:\scripts\Set-FSLogix-VHDLocations-set-to-staging.ps1"-Force
 
 "20.209.77.161 crmestorageglobal.blob.core.windows.net" | Out-File -FilePath C:\Windows\System32\drivers\etc\hosts -Encoding UTF8 -Append
 
-Invoke-WebRequest https://crmestorageglobal.blob.core.windows.net/repo/custom/bginfo/Bginfo-Shortcut.lnk -OutFile "Bginfo-Shortcut.lnk"
-Invoke-WebRequest https://crmestorageglobal.blob.core.windows.net/repo/custom/bginfo/Bginfo.exe -OutFile "Bginfo.exe"
-Invoke-WebRequest https://crmestorageglobal.blob.core.windows.net/repo/custom/bginfo/defi.bgi -OutFile "defi.bgi"
+if (-not(Test-Path "c:\scripts\bginfo")) {
+    New-Item -ItemType Directory -Path "c:\scripts\bginfo" -Force
+}
+
+Invoke-WebRequest https://crmestorageglobal.blob.core.windows.net/repo/custom/bginfo/Bginfo-Shortcut.lnk -OutFile "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\Bginfo-Shortcut.lnk"
+Invoke-WebRequest https://crmestorageglobal.blob.core.windows.net/repo/custom/bginfo/Bginfo.exe -OutFile "c:\scripts\bginfo\Bginfo.exe"
+Invoke-WebRequest https://crmestorageglobal.blob.core.windows.net/repo/custom/bginfo/defi.bgi -OutFile "c:\scripts\bginfo\defi.bgi"
 
 $environment = "production"
-$currentPath = $PSScriptRoot
-$bginfoPath = $currentPath+"\Bginfo.exe"
-$bginfoConfigPath = $currentPath+"\defi.bgi"
-$bginfoShortcutPath = $currentPath+"\Bginfo-Shortcut.lnk"
 
 if (-not(Test-Path "c:\Temp")) {
     New-Item -ItemType Directory -Path "c:\Temp" -Force
@@ -81,13 +81,6 @@ $filePath = "C:\Temp\region.txt"
 "Environment:   " + $environment | Out-File -FilePath $filePath -Encoding UTF8 -Append
 
 # Move files to BGInfo folder in scripts
-if (-not(Test-Path "c:\scripts\bginfo")) {
-    New-Item -ItemType Directory -Path "c:\scripts\bginfo" -Force
-}
-Copy-Item $bginfoPath -Destination "c:\scripts\bginfo\Bginfo.exe" -Force
-Copy-Item $bginfoConfigPath -Destination "c:\scripts\bginfo\defi.bgi" -Force
-Copy-Item $bginfoShortcutPath -Destination "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\Bginfo-Shortcut.lnk" -Force
-
 
 
 
