@@ -50,6 +50,7 @@ if($region) {
     Write-Host "[ERROR] Region not set"
 }
 
+Remove-Item -path "C:\scripts\Set-FSLogix-VHDLocations-set-to-staging.ps1"-Force
 
 ## Based on solution from https://serverfault.com/a/725385
 
