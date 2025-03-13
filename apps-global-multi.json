@@ -44,6 +44,17 @@
         "firewallruleoutgoingpath":  ""
     },
     {
+        "comment":  "",
+        "name":  "fslogix-tray",
+        "chocoVersion":  "",
+        "chocoArgumentString":  "",
+        "installType":  "custom",
+        "customInstallScript":  ".\\custom\\fslogix-tray\\fslogixtray.ps1",
+        "chocoIgnoreChecksum":  "",
+        "mandatory":  "no",
+        "firewallruleoutgoingpath":  ""
+    },
+    {
         "comment":  "!!!!!!! last standard mandatory installations !!!!!!!!!!!",
         "name":  "Boottasks",
         "chocoVersion":  "",
