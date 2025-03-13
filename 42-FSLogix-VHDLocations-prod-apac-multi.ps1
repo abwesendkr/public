@@ -4,7 +4,7 @@
 
 # Read region from environment variable 
 Write-Host "[INFO] read region variable"
-$region = "apac-mulit"
+$region = "apac-multi"
 
 # Set test FSLogix 
 Write-Host "[INFO] set fslogix variables"
