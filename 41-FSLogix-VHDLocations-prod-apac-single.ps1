@@ -72,6 +72,10 @@ $bginfoPath = $currentPath+"\Bginfo.exe"
 $bginfoConfigPath = $currentPath+"\defi.bgi"
 $bginfoShortcutPath = $currentPath+"\Bginfo-Shortcut.lnk"
 
+if (-not(Test-Path "c:\Temp")) {
+    New-Item -ItemType Directory -Path "c:\Temp" -Force
+}
+
 $filePath = "C:\Temp\region.txt"
 
 # Write the value to the file
