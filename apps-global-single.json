@@ -67,17 +67,6 @@
     },
     {
         "comment":  "",
-        "name":  "adobereader",
-        "chocoVersion":  "2024.5.20414",
-        "chocoArgumentString":  "/DesktopIcon",
-        "installType":  "choco",
-        "customInstallScript":  "",
-        "chocoIgnoreChecksum":  "",
-        "mandatory":  "no",
-        "firewallruleoutgoingpath":  ""
-    },
-    {
-        "comment":  "",
         "name":  "filezilla",
         "chocoVersion":  "3.68.1",
         "chocoArgumentString":  "",
