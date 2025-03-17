@@ -89,6 +89,28 @@
 },
 {
     "comment": "",
+    "name": "openvpn",
+    "chocoVersion": "2.6.13.2",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
+},
+{
+    "comment": "",
+    "name": "ShrewSoftVpn",
+    "chocoVersion": "2.2.2.0",
+    "chocoArgumentString": "/STANDARD",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
+},
+{
+    "comment": "",
     "name": "Boottasks",
     "chocoVersion": "",
     "chocoArgumentString": "",
