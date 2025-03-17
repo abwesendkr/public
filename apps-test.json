@@ -122,6 +122,17 @@
 },
 {
     "comment": "",
+    "name": "AzureVPN",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
+    "installType": "custom",
+    "customInstallScript": ".\\custom\\azurevpn\\azurevpn.ps1",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
+},
+{
+    "comment": "",
     "name": "Boottasks",
     "chocoVersion": "",
     "chocoArgumentString": "",
