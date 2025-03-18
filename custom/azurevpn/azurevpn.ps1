@@ -10,6 +10,14 @@
 # Download the installer
 #Invoke-WebRequest -Uri $installerUrl -OutFile $installerPath
 
+##########################################
+#### important: ##########################
+#### make a comment to last execution in failed:
+#### add-appdevpackage.ps1
+#### near line 718:
+#### PrintMessageAndExit $UiStrings.Success $ErrorCodes.Success
+#### so that it will no longer be excuted "press enter to continue"
+
 Write-Output "[INFO] Azure VPN client extracting"
 $zipFilePath = Join-Path -Path $PSScriptRoot -ChildPath "AzVpnAppx_3.3.1.0.7z"
 
