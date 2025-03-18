@@ -287,6 +287,39 @@
 },
 {
     "comment": "",
+    "name": "openvpn",
+    "chocoVersion": "2.6.13.2",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
+},
+{
+    "comment": "",
+    "name": "ciscoanyconnect",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
+    "installType": "custom",
+    "customInstallScript": ".\\custom\\cisco\\cisco-anyconnect.ps1",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
+},
+{
+    "comment": "",
+    "name": "AzureVPN",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
+    "installType": "custom",
+    "customInstallScript": ".\\custom\\azurevpn\\azurevpn.ps1",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
+},
+{
+    "comment": "",
     "name": "Boottasks",
     "chocoVersion": "",
     "chocoArgumentString": "",
