@@ -179,6 +179,7 @@ function Install-WithChoco {
     catch {
         Write-Host "[ERROR] Failed to install $($App.name)."  -ForegroundColor Red
         throw "[ERROR] Error encountered: $_"
+        return $chocoexitcode
     }
 }
 function Update-AppVersionToLatest {
