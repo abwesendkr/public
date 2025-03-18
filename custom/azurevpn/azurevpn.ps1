@@ -11,7 +11,7 @@
 #Invoke-WebRequest -Uri $installerUrl -OutFile $installerPath
 
 Write-Output "[INFO] Azure VPN client extracting"
-$zipFilePath = "AzVpnAppx_3.3.1.0.7z"
+$zipFilePath = ".\AzVpnAppx_3.3.1.0.7z"
 
 # Ensure 7-Zip is installed and accessible
 try {
