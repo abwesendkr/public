@@ -297,6 +297,17 @@
     "firewallruleoutgoingpath": ""
 },
 {
+    "comment": "!!!!!broken install",
+    "name": "ShrewSoftVpn",
+    "chocoVersion": "2.2.2.0",
+    "chocoArgumentString": "/STANDARD",
+    "installType": "choco",
+    "customInstallScript": "",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
+},
+{
     "comment": "",  
     "name": "ciscoanyconnect",
     "chocoVersion": "",
