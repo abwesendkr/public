@@ -297,7 +297,7 @@
     "firewallruleoutgoingpath": ""
 },
 {
-    "comment": "",
+    "comment": "",  
     "name": "ciscoanyconnect",
     "chocoVersion": "",
     "chocoArgumentString": "",
@@ -308,12 +308,23 @@
     "firewallruleoutgoingpath": ""
 },
 {
-    "comment": "",
+    "comment": "!!!! broken because of developer license !!!!",
     "name": "AzureVPN",
     "chocoVersion": "",
     "chocoArgumentString": "",
     "installType": "custom",
     "customInstallScript": ".\\custom\\azurevpn\\azurevpn.ps1",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
+},
+{
+    "comment": "",
+    "name": "F5 VPN",
+    "chocoVersion": "",
+    "chocoArgumentString": "",
+    "installType": "custom",
+    "customInstallScript": ".\\custom\\f5\\f5install.ps1",
     "chocoIgnoreChecksum": "",
     "mandatory": "no",
     "firewallruleoutgoingpath": ""
