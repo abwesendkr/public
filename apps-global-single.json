@@ -240,5 +240,38 @@
         "chocoIgnoreChecksum":  "",
         "mandatory":  "no",
         "firewallruleoutgoingpath":  ""
+    },
+    {
+        "comment": "",
+        "name": "openvpn",
+        "chocoVersion": "2.6.13.2",
+        "chocoArgumentString": "",
+        "installType": "choco",
+        "customInstallScript": "",
+        "chocoIgnoreChecksum": "",
+        "mandatory": "no",
+        "firewallruleoutgoingpath": ""
+    },
+    {
+        "comment": "",
+        "name": "ciscoanyconnect",
+        "chocoVersion": "",
+        "chocoArgumentString": "",
+        "installType": "custom",
+        "customInstallScript": ".\\custom\\cisco\\cisco-anyconnect.ps1",
+        "chocoIgnoreChecksum": "",
+        "mandatory": "no",
+        "firewallruleoutgoingpath": ""
+    },
+    {
+        "comment": "",
+        "name": "F5 VPN",
+        "chocoVersion": "",
+        "chocoArgumentString": "",
+        "installType": "custom",
+        "customInstallScript": ".\\custom\\f5\\f5install.ps1",
+        "chocoIgnoreChecksum": "",
+        "mandatory": "no",
+        "firewallruleoutgoingpath": ""
     }
 ]
