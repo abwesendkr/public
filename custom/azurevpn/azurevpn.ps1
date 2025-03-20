@@ -17,7 +17,7 @@
 #### near line 718:
 #### PrintMessageAndExit $UiStrings.Success $ErrorCodes.Success
 #### so that it will no longer be excuted "press enter to continue"
-
+<#
 Write-Output "[INFO] Azure VPN client extracting"
 $zipFilePath = Join-Path -Path $PSScriptRoot -ChildPath "AzVpnAppx_3.3.1.0.7z"
 
@@ -50,3 +50,24 @@ try {
 catch {
     Write-Output "[INFO] Azure VPN client installed NOT successfully."
 }
+#>
+
+# Setze die Gruppenrichtlinie, um den Microsoft Store zu deaktivieren
+$regKeyPath = "HKLM:\SOFTWARE\Policies\Microsoft\WindowsStore"
+$regName = "RemoveWindowsStore"
+$regValue = 0
+
+# Erstelle den Registrierungsschlüssel, wenn er nicht existiert
+If (-Not (Test-Path $regKeyPath)) {
+    New-Item -Path $regKeyPath -Force
+}
+
+# Setze den Wert, um den Store zu deaktivieren
+Set-ItemProperty -Path $regKeyPath -Name $regName -Value $regValue
+
+Write-Host "Microsoft Store wurde deaktiviert."
+
+Import-Module ..\..\functions-ps1
+$installoutput = Install-WithWingetpowershell7($App)
+$exitcode = ($installoutput).InstallerErrorCode
+return $exitcode
