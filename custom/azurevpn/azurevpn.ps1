@@ -66,7 +66,7 @@ If (-Not (Test-Path $regKeyPath)) {
 Set-ItemProperty -Path $regKeyPath -Name $regName -Value $regValue
 
 Write-Host "Microsoft Store wurde deaktiviert."
-
+write-host $PSScriptRoot
 Import-Module ..\..\functions.psm1
 
 $App = [PSCustomObject]@{
