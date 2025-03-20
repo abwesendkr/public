@@ -67,7 +67,7 @@ Set-ItemProperty -Path $regKeyPath -Name $regName -Value $regValue
 
 Write-Host "Microsoft Store wurde deaktiviert."
 write-host $PSScriptRoot
-Import-Module ..\..\functions.psm1
+Import-Module c:\scripts2\public\functions.psm1
 
 $App = [PSCustomObject]@{
     name = "azure vpn client"
