@@ -67,7 +67,14 @@ Set-ItemProperty -Path $regKeyPath -Name $regName -Value $regValue
 
 Write-Host "Microsoft Store wurde deaktiviert."
 
-Import-Module ..\..\functions-ps1
+Import-Module ..\..\functions.psm1
+
+$App = [PSCustomObject]@{
+    name = "azure vpn client"
+    chocoVersion = ""
+}
+
+
 $installoutput = Install-WithWingetpowershell7($App)
 $exitcode = ($installoutput).InstallerErrorCode
 return $exitcode
