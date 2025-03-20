@@ -70,7 +70,7 @@ write-host $PSScriptRoot
 Import-Module c:\scripts2\public\functions.psm1
 
 $App = [PSCustomObject]@{
-    name = "azure vpn client"
+    name = "9NP355QT2SQB"
     chocoVersion = ""
 }
 
