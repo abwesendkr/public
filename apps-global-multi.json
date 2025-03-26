@@ -211,7 +211,7 @@
     {
         "comment":  "",
         "name":  "amazon-workspaces",
-        "chocoVersion":  "5.25.0.5114",
+        "chocoVersion":  "5.26.1.5260",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
