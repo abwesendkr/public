@@ -20,8 +20,8 @@ function Set-Region {
             } elseif ($hostname -match "ae") {
                 Write-Output "Hostname $hostname shows 'apac'"
                 $region1 = "apac"
-            } elseif ($hostname -match "eus2") {
-                Write-Output "Hostname $hostname shows 'eus2'"
+            } elseif ($hostname -match "us") {
+                Write-Output "Hostname $hostname shows 'us'"
                 $region1 = "nam"
             } elseif ($hostname -match "we") {
                 Write-Output "Hostname $hostname shows 'we'"
