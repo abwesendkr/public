@@ -90,7 +90,7 @@
     {
         "comment":  "",
         "name":  "googlechrome",
-        "chocoVersion":  "134.0.6998.35",
+        "chocoVersion":  "135.0.7049.41",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
@@ -112,7 +112,7 @@
     {
         "comment":  "",
         "name":  "mobaxterm",
-        "chocoVersion":  "25.0.0",
+        "chocoVersion":  "25.1.0",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
@@ -134,7 +134,7 @@
     {
         "comment":  "",
         "name":  "notepadplusplus",
-        "chocoVersion":  "8.7.7",
+        "chocoVersion":  "8.7.8",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
@@ -189,7 +189,7 @@
     {
         "comment":  "",
         "name":  "vscode",
-        "chocoVersion":  "1.97.2",
+        "chocoVersion":  "1.98.2",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
