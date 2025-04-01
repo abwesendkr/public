@@ -34,19 +34,8 @@
     },
     {
         "comment":  "",
-        "name":  "firefox",
-        "chocoVersion":  "135.0.1",
-        "chocoArgumentString":  "",
-        "installType":  "choco",
-        "customInstallScript":  "",
-        "chocoIgnoreChecksum":  "",
-        "mandatory":  "no",
-        "firewallruleoutgoingpath":  ""
-    },
-    {
-        "comment":  "",
         "name":  "googlechrome",
-        "chocoVersion":  "134.0.6998.35",
+        "chocoVersion":  "135.0.7049.41",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
@@ -67,19 +56,8 @@
     },
     {
         "comment":  "",
-        "name":  "Notepad++.Notepad++",
-        "chocoVersion":  "8.7.7",
-        "chocoArgumentString":  "",
-        "installType":  "winget",
-        "customInstallScript":  "",
-        "chocoIgnoreChecksum":  "",
-        "mandatory":  "no",
-        "firewallruleoutgoingpath":  ""
-    },
-    {
-        "comment":  "",
-        "name":  "putty.install",
-        "chocoVersion":  "0.83.0",
+        "name":  "notepadplusplus",
+        "chocoVersion":  "8.7.8",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
@@ -89,8 +67,8 @@
     },
     {
         "comment":  "",
-        "name":  "python311",
-        "chocoVersion":  "3.11.9",
+        "name":  "putty.install",
+        "chocoVersion":  "0.83.0",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
@@ -112,18 +90,7 @@
     {
         "comment":  "",
         "name":  "vscode",
-        "chocoVersion":  "1.97.2",
-        "chocoArgumentString":  "",
-        "installType":  "choco",
-        "customInstallScript":  "",
-        "chocoIgnoreChecksum":  "",
-        "mandatory":  "no",
-        "firewallruleoutgoingpath":  ""
-    },
-    {
-        "comment":  "",
-        "name":  "vscode-powershell",
-        "chocoVersion":  "2025.0.0",
+        "chocoVersion":  "1.98.2",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
