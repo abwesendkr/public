@@ -16,7 +16,7 @@ function Set-Region {
             # set each region
             if ($hostname -match "san") {
                 Write-Output "Hostname $hostname shows 'san'"
-                $region1 = "san"
+                $region1 = "africa"
             } elseif ($hostname -match "ae") {
                 Write-Output "Hostname $hostname shows 'apac'"
                 $region1 = "apac"
