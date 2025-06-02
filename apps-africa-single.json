@@ -46,7 +46,7 @@
     {
         "comment":  "",
         "name":  "googlechrome",
-        "chocoVersion":  "136.0.7103.93",
+        "chocoVersion":  "136.0.7103.114",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
@@ -112,7 +112,7 @@
     {
         "comment":  "",
         "name":  "vscode",
-        "chocoVersion":  "1.99.3",
+        "chocoVersion":  "1.100.2",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
