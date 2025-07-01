@@ -1,15 +1,15 @@
 [
-    {
-        "comment":  "!!!!!!!!!!!never touch this!!!!!!!!!!!!!!!!!",
-        "name":  "powershell7",
-        "chocoVersion":  "",
-        "chocoArgumentString":  "",
-        "installType":  "custom",
-        "customInstallScript":  ".\\custom\\powershell7\\powershell7.ps1",
-        "chocoIgnoreChecksum":  "",
-        "mandatory":  "no",
-        "firewallruleoutgoingpath":  ""
-    },
+  {
+    "comment": "!!!!!!!!!!!never touch this!!!!!!!!!!!!!!!!!",
+    "name": "powershell-core",
+    "chocoVersion": "7.5.2",
+    "chocoArgumentString": "",
+    "installType": "choco",
+    "customInstallScript": ".\\custom\\powershell7\\powershell7.ps1",
+    "chocoIgnoreChecksum": "",
+    "mandatory": "no",
+    "firewallruleoutgoingpath": ""
+  },
     {
         "comment":  "",
         "name":  "7zip",
@@ -35,7 +35,7 @@
     {
         "comment":  "",
         "name":  "firefox",
-        "chocoVersion":  "138.0.1",
+        "chocoVersion":  "140.0.2",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
@@ -46,7 +46,7 @@
     {
         "comment":  "",
         "name":  "googlechrome",
-        "chocoVersion":  "136.0.7103.114",
+        "chocoVersion":  "137.0.7151.104",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
@@ -112,7 +112,7 @@
     {
         "comment":  "",
         "name":  "vscode",
-        "chocoVersion":  "1.100.2",
+        "chocoVersion":  "1.101.2",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
@@ -134,7 +134,7 @@
     {
         "comment":  "",
         "name":  "winscp",
-        "chocoVersion":  "6.5.1",
+        "chocoVersion":  "6.5.2",
         "chocoArgumentString":  "",
         "installType":  "choco",
         "customInstallScript":  "",
